@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Hong Kong Jockey Club</title>
+
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+    <!-- <link rel="stylesheet" href="assets/css/aos.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css"/>
+
+    <link rel="stylesheet" href="../assets/css/video-popup.css">
+
+    <link rel="stylesheet" href="../assets/css/single-video-popup.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!-- <script src="assets/js/aos.js"></script>
+
+    <script> AOS.init(); </script> -->
+
+    <script src="../assets/js/gsap.min.js"></script>
+
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/slick.min.js"></script>
+
+	<script src="../assets/js/video-popup.js"></script>
+
+    <script src="../assets/js/single-video-popup.js"></script>
+
+	
+
+	<!-- Strapi API Integration -->
+
+	<script>
+
+	    // Configure Strapi API URL
+
+	    window.STRAPI_BASE_URL = window.STRAPI_BASE_URL || 'http://localhost:1337';
+
+	</script>
+
+	<script src="../assets/js/strapi-api.js?v=20260127001"></script>
+
+	<script src="../assets/js/strapi-data-loader.js?v=20260127001"></script>
+
+	
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+            
+
+    <!-- Fix for iOS viewport height issue with browser UI -->
+
+    <script>
+
+        // Calculate and set actual viewport height as CSS custom property
+
+        function setViewportHeight() {
+
+            const vh = window.innerHeight * 0.01;
+
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+        }
+
+        
+
+        // Set on load
+
+        setViewportHeight();
+
+        
+
+        // Update on resize and orientation change
+
+        window.addEventListener('resize', setViewportHeight);
+
+        window.addEventListener('orientationchange', setViewportHeight);
+
+    </script>
+
+
+
+</head>
+
+
+
+<body class="bg-white overflow-x-hidden">
+
+    <header class="bg-white site-header fixed-top border-bottom">
+
+        <div class="px-5 py-4 container-fluid d-flex justify-content-between align-items-center header-bar">
+
+            <div class="d-flex align-items-center left-cluster">
+
+                <div class="logo pe-5 d-flex">
+
+                    <a href="index" class="d-inline-flex align-items-center">
+
+                        <img class="site-logo d-none d-lg-block" src="../assets/images/logo.png" alt="HKJC Logo">
+
+                        <img class="site-logo d-block d-lg-none" src="../assets/images/logo-mobile.png" alt="HKJC Logo">
+
+                    </a>
+
+                </div>
+
+                <nav class="main-nav d-none d-lg-flex align-items-center" aria-label="Primary">
+
+                    <ul class="nav mb-0">
+
+                        <li class="nav-item first-item-wrapper">
+
+                            <div class="border-start border-end px-3 me-2">
+
+                              <a class="nav-link px-2 fw-bold" href="index">Home</a>
+
+                            </div>
+
+                        </li>                
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="index#tipping">Tipping One</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racing-academy">Racing Academy</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="discover-highlight">Discover Highlights</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racecourse-experience">Racecourse Experience</a></li>
+
+                        <li class="nav-item button px-3 position-relative">
+                            <a class="nav-link px-3 fw-normal" href="javascript:void(0)" id="downloadDropdownBtn">Download Classic 3-in-1</a>
+                            <div id="downloadDropdown" class="text-center position-absolute start-0 end-0 bg-white shadow-lg rounded-3 px-4 pt-4 pb-3" style="display:none; top:100%; margin-top:15px;">
+                                <img src="../assets/images/3in1app-QRCode.png" class="img-fluid" alt="Download Classic 3-in-1">
+                                <small>Scan the QR code to<br> download the app now</small>
+                            </div>
+                        </li>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var btn = document.getElementById("downloadDropdownBtn");
+                                var dropdown = document.getElementById("downloadDropdown");
+                                btn.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                                });
+                                document.addEventListener("click", function (e) {
+                                    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                                        dropdown.style.display = "none";
+                                    }
+                                });
+                            });
+                        </script>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+            <div class="d-flex align-items-center">
+
+                <!-- Desktop language switcher -->
+
+                <div class="lang d-none d-lg-flex align-items-center desktop-lang dropdown">
+
+                    <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <img src="../assets/images/icon_lang.svg">
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                        <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                        <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Mobile cluster: language + hamburger -->
+
+                <div class="d-lg-none d-flex align-items-center justify-content-end mobile-controls ms-3">
+
+                    <button class="navbar-toggler p-0 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation" id="mobileNavToggle">
+
+                        <svg class="hamburger-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                        <svg class="close-icon d-none" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                    </button>
+
+                </div>
+
+          </div>    
+
+        </div>
+
+        <div class="collapse mobile-nav-wrapper border-bottom" id="mobileNav">
+
+            <div class="lang d-flex d-lg-none align-items-center mobile-lang dropdown">
+
+                <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <img src="../assets/images/icon_lang.svg">
+
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                    <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                    <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="container-fiuld p-5 border-top">
+
+                <nav aria-label="Mobile Primary">
+
+                    <ul class="nav flex-column">
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index">Home</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index#tipping" data-collapse-reload="index#tipping">Tipping One</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racing-academy">Racing Academy</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="discover-highlight">Discover Highlights</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racecourse-experience">Racecourse Experience</a></li>
+
+                        <li class="nav-item button text-center"><a class="nav-link px-2 py-3" href="https://bit.ly/44xVMGR">Download Classic 3-in-1</a></li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="main-content">
+
+        <!-- Banner Section -->
+
+        <section class="text-center position-relative z-0 cover-swiper-banner" id="home-banner">
+
+            <div class="swiper home-banner-wrapper">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-section/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover1_e.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover1_m_e.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                                <!--div class="swiper-image-overlay">
+
+                                    <div class="overlay-content">
+
+                                        <h2 class="section-title text-white">Discover the <br>New Way of<br> Racing</h2>
+
+                                        <a class="banner-cta-link" href="#">View More</a>
+
+                                    </div>
+
+                                </div-->
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="hkir" target="_blank">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover2_e.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover2_m_e.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover3_e.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover3_m_e.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                            </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover4_e.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover4_m_e.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                            </div>
+
+                        </a>
+
+                    </div>                
+
+
+                </div>
+
+                <!-- Custom dot pagination -->
+
+                <div class="swiper-pagination banner-pagination"></div>
+
+            </div>
+
+        </section>
+
+        
+
+        <!-- Specialists Section -->
+
+        <section id="specialists">
+
+          <a id="tipping"></a>
+
+          <div class="section-header">
+
+                <div class="text-center mb-4">
+
+                <h2 class="section-title">Top 3 Racing Specialists</h2>
+
+                <p class="section-title-description">Tipping One Racing Specialists will provide exclusive picks and analysis for every raceday*, providing you with a multi-dimensional insight into each race. Bet instantly with One-Click Direct Bet^ feature. The Leaderboard records Racing Spcialist’s monthly strike rate, score, trend and rankings.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="position-relative specialists-wrap">
+
+                <div class="swiper specialists-swiper">
+
+                    <div class="swiper-wrapper ">
+
+                        <!-- Specialist 1 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-green z-0 rounded-4 position-absolute bottom-0 start-0"></div>   
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">1</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Fu Jai</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-2.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">15.2%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4837</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        
+
+                        <!-- Specialist 3 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-purple z-0 rounded-4 position-absolute bottom-0 start-0"></div>
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">3</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Ling Ling</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-4.png" alt="Ling Ling" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">25.8%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4185</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>       
+
+
+
+                        <!-- Specialist 2 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-pink z-0 rounded-4 position-absolute bottom-0 start-0"></div>
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">2</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Krystal</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-5.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">32.3%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4732</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>       
+
+                        
+
+                          <!-- Specialist 1 -->
+
+                          <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-green z-0 rounded-4 position-absolute bottom-0 start-0"></div>   
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">1</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Fu Jai</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-2.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">15.2%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4837</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        
+
+                        <!-- Specialist 3 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-purple z-0 rounded-4 position-absolute bottom-0 start-0"></div>
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">3</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Ling Ling</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-4.png" alt="Ling Ling" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">25.8%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4185</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>       
+
+
+
+                        <!-- Specialist 2 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-pink z-0 rounded-4 position-absolute bottom-0 start-0"></div>
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">2</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Krystal</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-5.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">32.3%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4732</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>                                                        
+
+
+
+                         <!-- Specialist 1 -->
+
+                         <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-green z-0 rounded-4 position-absolute bottom-0 start-0"></div>   
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">1</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Fu Jai</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-2.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">15.2%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4837</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        
+
+                        <!-- Specialist 3 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-purple z-0 rounded-4 position-absolute bottom-0 start-0"></div>
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">3</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Ling Ling</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-4.png" alt="Ling Ling" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">25.8%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4185</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>       
+
+
+
+                        <!-- Specialist 2 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-pink z-0 rounded-4 position-absolute bottom-0 start-0"></div>
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">2</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">Krystal</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-5.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Strike Rate</span><span class="value">32.3%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">Score</span><span class="value">4732</span></div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>                              
+
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="text-center my-pick-wrapper">
+
+                <!--div class="down-icon d-flex flex-column pb-3" style="color: #022169;">
+
+                    <i class="fa-solid fa-chevron-down" style="font-size: 16px; "></i>
+
+                    <i class="fa-solid fa-chevron-down" style="font-size: 20px; margin-top: -9px;"></i>
+
+                </div-->
+
+                <div class="arrow">
+
+                    <div class="l-wrapper">
+
+                      <div class="c-arrow"></div>
+
+                      <div class="c-arrow"></div>
+
+                    </div>
+
+                </div>
+
+
+
+              <h4 class="section-sub-title">See My Picks</h4>
+
+                <div class="swiper picks-swiper overflow-visible">
+
+                    <div class="swiper-wrapper" id="picksWrapper">
+
+                        <!-- dynamic pick slides -->
+
+                    </div>
+
+                </div>
+
+          </div>
+
+      </section>
+
+        
+
+        <!-- More Specialists Section -->
+
+      <section id="specialists-second">
+
+        <div class="section-header">
+
+                <div class="text-center mb-4">
+
+                    <h2 class="section-title mb-3">More Racing Specialists’ Picks</h2>
+
+                </div>
+
+          </div>
+
+          <div class="more-specialists-wrap position-relative">
+
+            <div class="swiper more-specialists-swiper pb-2">
+
+                <div class="swiper-wrapper">
+
+                    <!-- Sample slides (colors are placeholder tone-*) -->
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-blue"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Elke</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image.png" alt="Elke"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-teal"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Alex Ng</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-7.png" alt="Alex Ng"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-gold"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Colette</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-3.png" alt="Colette"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-slate"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Steven's Bros</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-6.png" alt="Steven's Bros"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-amber"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">KK</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-1.png" alt="KK"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-blue"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Elke</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image.png" alt="Elke"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-teal"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Alex Ng</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-7.png" alt="Alex Ng"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-gold"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Colette</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-3.png" alt="Colette"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-slate"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Steven's Bros</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-6.png" alt="Steven's Bros"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-amber"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">KK</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-1.png" alt="KK"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-blue"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Elke</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image.png" alt="Elke"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-teal"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Alex Ng</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-7.png" alt="Alex Ng"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-gold"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Colette</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-3.png" alt="Colette"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-slate"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">Steven's Bros</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-6.png" alt="Steven's Bros"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/en-US/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                        <article class="mspec-card">
+
+                            <div class="mspec-bg tone-amber"></div>
+
+                            <div class="mspec-text">
+
+                                <div class="mspec-name">KK</div>
+
+                                <!--div class="mspec-title">King of QIN</div-->
+
+                            </div>
+
+                            <div class="mspec-avatar"><img src="../assets/images/KOL Image-1.png" alt="KK"></div>
+
+                        </article>
+
+                        </a>
+
+                    </div>
+
+
+
+                     
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+
+                <div class="swiper-button-next"></div>
+
+            </div>
+
+            <div class="mspec-quote-wrapper text-center">
+
+                <div class="mspec-quote">Champion of  2024/25 Tipping One, often shares horse racing insights in racecourse and experience shops. Frequently bets on Quinella and Quinella Place pools, with a strategy of mixing two favorites with one longshot when picking horses, aiming for steady victories.</div>
+
+                <button class="hkjc-outline-button button-blue "><a href="https://sh.hkjc.com/d/en-US/share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">Leaderboard</a></button>
+
+            </div>
+
+        </div>
+
+        </section>
+
+
+
+        <!-- Card Animation Section -->
+
+      
+
+        <section id="animation" class="p-0">
+
+            <a id="academy"></a>
+
+            <div class="animation-stage container-fluid p-0">
+
+                <div class="animation-group-wrapper">
+
+                    <div class="animation-image-wrapper">
+
+                      <img src="../assets/images/yjs.png" alt="Racing Education Background" />
+
+                    </div>
+
+
+
+                    <div class="animation-text-wrapper">
+
+                        <div class="animation-text top">RACING</div>
+
+                        <div class="animation-text center">EDUCATION</div>
+
+                        <div class="animation-text bottom">FOR YOU</div>
+
+                    </div>
+
+                    
+
+                    <div class="animation-cards-layer">
+
+                        <figure class="media-card" onclick="openPopup(0)">
+
+                          <img src="../assets/images/edu_area_video1.jpg" class="video-thumbnail" alt="Race replay highlight 1">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注初體驗</span>
+
+                              </div>
+
+                                <p class="video-title">由零開始新手上路！2分鐘學識四大基本彩池</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(1)">
+
+                          <img src="../assets/images/edu_area_video2.jpg" class="video-thumbnail" alt="Race replay highlight 2">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注初體驗</span>
+
+                              </div>
+
+                                <p class="video-title">揀馬毋須左度右度！排位表兩大因素篩選機會馬</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(2)">
+
+                          <img src="../assets/images/edu_area_video3.jpg" class="video-thumbnail" alt="Race replay highlight 3">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注攻略</span>
+
+                              </div>
+
+                                <p class="video-title">排位表度馬攻略！一眼睇晒重點賽事資訊</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(3)">
+
+                          <img src="../assets/images/edu_area_video4.jpg" class="video-thumbnail" alt="Race replay highlight 4">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">馬匹與騎練指南</span>
+
+                              </div>
+
+                                <p class="video-title">Stevan 教你三大揀頭馬法則！天時 x 地利 x 人和</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(4)">
+
+                          <img src="../assets/images/edu_area_video5.jpg" class="video-thumbnail" alt="Race replay highlight 5">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注攻略</span>
+
+                              </div>
+
+                                <p class="video-title">Ling Ling 教你季初、中、尾三個揀馬關鍵字！</p>
+
+                          </div>
+
+                      </figure>
+
+                    </div>
+
+                    <div class="animation-button-wrapper position-relative z-1">
+
+                        <button class="hkjc-outline-button button-blue" onclick="window.location.href='racing-academy.html'">View More</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+         
+
+     
+
+        <!-- Discover More Section -->
+
+        <section id="discover">
+
+            <div class="discover-image-background">
+
+              <img src="../assets/images/Rectangle 16.png" class="left-vector" alt="Discover More Background" />
+
+              <img src="../assets/images/Vector.png" class="right-vector" alt="Discover More Background" />
+
+            </div>
+
+            <div class="discover-background"></div>
+
+            <div class="discover-content">
+
+              <img class="discover-icon" src="../assets/images/EngLogo.png"/>
+
+                <p class="discover-dot"></p>
+
+                <p class="discover-text">Introducing “Discover”, your all-in-one hub for horse racing infotainment. Set your preferences to browse personalized content, whether you're an experienced racegoer seeking advanced statistics or a novice needing a guide. Accessible through the “Classic 3-in-1” app!</p>
+
+            </div>
+
+            <div class="discover-post">
+
+                
+
+                <div class="post-wrapper first">
+
+                    <h2 class="section-title text-white">Discover Highlights</h2>
+
+                    <div class="swiper discover-posts-swiper-1">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250903/discoverpromovideo/eng/dei-content002_20250903_discoverpromovideo_eng_2500kbps.mp4', title: 'A Brief Introduction to the DISCOVER Content Revamp', description: 'DISCOVER has been upgraded for the new season, bringing you 2 exciting surprises!' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_1_e.png" alt=""></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">A Brief Introduction to the DISCOVER Content Revamp</p>
+
+                                            <p class="post-excerpt">DISCOVER has been upgraded for the new season, bringing you 2 exciting surprises!</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250814/newjockeytrainer/eng/dei-content002_20250814_newjockeytrainer_eng_2500kbps.mp4', title: 'The Three New Trainer and Jockeys', description: 'Taking an in-depth look at the South African trainer B Crawford, and two jockeys from the UK, D Probert and R Kingscote. ' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_2_e.png" alt=""></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">The Three New Trainer and Jockeys</p>
+
+                                            <p class="post-excerpt">Taking an in-depth look at the South African trainer B Crawford, and two jockeys from the UK, D Probert and R Kingscote. </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content005/2025/20250702/zacpurton-fanscm/eng/dei-content005_20250702_zacpurton-fanscm_eng_2500kbps.mp4', title: 'Fans’Top Three Epic Rides by Zac: The Craft of Eight-Time Champion Jockey', description: 'Let’s review Zac’s superb riding skills based on fans’ comments. ' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_3_e.jpg" alt=""></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">Fans' Top Three Epic Rides by Zac: The Craft of Eight-Time Champion Jockey</p>
+
+                                            <p class="post-excerpt">Let’s review Zac’s superb riding skills based on fans’ comments.</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                        
+
+                    <!--div class="button-wrapper">
+
+                        <button class="hkjc-outline-button button-white">View More</button>
+
+                    </div-->
+
+                </div>
+
+                <div class="post-wrapper second">
+
+                    <h2 class="section-title text-white">Racecourse Experience</h2>
+
+                    <div class="swiper discover-posts-swiper-2">
+
+                        <div class="swiper-wrapper">
+
+                            <!-- <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="genso">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_4_e.png" alt="Race replay highlight 1"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">A new hotspot at Sha Tin Racecourse - Genso</p>
+
+                                            <p class="post-excerpt">“Genso” is a pioneering four-storey digital horse racing hub in Hong Kong with innovative phygitainment entertainment, Instagram-worthy experiences, and scrumptious dining.</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/1124/1124/HKIRRainCTA/chi/dei-content002_1124_HKIRRainCTA_chi_2500kbps.mp4', title: '[2025/26 Longines Hong Kong International Races] Opening Performance by RAIN', description: 'Get ready for a world-class performance! International K-Pop legend RAIN opens the LONGINES Hong Kong International Races at Sha Tin on December 14. Witness his show-stopping performance, followed by the thrilling action of four world-class G1 races!<br>Dec 14, 2025 (Sunday)<br>Event starts ∣ 11:10am<br>First race ∣ 12:25pm<br>Sha Tin Racecourse <br>Special crowd safety arrangements will be implemented at Sha Tin Racecourse. Please follow the instructions from staff on site.<br>Racecourse entrants and those who bet must be aged 18 or above. Don’t gamble your life away.' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_9_e.png" alt="Race replay highlight 2"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">[2025/26 Longines Hong Kong International Races] Opening Performance by RAIN</p>
+
+                                            <p class="post-excerpt">Get ready for a world-class performance! International K-Pop legend RAIN opens the LONGINES Hong Kong International Races at Sha Tin on December 14. Witness his show-stopping performance, followed by the thrilling action of four world-class G1 races!<br>Dec 14, 2025 (Sunday)<br>Event starts ∣ 11:10am<br>First race ∣ 12:25pm<br>Sha Tin Racecourse <br>Special crowd safety arrangements will be implemented at Sha Tin Racecourse. Please follow the instructions from staff on site.<br>Racecourse entrants and those who bet must be aged 18 or above. Don’t gamble your life away.</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="hkir">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_8.png" alt="Race replay highlight 4"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">2025 LONGINES Hong Kong International Races – Turf World Championships</p>
+
+                                            <p class="post-excerpt">The highlight of the city's racing calendar will unfold on Sun 14 Dec at Sha Tin Racecourse. World-class horses and jockeys will compete for glory in four prestigious G1 races: the LONGINES Hong Kong Sprint, LONGINES Hong Kong Mile, LONGINES Hong Kong Cup, and LONGINES Hong Kong Vase, delivering thrilling match-ups! Join us live to support the Hong Kong team and witness the fierce battles between top contenders from around the world. </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div> -->
+
+                            <!--div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="happy-valley">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_6_e.png" alt="Race replay highlight 3"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">A new hotspot at Happy Valley Racecourse, a new digital horse racing night entertainment experience</p>
+
+                                            <p class="post-excerpt">Get ready for a groundbreaking night out at Happy Valley Racecourse! We're thrilled to announce the opening of two spectacular venues — The Beat and Vantage — designed to elevate your dining and nightlife experience.</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div-->
+
+                        </div>
+
+                    </div>
+
+                    <!--div class="button-wrapper">
+
+                        <button class="hkjc-outline-button button-white">View More</button>
+
+                    </div-->
+
+                </div>
+
+            </div>
+
+      </section>
+
+      <section id="footer" class="px-5">
+
+            <div class="container text-left">
+
+                <p class="footer-text mb-1">Last update 25/11/2025 <br>
+
+                    <a href="https://sh.hkjc.com/d/en-US/share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">Click here</a> to check out the calculation method for Strike Rate and Score
+
+                </p>
+
+                <p class="footer-text">*All information is for reference only and does not represent the position of The Hong Kong Jockey Club or constitute any advice.</p>
+
+                <p class="footer-text">^ “One-Click Direct-Bet” function is only available to users who have logged into their betting accounts.</p>
+
+                <p class="footer-text"><a href="https://www.hkjc.com/responsible-gambling/en/index">Play Responsibly</a></p>
+
+                <ul class="footer-list">
+
+                    <li class="footer-list">No person under 18 is allowed to bet or enter premises where bets are accepted.</li>
+
+                    <li class="footer-list">Betting with illegal or overseas bookmakers is against the law and offenders may be liable to imprisonment.</li>
+
+                    <li class="footer-list">Don't gamble your life away. Call Ping Wo Fund hotline 1834 633 if you need help or counselling.</li>
+
+                </ul>                              
+
+          </div>
+
+      </section>
+
+</main>
+
+
+
+    
+
+    <!-- SVG defs for reusable clip paths/masks -->
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <clipPath id="discover-clip" clipPathUnits="userSpaceOnUse">
+
+                <rect id="discoverClipRect" x="0" y="0" width="0" height="0" rx="0" ry="0" />
+
+            </clipPath>
+
+            <clipPath id="discover-clip-mobile" clipPathUnits="userSpaceOnUse">
+
+                <rect id="discoverClipRectMobile" x="0" y="0" width="0" height="0" rx="0" ry="0" />
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-large" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.98,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.96,0.12 
+
+               L0.03,0.3 
+
+               Q0,0.32,0,0.4 
+
+               L0,0.92 
+
+               Q0,1,0.02,1 Z" />
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-large-mobile" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.97,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.945,0.12 
+
+               L0.04,0.294 
+
+               Q0,0.3,0,0.39 
+
+               L0,0.92 
+
+               Q0,1,0.03,1 Z"></path>
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-small" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.92,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.9,0.12 
+
+               L0.1,0.3 
+
+               Q0,0.32,0,0.4 
+
+               L0,0.92 
+
+               Q0,1,0.08,1 Z" />
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-small-style-2" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.92,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.865,0.12 
+
+               L0.1,0.3 
+
+               Q0,0.32,0,0.4 
+
+               L0,0.92 
+
+               Q0,1,0.08,1 Z"></path>
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-small-style-2-img" clipPathUnits="objectBoundingBox">
+
+                <path d="M 0.05 1 
+
+                L 0.92 1 
+
+                Q 1 1 1 0.92 
+
+                Q 1 0 1 0 
+
+                Q 0 0 0 0 
+
+                L 0 0.92 
+
+                Q 0 1 0.08 1 
+
+                Z"></path>
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    
+
+    
+
+    <!-- Data Objects (Language-specific content) -->
+
+    <script>
+
+        // Racing picks data for specialists (English)
+
+        //const picksData = [
+
+        //  {
+
+        //    name: 'Fu Jai',
+
+        //    picks: [
+
+        //                    { race: 'Race 1', type: 'QUINELLA', meta: '26/11 (Wed) 18:40, Class 5,<br>1200M, Turf, "C" Course', list: ['1. ALWAYS MY FOLKS','11. GLORIOUS EXPERT','12. EVER SMART'], betLink: 'https://sh.hkjc.com/m/i4XqjcfaFx' },
+
+        //                    { race: 'Race 2', type: 'QUINELLA', meta: '26/11 (Wed) 19:10, Class 5,<br>1650M, Turf, "C" Course', list: ['1. STAR BROSE','5. YIU CHEUNG VICTORY','8. DRACO'], betLink: 'https://sh.hkjc.com/m/X3oNmtpjDF' },
+
+        //                    { race: 'Race 3', type: 'QUINELLA', meta: '26/11 (Wed) 19:40, Class 4,<br>1200M, Turf, "C" Course', list: ['6. BITS SUPERSTAR','10. GOLDEN LUCK','11. SONIC PURSUIT'], betLink: 'https://sh.hkjc.com/m/VNGNP1GZLS' },
+
+        //                    { race: 'Race 4', type: 'QUINELLA', meta: '26/11 (Wed) 20:10, Class 4,<br>1200M, Turf, "C" Course', list: ['4. EVERSTAR','8. DENFIELD','10. ROMAN CROWN'], betLink: 'https://sh.hkjc.com/m/xz7kCXjYfG' },
+
+        //                    { race: 'Race 5', type: 'QUINELLA', meta: '26/11 (Wed) 20:40, Class 4,<br>1800M, Turf, "C" Course', list: ['1. NEARLY FINE','11. VIVACIOUS WIN','12. KASA PAPA'], betLink: 'https://sh.hkjc.com/m/aNqhZsI76F' },
+
+        //                    { race: 'Race 6', type: 'QUINELLA', meta: '26/11 (Wed) 21:10, Class 4,<br>1200M, Turf, "C" Course', list: ['1. ROBOT LUCKY STAR','5. MEOWTH','7. YEE CHEONG SPIRIT'], betLink: 'https://sh.hkjc.com/m/oC8zwFPGis' },
+
+        //                    { race: 'Race 7', type: 'QUINELLA', meta: '26/11 (Wed) 21:45, Class 4,<br>1650M, Turf, "C" Course', list: ['2. ALLCASH','5. AMAZING GAZE','8. FORTUNE STAR'], betLink: 'https://sh.hkjc.com/m/ifQCpySr7u' },
+
+        //                    { race: 'Race 8', type: 'QUINELLA', meta: '26/11 (Wed) 22:15, Class 3,<br>1650M, Turf, "C" Course', list: ['1. EMBRACES','6. KEEN MOLLY','9. HARMONY GALAXY'], betLink: 'https://sh.hkjc.com/m/gOy5nYaER3' },
+
+        //                    { race: 'Race 9', type: 'QUINELLA', meta: '26/11 (Wed) 22:50, Class 3,<br>1200M, Turf, "C" Course', list: ['4. AKASHVANI','6. CHARMING BABE','7. PRESTIGE ALWAYS'], betLink: 'https://sh.hkjc.com/m/RZhFdvw4gz' }
+
+        //    ]
+
+        //  },
+
+        //  {
+
+        //    name: 'Ling Ling',
+
+        //    picks: [
+
+        //                    { race: 'Race 1', type: 'WIN & PLACE', meta: '26/11 (Wed) 18:40, Class 5,<br>1200M, Turf, "C" Course', list: ['3. JOYFUL TREASURE'], betLink: 'https://sh.hkjc.com/m/I3tySKRv8W' },
+
+        //                    { race: 'Race 2', type: 'QUINELLA & QUINELLA PLACE', meta: '26/11 (Wed) 19:10, Class 5,<br>1650M, Turf, "C" Course', list: ['1. STAR BROSE','8. DRACO'], betLink: 'https://sh.hkjc.com/m/tDagSKx9cu' },
+
+        //                    { race: 'Race 3', type: 'WIN & PLACE', meta: '26/11 (Wed) 19:40, Class 4,<br>1200M, Turf, "C" Course', list: ['6. BITS SUPERSTAR'], betLink: 'https://sh.hkjc.com/m/i3oCfgHZfB' },
+
+        //                    { race: 'Race 4', type: 'WIN & PLACE', meta: '26/11 (Wed) 20:10, Class 4,<br>1200M, Turf, "C" Course', list: ['8. DENFIELD'], betLink: 'https://sh.hkjc.com/m/8kJaWOnWpv' },
+
+        //                    { race: 'Race 5', type: 'WIN & PLACE', meta: '26/11 (Wed) 20:40, Class 4,<br>1800M, Turf, "C" Course', list: ['3. HAKKA RADIANCE'], betLink: 'https://sh.hkjc.com/m/Znu3eg238r' },
+
+        //                    { race: 'Race 6', type: 'WIN & PLACE', meta: '26/11 (Wed) 21:10, Class 4,<br>1200M, Turf, "C" Course', list: ['5. MEOWTH'], betLink: 'https://sh.hkjc.com/m/ck1m6pWFrr' },
+
+        //                    { race: 'Race 7', type: 'WIN & PLACE', meta: '26/11 (Wed) 21:45, Class 4,<br>1650M, Turf, "C" Course', list: ['5. AMAZING GAZE'], betLink: 'https://sh.hkjc.com/m/ZQdhMOf8Ht' },
+
+        //                    { race: 'Race 8', type: 'WIN & PLACE', meta: '26/11 (Wed) 22:15, Class 3,<br>1650M, Turf, "C" Course', list: ['3. A AMERIC TE SPECSO'], betLink: 'https://sh.hkjc.com/m/IshDnvqXcf' },
+
+        //                    { race: 'Race 9', type: 'WIN & PLACE', meta: '26/11 (Wed) 22:50, Class 3,<br>1200M, Turf, "C" Course', list: ['6. CHARMING BABE'], betLink: 'https://sh.hkjc.com/m/Ew8Kf5Lcji' }
+
+        //    ]
+
+        //  },
+
+        //  {
+
+        //    name: 'Krystal',
+
+        //    picks: [
+
+        //                    { race: 'Race 1', type: 'WIN & PLACE', meta: '26/11 (Wed) 18:40, Class 5,<br>1200M, Turf, "C" Course', list: ['12. EVER SMART'], betLink: 'https://sh.hkjc.com/m/bafYmU554l' },
+
+        //                    { race: 'Race 2', type: 'WIN & PLACE', meta: '26/11 (Wed) 19:10, Class 5,<br>1650M, Turf, "C" Course', list: ['7. PANDA LEGEND'], betLink: 'https://sh.hkjc.com/m/0q0vJAylgD' },
+
+        //                    { race: 'Race 3', type: 'WIN & PLACE', meta: '26/11 (Wed) 19:40, Class 4,<br>1200M, Turf, "C" Course', list: ['4. FLOW WATER FLOW'], betLink: 'https://sh.hkjc.com/m/04mW0XvXhw' },
+
+        //                    { race: 'Race 4', type: 'WIN & PLACE', meta: '26/11 (Wed) 20:10, Class 4,<br>1200M, Turf, "C" Course', list: ['10. ROMAN CROWN'], betLink: 'https://sh.hkjc.com/m/XNcIXfRdCr' },
+
+        //                    { race: 'Race 5', type: 'WIN & PLACE', meta: '26/11 (Wed) 20:40, Class 4,<br>1800M, Turf, "C" Course', list: ['6. PING HAI COMET'], betLink: 'https://sh.hkjc.com/m/mCE5T1v4ep' },
+
+        //                    { race: 'Race 6', type: 'WIN & PLACE', meta: '26/11 (Wed) 21:10, Class 4,<br>1200M, Turf, "C" Course', list: ['3. RUN RUN SMART'], betLink: 'https://sh.hkjc.com/m/cCTh1D0m9J' },
+
+        //                    { race: 'Race 7', type: 'WIN & PLACE', meta: '26/11 (Wed) 21:45, Class 4,<br>1650M, Turf, "C" Course', list: ['12. SMILING EMPEROR'], betLink: 'https://sh.hkjc.com/m/J0zWu0o4bo' },
+
+        //                    { race: 'Race 8', type: 'WIN & PLACE', meta: '26/11 (Wed) 22:15, Class 3,<br>1650M, Turf, "C" Course', list: ['3. A AMERIC TE SPECSO'], betLink: 'https://sh.hkjc.com/m/7Gt5196027' },
+
+        //                    { race: 'Race 9', type: 'WIN & PLACE', meta: '26/11 (Wed) 22:50, Class 3,<br>1200M, Turf, "C" Course', list: ['10. GREATER BAE'], betLink: 'https://sh.hkjc.com/m/rCpMc4GAaf' }
+
+        //    ]
+
+        //  }
+
+        //];
+
+
+
+
+
+        // Specialist data structure (English)
+
+        //const specialistsData = {
+
+        //    'Ling Ling': {
+
+        //        name: 'Ling Ling',
+
+        //        quote: 'Champion of  2024/25 Tipping One, often shares horse racing insights in racecourse and experience shops. Frequently bets on Quinella and Quinella Place pools, with a strategy of mixing two favorites with one longshot when picking horses, aiming for steady victories.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/lingling/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Fu Jai': {
+
+        //        name: 'Fu Jai',
+
+        //        quote: 'Participant in Tipping One for the second year, with extensive horse racing experience, I select the best-conditioned horse from the perspective of trackwork. At the same time, I also offer alternative horse choices for racing fans to consider, aiming to hit on longshots before they become popular picks.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/fujai/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Colette': {
+
+        //        name: 'Colette',
+
+        //        quote: 'Known as Lek Jei, I excel in utilizing  exclusive \'Relative Pace\' calculation method to analyze horse strength. I am good at uncovering value bets on longshots in a scientific way.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    "Steven's Bros": {
+
+        //        name: "Steven's Bros",
+
+        //        quote: 'Formed by three horse racing enthusiasts - Steven, Homan and Kenson, they are skilled in dissecting race performances and sectional times. They enjoy studying horse ratings, combining situations to identify opportunities. Proficient in betting strategies, they aim to maximize returns with minimal wagers.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Alex Ng': {
+
+        //        name: 'Alex Ng',
+
+        //        quote: 'A horse racing hardcore, currently provide on-site commentary on racedays and host HKJC Program.  I focus on the horses\' conditions and barrier trial trends, pay attention to the stable deployment, and discover value bets and semi-longshot win places.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'KK': {
+
+        //        name: 'KK',
+
+        //        quote: 'My interest in horse racing has deepened over several seasons of involvement. When selecting horses, I focus on factors like overall pace and running style of the horses, paying special attention to whether young horses show potential in trial. I often place bets on Quinella and Quinella Place pools.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Elke': {
+
+        //        name: 'Elke',
+
+        //        quote: 'Participant in Tipping One for the third year, as well as HKJC and i-CABLE Channel 18 racing host. Prefers picking horses based on their past performance and form, often betting on Win and Quinella Place pools. I have loved animals since childhood and enjoy studying their emotions and behaviors.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Krystal': {
+
+        //        name: 'Krystal',
+
+        //        quote: 'A horse racing novice, serving as a racing host on  i-CABLE Channel 18. I seldom share racing insights in racecourse and experience stops. Focuses on horses\' past performance when picking, and often bets on Place and Quinella Place pools.',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/krystal/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    }
+
+        //};
+
+        
+
+
+
+        // Video list for educational content (Traditional Chinese)
+
+        var videoPop = new VideoPopup(); 
+
+        videoPop.videoList = [ 
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250905/racingacademyep1/chi/dei-content007_20250905_racingacademyep1_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video1.jpg',
+
+                title:'由零開始新手上路！2分鐘學識四大基本彩池',
+
+                description:'由香港體育評述員鍾志光淺淡香港賽馬「平分彩金」制度，以及賠率變化的啟示；然後介紹四大基本彩池，並提供新手兩大揀馬貼士。'
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250912/racingacademyep2/chi/dei-content007_20250912_racingacademyep2_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video2.jpg',
+
+                title:'揀馬毋須左度右度！排位表兩大因素篩選機會馬',
+
+                description:'由香港體育評述員鍾志光，教你如何使用排位表自己度馬。影片將介紹兩大最入門因素，包括「6次近績」及「騎師」，對新手揀馬有何啟示。'
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250919/racingacademyep4/chi/dei-content007_20250919_racingacademyep4_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video3.jpg',
+
+                title:'排位表度馬攻略！一眼睇晒重點賽事資訊',
+
+                description:'由香港體育評述員鍾志光教你學識睇負磅及評分。'
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content003/2025/20250623/education-14-stevan/dei-content003_20250623_education-14-stevan_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video4.jpg',
+
+                title:'Stevan 教你三大揀頭馬法則！天時 x 地利 x 人和',
+
+                description:'世一分析師 Stevan 教你揀頭馬三大黃金法則——「查天氣、看場地、計騎練」。天時、地利、人和皆有數據可尋！'
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content003/2025/20250310/education-10-lingling/dei-content003_20250310_education-10-lingling_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video5.jpg',
+
+                title:'Ling Ling 教你季初、中、尾三個揀馬關鍵字！',
+
+                description:'馬季不同階段均有不同的度馬指南，緊記「經驗」、「實力」、「體力」三大關鍵字。'
+
+            }
+
+        ]; 
+
+
+
+
+
+        // singleVideoPopup
+
+        function openPopup(i) {
+
+            // 先關閉 discover 彈窗（如果打開）
+
+            if (window.singleVideoPopup && window.singleVideoPopup.container) {
+
+                window.singleVideoPopup.close();
+
+            }
+
+            // 打開教育內容彈窗
+
+            videoPop.open(i);
+
+        }
+
+
+
+        // 使用獨立的 single-video-popup.js，不使用 slick，只有一個視頻
+
+        var singleVideoPopup = new SingleVideoPopup({
+
+            containerId: 'singleVideoPopupContainer'
+
+        });
+
+        window.singleVideoPopup = singleVideoPopup; // 保存到全局以便其他函數訪問
+
+
+
+        // Function to open discover popup（單獨影片）
+
+        function openPopupdiscover(i) {
+
+            // 先關閉教育內容彈窗（如果打開）
+
+            if (videoPop && videoPop.container) {
+
+                videoPop.close();
+
+            }
+
+            
+
+        }
+
+
+
+    </script>
+
+
+
+    <!-- Main JavaScript (All interactive functionality) -->
+
+    <script src="../assets/js/index.js?v=20260127001"></script>
+
+    
+
+</body>
+
+<script>
+
+
+
+    $(document).ready(function() {
+
+        if (typeof Swiper === 'undefined') return;
+
+
+
+        // Conditional slide presentation based on device screen width
+
+        var slidesPerView;
+
+        var spaceBetween;
+
+        var allowTouchMove;
+
+
+
+        console.log('widnow-----222',window.picksData)
+
+        
+
+        if (window.innerWidth <= 768) {
+
+            slidesPerView = 1.2;
+
+            spaceBetween = 10;
+
+            allowTouchMove = true;
+
+        } else {
+
+            slidesPerView = 3;
+
+            spaceBetween = 20;
+
+            allowTouchMove = false;
+
+        }
+
+
+
+        const specialistsSwiper = new Swiper('.specialists-swiper', {
+
+            loop: true,
+
+            slidesPerView: slidesPerView,
+
+            centeredSlides: true,
+
+            spaceBetween: spaceBetween,
+
+            speed: 600,
+
+            allowTouchMove: allowTouchMove,
+
+            watchSlidesProgress: true,
+
+        });
+
+        
+
+        // Store instance globally
+
+        if (window.hkjcSwipers) {
+
+            window.hkjcSwipers.specialists = specialistsSwiper;
+
+        }
+
+
+
+        // Picks Swiper instance (created after first render)
+
+        let picksSwiper = null;
+
+
+
+        function renderPicks(idx) {
+
+
+
+
+
+            // Expect picksData to be defined in the HTML file
+
+            if (typeof picksData === 'undefined') {
+
+                console.warn('picksData not defined');
+
+                return;
+
+            }
+
+            
+
+            const spec = picksData[idx % picksData.length];
+
+            const slidesHtml = spec.picks.map(p => `
+
+                <div class="swiper-slide">
+
+                    <div class="pick-card">
+
+                        <h6 class="race-number">${p.race}</h6>
+
+                        <div class="meta">${p.meta}</div>
+
+                        <hr/>
+
+                        <div class="type mb-2">${p.type}</div>
+
+                        <div class="d-flex flex-row justify-content-between flex-nowrap align-items-end w-100">
+
+                            <div class="list">
+
+                                ${p.list.map(i => `<p>${i}</p>`).join('')}
+
+                            </div>
+
+                            <div class="">
+
+                                <button class="cta" type="button" onclick="window.location.href='${p.betLink}'">Bet Now</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `).join('');
+
+            $('#picksWrapper').html(slidesHtml);
+
+
+
+            // (Re)initialize picks swiper for fresh content
+
+            if (picksSwiper) {
+
+                picksSwiper.destroy(true, true);
+
+                picksSwiper = null;
+
+            }
+
+            
+
+            var spaceBetween = window.innerWidth <= 768 ? 16 : 32;
+
+            
+
+            picksSwiper = new Swiper('.picks-swiper', {
+
+                slidesPerView: 'auto',
+
+                spaceBetween: spaceBetween,
+
+                watchSlidesProgress: true
+
+            });
+
+            
+
+            // Store instance globally
+
+            if (window.hkjcSwipers) {
+
+                window.hkjcSwipers.picks = picksSwiper;
+
+            }
+
+        }
+
+
+
+        // Initial render - use realIndex which is correct even in loop mode
+
+        // renderPicks(specialistsSwiper.realIndex);
+
+
+
+        // // Click to center slide
+
+        // $('.specialists-swiper').on('click', '.swiper-slide', function() {
+
+        //     if ($(this).hasClass('swiper-slide-prev')) {
+
+        //         specialistsSwiper.slidePrev();
+
+        //     } else if ($(this).hasClass('swiper-slide-next')) {
+
+        //         specialistsSwiper.slideNext();
+
+        //     }
+
+        // });
+
+
+
+        // // Update picks on slide change
+
+        // specialistsSwiper.on('slideChange', function() {
+
+        //     renderPicks(specialistsSwiper.realIndex);
+
+        //     specialistsSwiper.updateSlides();
+
+        //     specialistsSwiper.updateProgress();
+
+        //     specialistsSwiper.updateSlidesClasses();
+
+        //     specialistsSwiper.update();
+
+        // });
+
+
+
+         
+
+    });
+
+
+
+    $(document).ready(function() {
+
+                // Mobile navigation toggle icon handler
+
+                const mobileNav = document.getElementById('mobileNav');
+
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+        const closeIcon = document.querySelector('.close-icon');
+
+        
+
+        if (mobileNav && hamburgerIcon && closeIcon) {
+
+            mobileNav.addEventListener('show.bs.collapse', function() {
+
+                hamburgerIcon.classList.add('d-none');
+
+                closeIcon.classList.remove('d-none');
+
+            });
+
+            
+
+            mobileNav.addEventListener('hide.bs.collapse', function() {
+
+                hamburgerIcon.classList.remove('d-none');
+
+                closeIcon.classList.add('d-none');
+
+            });
+
+        }
+
+    });
+
+
+
+</script>
+
+<script>
+
+    $(document).ready(function() {
+
+        // 獲取 footer 配置並更新頁面
+
+// 獲取 footer 配置並更新頁面
+
+async function loadFooter() {
+
+    try {
+
+        const footerConfig = await window.StrapiAPI.Footer.getConfig({
+
+            locale: window.StrapiAPI.getCurrentLocale()
+
+        });
+
+        
+
+        // 將 HTML 內容插入到 footer 元素中
+
+        const footerElement = document.getElementById('footer');
+
+        if (footerElement && footerConfig.htmlContent) {
+
+            footerElement.innerHTML = footerConfig.htmlContent;
+
+        }
+
+    } catch (error) {
+
+        console.error('Failed to load footer:', error);
+
+    }
+
+}
+
+
+
+// 在頁面加載時調用
+
+loadFooter();
+
+});
+
+</script>
+
+</html>
+

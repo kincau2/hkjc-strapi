@@ -1,0 +1,302 @@
+/* ======================================
+   Discover Highlight Page Styles
+   ====================================== */
+
+/* Page Header Section */
+.page-header-section {
+    padding: 32px 0 32px 0px;
+}
+
+.section-title {
+    margin-bottom: 0!important;
+}
+
+main.main-content.discover-highlight-page {
+    padding: 0 15px;
+}
+
+.discover-highlight-page .post-text-wrapper p.post-title {
+    -webkit-line-clamp: 2;
+}
+.discover-highlight-page .post-text-wrapper p.post-excerpt {
+    -webkit-line-clamp: 1;
+}
+
+/* Filter Controls Section */
+.filter-controls-section {
+    /*padding: 20px 0 40px;*/
+}
+
+.filter-controls-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Sort/Filter Button */
+.sort-filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: unset;
+    background: #ffffff;
+    color: #022169;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Posts Grid Section */
+.posts-grid-section {
+    padding: 0 0 64px 0;
+}
+@media (max-width: 768px) {
+    .posts-grid-section {
+        padding: 0 0 32px 0;
+    }
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Post Card - Using same styles as index.html #discover section */
+/* Styles are inherited from style.css #discover .post */
+
+/* Sort/Filter Modal */
+.sort-filter-modal {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 99;
+    display: none;
+    margin-top: 8px;
+}
+
+.sort-filter-modal.active {
+    display: block;
+}
+
+.sort-filter-overlay {
+    display: none;
+}
+
+.sort-filter-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    width: 470px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: none;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sort-section {
+    margin-bottom: 12px;
+}
+.filter-section {
+    margin-bottom: 24px;
+}
+
+.sort-section:last-of-type,
+.filter-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding: 8px 0px;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0;
+    background: transparent;
+    color: #374151;
+    font-size: 21px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.option-btn:last-child {
+    border-bottom: none;
+}
+
+/*.option-btn:hover {
+    background: #f9fafb;
+}*/
+
+.option-btn.active {
+    color: #022169;
+    font-weight: 600;
+}
+
+.check-icon {
+    font-size: 16px;
+    color: #022169;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+    width: 16px;
+}
+
+.option-btn.active .check-icon {
+    opacity: 1;
+}
+
+.option-title {
+    font-size: 23px;
+}
+
+.option-label {
+    flex: 1;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    /*margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;*/
+}
+.modal-actions .reset-btn {
+    width: 30%;
+}
+
+.modal-actions .show-result-btn {
+    width: 70%;
+}
+
+.action-btn {
+    /*flex: 1;*/
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-btn {
+    background: #ffffff;
+    color: #374151;
+    border-color: #e5e7eb;
+}
+
+.reset-btn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.show-result-btn {
+    background: #022169;
+    color: #ffffff;
+    border-color: #022169;
+}
+
+.show-result-btn:hover {
+    background: #011449;
+    border-color: #011449;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    
+    .sort-filter-content {
+        width: 360px;
+    }
+}
+
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 40px;
+    }
+    
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .sort-filter-content {
+        width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sort-filter-modal {
+        right: 10px;
+    }
+
+    .page-header-section {
+        padding: 20px 0px;
+    }
+    
+    .filter-controls-wrapper {
+        justify-content: center;
+    }
+    
+    .sort-filter-btn {
+        position: static;
+    }
+    
+    .posts-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .sort-filter-content {
+        width: 340px;
+        right: 0;
+    }
+    
+    .option-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .sort-filter-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+}
+
+/* No Results Message */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b7280;
+    font-size: 18px;
+    font-weight: 500;
+}

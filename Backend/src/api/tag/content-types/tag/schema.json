@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "標籤",
+    "description": "標籤表"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "hasPublished": {
+      "type": "boolean",
+      "default": true
+    },
+    "racingAcademies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::racing-academy.racing-academy",
+      "mappedBy": "tags"
+    }
+  }
+}
+

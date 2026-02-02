@@ -1,0 +1,95 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experts",
+  "info": {
+    "singularName": "expert",
+    "pluralName": "experts",
+    "displayName": "KOL",
+    "description": "Racing specialists and experts"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nameEn": {
+      "type": "string"
+    },
+    "nameTc": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "rank": {
+      "type": "integer",
+      "min": 1
+    },
+    "strikeRate": {
+      "type": "decimal"
+    },
+    "score": {
+      "type": "integer",
+      "default": 0
+    },
+
+    "titleEn": {
+      "type": "string"
+    },
+    "titleTc": {
+      "type": "string"
+    },
+
+    "quoteEn": {
+      "type": "text"
+    },
+    "quoteTc": {
+      "type": "text"
+    },
+    "videoLink": {
+      "type": "string"
+    },
+    "profileLinkTc": {
+      "type": "string"
+    },
+    "profileLinkEn": {
+      "type": "string"
+    },
+    "toneStyle": {
+      "type": "string"
+    },
+    "toneColor": {
+      "type": "enumeration",
+      "default": "green",
+      "enum": [
+        "green",
+        "blue",
+        "teal",
+        "purple",
+        "amber",
+        "gold",
+        "slate",
+        "pink"
+      ]
+    },
+    "isTopThree": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "picks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pick.pick",
+      "mappedBy": "expert"
+    }
+  }
+}

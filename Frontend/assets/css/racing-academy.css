@@ -1,0 +1,652 @@
+/* ======================================
+   Racing Academy Listing Page Styles
+   ====================================== */
+
+/* Page Header Section */
+
+.racing-academy-page {
+    padding: 0 15px;
+}
+
+.page-header-section {
+    padding: 32px 0 0px;
+}
+
+.page-header-section .filter-controls-section {
+    padding: 0;
+}
+
+.page-header-section .filter-controls-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.section-title {
+    margin-bottom: 0!important;
+}
+
+/* Filter Controls Section */
+.filter-controls-section {
+    padding: 24px 0;
+}
+
+.filter-controls-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 20px;
+}
+
+/* Tag Filters */
+.tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .tag-filters {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .page-header-section .filter-controls-section {
+        padding: 0;
+    }
+    .racing-academy-page {
+        padding: 0;
+    }
+    .racing-academy-page .page-header-section {
+        padding: 20px 15px;
+    }
+    .racing-academy-page .posts-grid-section {
+        padding: 0 15px 80px 15px;
+    }
+    .racing-academy-page .filter-controls-section .container {
+        padding: 0;
+    }
+    .racing-academy-page .tag-filter-btn:first-child {
+        margin-left: 15px;
+    }
+}
+
+.tag-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px 8px 10px;
+    border: 3px solid #FFF;
+    outline: 3px solid #FFF;
+    margin: 3px;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.tag-filter-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Individual tag button colors when active */
+.tag-filter-btn[data-tag="all"] {
+    background: #2655CC;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="all"] i{
+    color: #FEC655;
+}
+
+.tag-filter-btn[data-tag="all"].active {
+    outline: 3px solid rgba(37, 84, 203, 0.2);
+}
+
+.tag-filter-btn[data-tag="racing-kickstarter"] {
+    background: #804CFF;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="racing-kickstarter"] i{
+    color: #804CFF;
+}
+
+.tag-filter-btn[data-tag="racing-kickstarter"].active {
+    outline: 3px solid rgba(127, 76, 255, 0.2);
+}
+
+.tag-filter-btn[data-tag="basics-to-racing"] {
+    background: #5CAD2D;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="basics-to-racing"] i{
+    color: #5CAD2D;
+}
+
+.tag-filter-btn[data-tag="basics-to-racing"].active {
+    outline: 3px solid rgba(92, 173, 45, 0.2);
+}
+
+.tag-filter-btn[data-tag="bet-type"] {
+    background: #D54B8D;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="bet-type"] i{
+    color: #D54B8D;
+}
+
+.tag-filter-btn[data-tag="bet-type"].active {
+    outline: 3px solid rgba(213, 75, 141, 0.2);
+}
+
+.tag-filter-btn[data-tag="betting-strategy"] {
+    background: #EC9223;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="betting-strategy"] i{
+    color: #EC9223;
+}
+
+.tag-filter-btn[data-tag="betting-strategy"].active {
+    outline: 3px solid rgba(236, 146, 35, 0.2);
+}
+
+.tag-filter-btn[data-tag="horse-jockey-trainer"] {
+    background: #2F94CD;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="horse-jockey-trainer"] i{
+    color: #2F94CD;
+}
+
+.tag-filter-btn[data-tag="horse-jockey-trainer"].active {
+    outline: 3px solid rgba(47, 148, 205, 0.2);
+}
+
+.tag-filter-btn[data-tag="simulcast-racing"] {
+    background: #BCA12A;
+    outline: 3px solid transparent;
+}
+
+.tag-filter-btn[data-tag="simulcast-racing"] i{
+    color: #BCA12A;
+}
+
+.tag-filter-btn[data-tag="simulcast-racing"].active {
+    outline: 3px solid rgba(188, 161, 42, 0.2);
+}
+
+.tag-filter-btn .tag-icon {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: #FFF;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+}
+
+/* Sort/Filter Button */
+.sort-filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: unset;
+    background: #ffffff;
+    color: #022169;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Posts Grid Section */
+.posts-grid-section {
+    padding: 0 0 80px;
+}
+
+.posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Level Group */
+.level-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.level-group-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #022169;
+    margin: 0;
+}
+
+.level-group-posts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Post Card */
+.post-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+}
+
+.post-card.hidden {
+    display: none;
+}
+
+.post-thumbnail {
+    position: relative;
+    border-radius: 18px;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    transition: all 0.2s ease;
+}
+
+.post-card:hover .post-play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.post-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 0px;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.post-tag {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.post-tag.level {
+    background: #FFF;
+    color: #2655CC;
+    border: 1px solid #2655CC;
+}
+
+.post-tag.racing-kickstarter {
+    color: #804CFF;
+    border: 1px solid #804CFF;
+}
+
+.post-tag.basics-to-racing {
+    color: #5CAD2D;
+    border: 1px solid #5CAD2D;
+}
+
+.post-tag.bet-type {
+    color: #D54B8D;
+    border: 1px solid #D54B8D;
+}
+
+.post-tag.betting-strategy {
+    color: #EC9223;
+    border: 1px solid #EC9223;
+}
+
+.post-tag.horse-jockey-trainer {
+    color: #2F94CD;
+    border: 1px solid #2F94CD;
+}
+
+.post-tag.simulcast-racing {
+    color: #BCA12A;
+    border: 1px solid #BCA12A;
+}
+
+.post-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-excerpt {
+    font-size: 15px;
+    color: #1f2937;
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Sort/Filter Modal */
+.sort-filter-modal {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 99;
+    display: none;
+    margin-top: 8px;
+}
+
+.sort-filter-modal.active {
+    display: block;
+}
+
+.sort-filter-overlay {
+    display: none;
+}
+
+.sort-filter-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    width: 470px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: none;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sort-section {
+    margin-bottom: 12px;
+}
+.filter-section {
+    margin-bottom: 24px;
+}
+
+.sort-section:last-of-type,
+.filter-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding: 8px 0px;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0;
+    background: transparent;
+    color: #374151;
+    font-size: 21px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.option-btn:last-child {
+    border-bottom: none;
+}
+
+/*.option-btn:hover {
+    background: #f9fafb;
+}*/
+
+.option-btn.active {
+    color: #022169;
+    font-weight: 600;
+}
+
+.check-icon {
+    font-size: 16px;
+    color: #022169;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+    width: 16px;
+}
+
+.option-btn.active .check-icon {
+    opacity: 1;
+}
+
+.option-title {
+    font-size: 23px;
+}
+
+.option-label {
+    flex: 1;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    /*margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;*/
+}
+.modal-actions .reset-btn {
+    width: 30%;
+}
+
+.modal-actions .show-result-btn {
+    width: 70%;
+}
+
+.action-btn {
+    /*flex: 1;*/
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-btn {
+    background: #ffffff;
+    color: #374151;
+    border-color: #e5e7eb;
+}
+
+.reset-btn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.show-result-btn {
+    background: #022169;
+    color: #ffffff;
+    border-color: #022169;
+}
+
+.show-result-btn:hover {
+    background: #011449;
+    border-color: #011449;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .level-group-posts {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    
+    .sort-filter-content {
+        width: 360px;
+    }
+}
+
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 40px;
+    }
+    
+    .level-group-title {
+        font-size: 28px;
+    }
+    
+    .level-group-posts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .tag-filter-btn {
+        font-size: 13px;
+        padding: 6px 14px 6px 7px;
+    }
+    
+    .sort-filter-content {
+        width: 340px;
+    }
+    .filter-controls-section {
+        padding: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sort-filter-modal {
+        right: 10px;
+    }   
+
+    .page-header-section {
+        padding: 20px 0;
+    }
+
+    .page-header-section .filter-controls-wrapper {
+        justify-content: center;
+    }
+    
+    .level-group-title {
+        font-size: 24px;
+    }
+    
+    .filter-controls-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        position: static;
+    }
+    
+    .tag-filters::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .tag-filters::-webkit-scrollbar-track {
+        background: #f3f4f6;
+    }
+    
+    .tag-filters::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 2px;
+    }
+    
+    .sort-filter-btn {
+        /*top: 30px;
+        right: 20px;
+        position: absolute;*/
+    }
+    
+    .level-group-posts {
+        gap: 24px;
+    }
+    
+    .sort-filter-content {
+        width: 340px;
+        right: 0;
+    }
+    
+    .option-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .tag-filter-btn {
+        font-size: 13px;
+        padding: 6px 14px 6px 7px;
+    }
+    
+    .sort-filter-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+}
+
+/* No Results Message */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b7280;
+    font-size: 18px;
+    font-weight: 500;
+}

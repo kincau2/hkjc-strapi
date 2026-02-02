@@ -1,0 +1,1161 @@
+{
+  "banners": {
+    "en": [
+      {
+        "title": "Banner 1",
+        "desktopImage": "../assets/images/cover1_e.png",
+        "mobileImage": "../assets/images/cover1_m_e.png",
+        "linkUrl": "https://sh.hkjc.com/d/en-US/share/dont-miss-these-events/2511-rm-sasa/",
+        "linkTarget": "_blank",
+        "order": 1,
+        "locale": "en"
+      },
+      {
+        "title": "Banner 2",
+        "desktopImage": "../assets/images/cover2_e.png",
+        "mobileImage": "../assets/images/cover2_m_e.png",
+        "linkUrl": "https://sh.hkjc.com/d/en-US/share/dont-miss-these-events/2511-hw-japanese/",
+        "linkTarget": "_blank",
+        "order": 2,
+        "locale": "en"
+      },
+      {
+        "title": "Banner 3",
+        "desktopImage": "../assets/images/cover3_e.png",
+        "mobileImage": "../assets/images/cover3_m_e.png",
+        "linkUrl": "https://sh.hkjc.com/d/en-US/share/kol-section/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "linkTarget": "_blank",
+        "order": 3,
+        "locale": "en"
+      },
+      {
+        "title": "Banner 4",
+        "desktopImage": "../assets/images/cover4_e.jpg",
+        "mobileImage": "../assets/images/cover4_m_e.jpg",
+        "linkUrl": "https://sh.hkjc.com/d/en-US/share/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "linkTarget": "_blank",
+        "order": 4,
+        "locale": "en"
+      }
+    ],
+    "tc": [
+      {
+        "title": "輪播圖 1",
+        "desktopImage": "../assets/images/cover1.png",
+        "mobileImage": "../assets/images/cover1_m.png",
+        "linkUrl": "https://sh.hkjc.com/d/zh-HK/share/dont-miss-these-events/2511-rm-sasa/",
+        "linkTarget": "_blank",
+        "order": 1,
+        "locale": "tc"
+      },
+      {
+        "title": "輪播圖 2",
+        "desktopImage": "../assets/images/cover2_e.png",
+        "mobileImage": "../assets/images/cover2_m_e.png",
+        "linkUrl": "https://sh.hkjc.com/d/zh-HK/share/dont-miss-these-events/2511-hw-japanese/",
+        "linkTarget": "_blank",
+        "order": 2,
+        "locale": "tc"
+      },
+      {
+        "title": "輪播圖 3",
+        "desktopImage": "../assets/images/cover3.png",
+        "mobileImage": "../assets/images/cover3_m.png",
+        "linkUrl": "https://sh.hkjc.com/d/zh-HK/share/kol-section/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "linkTarget": "_blank",
+        "order": 3,
+        "locale": "tc"
+      },
+      {
+        "title": "輪播圖 4",
+        "desktopImage": "../assets/images/cover4.jpg",
+        "mobileImage": "../assets/images/cover4_m.jpg",
+        "linkUrl": "https://sh.hkjc.com/d/zh-HK/share/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "linkTarget": "_blank",
+        "order": 4,
+        "locale": "tc"
+      }
+    ]
+  },
+  "experts": {
+    "en": [
+      {
+        "name": "Fu Jai",
+        "nameEn": "Fu Jai",
+        "rank": 1,
+        "strikeRate": 15.8,
+        "score": 1775,
+        "title": "",
+        "titleEn": "",
+        "quote": "Participant in Tipping One for the second year, with extensive horse racing experience, I select the best-conditioned horse from the perspective of trackwork. At the same time, I also offer alternative horse choices for racing fans to consider, aiming to hit on longshots before they become popular picks.",
+        "quoteEn": "Participant in Tipping One for the second year, with extensive horse racing experience, I select the best-conditioned horse from the perspective of trackwork. At the same time, I also offer alternative horse choices for racing fans to consider, aiming to hit on longshots before they become popular picks.",
+        "avatar": "../assets/images/KOL Image-2.png",
+        "toneColor": "green",
+        "isTopThree": true,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/fujai/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": [
+          {
+            "race": "Race 1",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 13:00, Class 5,<br>1600M, Turf, \"C+3\" Course",
+            "list": [
+              "2. CELESTIAL HARMONY",
+              "3. PERFECT PEACH",
+              "4. PANDA LEGEND"
+            ],
+            "betLink": "https://sh.hkjc.com/m/8VHaYqO8V1"
+          },
+          {
+            "race": "Race 2",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 13:30, Class 4,<br>1000M, Turf, \"C+3\" Course",
+            "list": [
+              "10. STRAIGHT TO GLORY",
+              "12. LITTLE MONSTER",
+              "13. WINNING DIAMOND"
+            ],
+            "betLink": "https://sh.hkjc.com/m/TeZ9Ji8gUD"
+          },
+          {
+            "race": "Race 3",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 14:00, Class 5,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "1. CIRCUIT FIERY",
+              "4. BLUE BARON",
+              "8. DECRELOT"
+            ],
+            "betLink": "https://sh.hkjc.com/m/QBzDU5AA8b"
+          },
+          {
+            "race": "Race 4",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 14:30, Class 4,<br>1600M, Turf, \"C+3\" Course",
+            "list": [
+              "3. BEAUTY VIVA",
+              "6. HAPPY UNIVERSE",
+              "10. INNO SUPER"
+            ],
+            "betLink": "https://sh.hkjc.com/m/z9nvEzHQFs"
+          },
+          {
+            "race": "Race 5",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 15:00, Class 3,<br>1200M, Turf, \"C+3\" Course",
+            "list": [
+              "1. LIFELINE EXPRESS",
+              "2. INFINITE RESOLVE",
+              "4. MATTERS MOST"
+            ],
+            "betLink": "https://sh.hkjc.com/m/MsSzrdUfqy"
+          },
+          {
+            "race": "Race 6",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 15:35, Class 4,<br>1200M, Turf, \"C+3\" Course",
+            "list": [
+              "4. SZERYNG",
+              "7. INCREDIBLE MOMENT",
+              "8. CALIFORNIA BLITZ"
+            ],
+            "betLink": "https://sh.hkjc.com/m/xS85JwoXOD"
+          },
+          {
+            "race": "Race 7",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 16:05, Group Three,<br>1800M, Turf, \"C+3\" Course",
+            "list": [
+              "1. BEAUTY JOY",
+              "4. CAP FERRAT",
+              "8. MASSIVE SOVEREIGN"
+            ],
+            "betLink": "https://sh.hkjc.com/m/E2mauKpo1C"
+          },
+          {
+            "race": "Race 8",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 16:40, Class 4,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "3. SUPER LOVE",
+              "6. STRATHPEFFER",
+              "8. EXCEL WONGCHOY"
+            ],
+            "betLink": "https://sh.hkjc.com/m/xN0CPXfiCm"
+          },
+          {
+            "race": "Race 9",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 17:15, Class 3,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "2. LITTLE PARADISE",
+              "3. THE BOOM BOX",
+              "11. TIN FOOK"
+            ],
+            "betLink": "https://sh.hkjc.com/m/VKYy3uaqh9"
+          },
+          {
+            "race": "Race 10",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 17:50, Class 2,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "2. LIGHT YEARS CHARM",
+              "7. YOUNG CHAMPION",
+              "13. MICKLEY"
+            ],
+            "betLink": "https://sh.hkjc.com/m/n9WCO9qAVf"
+          }
+        ]
+      },
+      {
+        "name": "Alex Ng",
+        "nameEn": "Alex Ng",
+        "rank": 3,
+        "strikeRate": 26.3,
+        "score": 1295,
+        "title": "",
+        "titleEn": "",
+        "quote": "A horse racing hardcore, currently provide on-site commentary on racedays and host HKJC Program.  I focus on the horses' conditions and barrier trial trends, pay attention to the stable deployment, and discover value bets and semi-longshot win places.",
+        "quoteEn": "A horse racing hardcore, currently provide on-site commentary on racedays and host HKJC Program.  I focus on the horses' conditions and barrier trial trends, pay attention to the stable deployment, and discover value bets and semi-longshot win places.",
+        "avatar": "../assets/images/KOL Image-7.png",
+        "toneColor": "teal",
+        "isTopThree": true,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": [
+          {
+            "race": "Race 1",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 13:00, Class 5,<br>1600M, Turf, \"C+3\" Course",
+            "list": [
+              "<span class=\"badge text-bg-primary me-1\">BANKER</span>3. PERFECT PEACH",
+              "<span class=\"badge text-bg-primary me-1\">SEL</span>4. PANDA LEGEND",
+              "<span class=\"badge d-none d-md-inline-block\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>7. LITTLE FAIRY"
+            ],
+            "betLink": "https://sh.hkjc.com/m/WgPWyUoWDK"
+          },
+          {
+            "race": "Race 2",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 13:30, Class 4,<br>1000M, Turf, \"C+3\" Course",
+            "list": [
+              "2. GIANT BALLON",
+              "3. JUMBO BLESSING",
+              "14. WINNING MONEY"
+            ],
+            "betLink": "https://sh.hkjc.com/m/VJG9aNNlRF"
+          },
+          {
+            "race": "Race 3",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 14:00, Class 5,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "<span class=\"badge text-bg-primary me-1\">BANKER</span>1. CIRCUIT FIERY",
+              "<span class=\"badge text-bg-primary me-1\">SEL</span>2. CIRCUIT VICTORY",
+              "<span class=\"badge d-none d-md-inline-block\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>11. DOUBLE SHOW"
+            ],
+            "betLink": "https://sh.hkjc.com/m/Mmb2L8tcOz"
+          },
+          {
+            "race": "Race 4",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 14:30, Class 4,<br>1600M, Turf, \"C+3\" Course",
+            "list": [
+              "6. HAPPY UNIVERSE",
+              "9. AUDACIOUS PURSUIT",
+              "10. INNO SUPER"
+            ],
+            "betLink": "https://sh.hkjc.com/m/RfkbOyyJiw"
+          },
+          {
+            "race": "Race 5",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 15:00, Class 3,<br>1200M, Turf, \"C+3\" Course",
+            "list": [
+              "2. INFINITE RESOLVE",
+              "4. MATTERS MOST",
+              "5. SUNNY DA BEST"
+            ],
+            "betLink": "https://sh.hkjc.com/m/YMjLJcy49D"
+          },
+          {
+            "race": "Race 6",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 15:35, Class 4,<br>1200M, Turf, \"C+3\" Course",
+            "list": [
+              "1. JUBILANT WINNER",
+              "7. INCREDIBLE MOMENT",
+              "8. CALIFORNIA BLITZ"
+            ],
+            "betLink": "https://sh.hkjc.com/m/d1aqtSNfEG"
+          },
+          {
+            "race": "Race 7",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 16:05, Group Three,<br>1800M, Turf, \"C+3\" Course",
+            "list": [
+              "4. CAP FERRAT",
+              "8. MASSIVE SOVEREIGN",
+              "12. PRAY FOR MIR"
+            ],
+            "betLink": "https://sh.hkjc.com/m/3ZxH8lmp2M"
+          },
+          {
+            "race": "Race 8",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 16:40, Class 4,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "10. BETTER AND BETTER"
+            ],
+            "betLink": "https://sh.hkjc.com/m/JJFC00ikbf"
+          },
+          {
+            "race": "Race 9",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 17:15, Class 3,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "1. JUNEAU PRIDE",
+              "2. LITTLE PARADISE",
+              "11. TIN FOOK"
+            ],
+            "betLink": "https://sh.hkjc.com/m/59Pi1avoWY"
+          },
+          {
+            "race": "Race 10",
+            "type": "QUINELLA",
+            "meta": "09/11 (Sun) 17:50, Class 2,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "2. LIGHT YEARS CHARM",
+              "8. STEPS AHEAD",
+              "12. BEAUTY CRESCENT"
+            ],
+            "betLink": "https://sh.hkjc.com/m/cO0lYn9bGg"
+          }
+        ]
+      },
+      {
+        "name": "Elke",
+        "nameEn": "Elke",
+        "rank": 2,
+        "strikeRate": 42.1,
+        "score": 1436,
+        "title": "",
+        "titleEn": "",
+        "quote": "Participant in Tipping One for the third year, as well as HKJC and i-CABLE Channel 18 racing host. Prefers picking horses based on their past performance and form, often betting on Win and Quinella Place pools. I have loved animals since childhood and enjoy studying their emotions and behaviors.",
+        "quoteEn": "Participant in Tipping One for the third year, as well as HKJC and i-CABLE Channel 18 racing host. Prefers picking horses based on their past performance and form, often betting on Win and Quinella Place pools. I have loved animals since childhood and enjoy studying their emotions and behaviors.",
+        "avatar": "../assets/images/KOL Image.png",
+        "toneColor": "blue",
+        "isTopThree": true,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": [
+          {
+            "race": "Race 1",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 13:00, Class 5,<br>1600M, Turf, \"C+3\" Course",
+            "list": [
+              "3. PERFECT PEACH"
+            ],
+            "betLink": "https://sh.hkjc.com/m/DPQMF5wieA"
+          },
+          {
+            "race": "Race 2",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 13:30, Class 4,<br>1000M, Turf, \"C+3\" Course",
+            "list": [
+              "3. JUMBO BLESSING"
+            ],
+            "betLink": "https://sh.hkjc.com/m/mjyhK2WSdn"
+          },
+          {
+            "race": "Race 3",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 14:00, Class 5,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "1. CIRCUIT FIERY"
+            ],
+            "betLink": "https://sh.hkjc.com/m/qQEbrBZgPk"
+          },
+          {
+            "race": "Race 4",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 14:30, Class 4,<br>1600M, Turf, \"C+3\" Course",
+            "list": [
+              "12. GOR GOR"
+            ],
+            "betLink": "https://sh.hkjc.com/m/zJprDbCLEe"
+          },
+          {
+            "race": "Race 5",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 15:00, Class 3,<br>1200M, Turf, \"C+3\" Course",
+            "list": [
+              "1. LIFELINE EXPRESS"
+            ],
+            "betLink": "https://sh.hkjc.com/m/rua0YQh63a"
+          },
+          {
+            "race": "Race 6",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 15:35, Class 4,<br>1200M, Turf, \"C+3\" Course",
+            "list": [
+              "1. JUBILANT WINNER"
+            ],
+            "betLink": "https://sh.hkjc.com/m/QSEZCpMips"
+          },
+          {
+            "race": "Race 7",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 16:05, Group Three,<br>1800M, Turf, \"C+3\" Course",
+            "list": [
+              "1. BEAUTY JOY"
+            ],
+            "betLink": "https://sh.hkjc.com/m/B2f3xo86xL"
+          },
+          {
+            "race": "Race 8",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 16:40, Class 4,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "6. STRATHPEFFER"
+            ],
+            "betLink": "https://sh.hkjc.com/m/Dqw5F60ZDb"
+          },
+          {
+            "race": "Race 9",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 17:15, Class 3,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "2. LITTLE PARADISE"
+            ],
+            "betLink": "https://sh.hkjc.com/m/CM6hgQsfRG"
+          },
+          {
+            "race": "Race 10",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (Sun) 17:50, Class 2,<br>1400M, Turf, \"C+3\" Course",
+            "list": [
+              "2. LIGHT YEARS CHARM"
+            ],
+            "betLink": "https://sh.hkjc.com/m/KjqREu9I9j"
+          }
+        ]
+      },
+      {
+        "name": "Ling Ling",
+        "nameEn": "Ling Ling",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "",
+        "titleEn": "",
+        "quote": "Champion of  2024/25 Tipping One, often shares horse racing insights in racecourse and experience shops. Frequently bets on Quinella and Quinella Place pools, with a strategy of mixing two favorites with one longshot when picking horses, aiming for steady victories.",
+        "quoteEn": "Champion of  2024/25 Tipping One, often shares horse racing insights in racecourse and experience shops. Frequently bets on Quinella and Quinella Place pools, with a strategy of mixing two favorites with one longshot when picking horses, aiming for steady victories.",
+        "avatar": "../assets/images/KOL Image-4.png",
+        "toneColor": "purple",
+        "isTopThree": false,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/lingling/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "KK",
+        "nameEn": "KK",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "",
+        "titleEn": "",
+        "quote": "My interest in horse racing has deepened over several seasons of involvement. When selecting horses, I focus on factors like overall pace and running style of the horses, paying special attention to whether young horses show potential in trial. I often place bets on Quinella and Quinella Place pools.",
+        "quoteEn": "My interest in horse racing has deepened over several seasons of involvement. When selecting horses, I focus on factors like overall pace and running style of the horses, paying special attention to whether young horses show potential in trial. I often place bets on Quinella and Quinella Place pools.",
+        "avatar": "../assets/images/KOL Image-1.png",
+        "toneColor": "amber",
+        "isTopThree": false,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "Colette",
+        "nameEn": "Colette",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "",
+        "titleEn": "",
+        "quote": "Known as Lek Jei, I excel in utilizing  exclusive 'Relative Pace' calculation method to analyze horse strength. I am good at uncovering value bets on longshots in a scientific way.",
+        "quoteEn": "Known as Lek Jei, I excel in utilizing  exclusive 'Relative Pace' calculation method to analyze horse strength. I am good at uncovering value bets on longshots in a scientific way.",
+        "avatar": "../assets/images/KOL Image-3.png",
+        "toneColor": "gold",
+        "isTopThree": false,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "Steven's Bros",
+        "nameEn": "Steven's Bros",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "",
+        "titleEn": "",
+        "quote": "Formed by three horse racing enthusiasts - Steven, Homan and Kenson, they are skilled in dissecting race performances and sectional times. They enjoy studying horse ratings, combining situations to identify opportunities. Proficient in betting strategies, they aim to maximize returns with minimal wagers.",
+        "quoteEn": "Formed by three horse racing enthusiasts - Steven, Homan and Kenson, they are skilled in dissecting race performances and sectional times. They enjoy studying horse ratings, combining situations to identify opportunities. Proficient in betting strategies, they aim to maximize returns with minimal wagers.",
+        "avatar": "../assets/images/KOL Image-6.png",
+        "toneColor": "slate",
+        "isTopThree": false,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "Krystal",
+        "nameEn": "Krystal",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "",
+        "titleEn": "",
+        "quote": "A horse racing novice, serving as a racing host on  i-CABLE Channel 18. I seldom share racing insights in racecourse and experience stops. Focuses on horses' past performance when picking, and often bets on Place and Quinella Place pools.",
+        "quoteEn": "A horse racing novice, serving as a racing host on  i-CABLE Channel 18. I seldom share racing insights in racecourse and experience stops. Focuses on horses' past performance when picking, and often bets on Place and Quinella Place pools.",
+        "avatar": "../assets/images/KOL Image-5.png",
+        "toneColor": "pink",
+        "isTopThree": false,
+        "locale": "en",
+        "profileLink": "https://sh.hkjc.com/d/en-US/share/kol-profile/krystal/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      }
+    ],
+    "tc": [
+      {
+        "name": "富仔",
+        "nameTc": "富仔",
+        "rank": 1,
+        "strikeRate": 15.8,
+        "score": 1775,
+        "title": "晨操達人",
+        "titleTc": "晨操達人",
+        "quote": "第二年參與「揀馬世一」，擁有資深賽馬經驗，由晨操角度揀選每場最好狀態的馬。與此同時，亦會提供變化馬予馬迷參考，目標在馬匹未成為熱門之前，冷門命中。",
+        "quoteTc": "第二年參與「揀馬世一」，擁有資深賽馬經驗，由晨操角度揀選每場最好狀態的馬。與此同時，亦會提供變化馬予馬迷參考，目標在馬匹未成為熱門之前，冷門命中。",
+        "avatar": "../assets/images/KOL Image-2.png",
+        "toneColor": "green",
+        "isTopThree": true,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/fujai/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/1107/1107/FU/chi/dei-content002_1107_FU_chi_2500kbps.mp4",
+        "picks": [
+          {
+            "race": "第一場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 13:00, 第五班,<br>1600米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 悠悠乾坤",
+              "3. 桃花多",
+              "4. 熊噹噹"
+            ],
+            "betLink": "https://sh.hkjc.com/m/8VHaYqO8V1"
+          },
+          {
+            "race": "第二場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 13:30, 第四班,<br>1000米, 草地, \"C+3\" 賽道",
+            "list": [
+              "10. 團結勇士",
+              "12. 小魔怪",
+              "13. 鑽得勝"
+            ],
+            "betLink": "https://sh.hkjc.com/m/TeZ9Ji8gUD"
+          },
+          {
+            "race": "第三場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 14:00, 第五班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 綫路萬里",
+              "4. 藍爵爺",
+              "8. 球皇"
+            ],
+            "betLink": "https://sh.hkjc.com/m/QBzDU5AA8b"
+          },
+          {
+            "race": "第四場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 14:30, 第四班,<br>1600米, 草地, \"C+3\" 賽道",
+            "list": [
+              "3. 爆出美麗",
+              "6. 開心宇宙",
+              "10. 創科群英"
+            ],
+            "betLink": "https://sh.hkjc.com/m/z9nvEzHQFs"
+          },
+          {
+            "race": "第五場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 15:00, 第三班,<br>1200米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 健康快車",
+              "2. 晒冷",
+              "4. 關鍵所在"
+            ],
+            "betLink": "https://sh.hkjc.com/m/MsSzrdUfqy"
+          },
+          {
+            "race": "第六場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 15:35, 第四班,<br>1200米, 草地, \"C+3\" 賽道",
+            "list": [
+              "4. 弦力寶",
+              "7. 非凡時刻",
+              "8. 加州本事"
+            ],
+            "betLink": "https://sh.hkjc.com/m/xS85JwoXOD"
+          },
+          {
+            "race": "第七場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 16:05, 三級賽,<br>1800米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 美麗同享",
+              "4. 百賀飛駒",
+              "8. 大至尊"
+            ],
+            "betLink": "https://sh.hkjc.com/m/E2mauKpo1C"
+          },
+          {
+            "race": "第八場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 16:40, 第四班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "3. 戀愛狂",
+              "6. 龍城強將",
+              "8. 超旺財"
+            ],
+            "betLink": "https://sh.hkjc.com/m/xN0CPXfiCm"
+          },
+          {
+            "race": "第九場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 17:15, 第三班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 小鳥天堂",
+              "3. 膨才",
+              "11. 天福"
+            ],
+            "betLink": "https://sh.hkjc.com/m/VKYy3uaqh9"
+          },
+          {
+            "race": "第十場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 17:50, 第二班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 光年魅力",
+              "7. 競駿輝煌",
+              "13. 米奇"
+            ],
+            "betLink": "https://sh.hkjc.com/m/n9WCO9qAVf"
+          }
+        ]
+      },
+      {
+        "name": "伍兆銓",
+        "nameTc": "伍兆銓",
+        "rank": 3,
+        "strikeRate": 26.3,
+        "score": 1295,
+        "title": "試閘密探",
+        "titleTc": "試閘密探",
+        "quote": "參與賽馬活動多年，現時於賽日作現場評述，以及主持《聽日有馬跑》。關注馬匹狀態及試閘走勢，留意馬房出擊部署，發掘值博半冷WP。",
+        "quoteTc": "參與賽馬活動多年，現時於賽日作現場評述，以及主持《聽日有馬跑》。關注馬匹狀態及試閘走勢，留意馬房出擊部署，發掘值博半冷WP。",
+        "avatar": "../assets/images/KOL Image-7.png",
+        "toneColor": "teal",
+        "isTopThree": true,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/alexng/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/1107/1107/alexng/chi/dei-content002_1107_alexng_chi_2500kbps.mp4",
+        "picks": [
+          {
+            "race": "第一場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 13:00, 第五班,<br>1600米, 草地, \"C+3\" 賽道",
+            "list": [
+              "<span class=\"badge text-bg-primary me-1\">膽</span>3. 桃花多",
+              "<span class=\"badge text-bg-primary me-1\">腳</span>4. 熊噹噹",
+              "<span class=\"badge me-1\">&nbsp;&nbsp;&nbsp;&nbsp;</span>7. 小神仙"
+            ],
+            "betLink": "https://sh.hkjc.com/m/WgPWyUoWDK"
+          },
+          {
+            "race": "第二場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 13:30, 第四班,<br>1000米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 踏雪尋梅",
+              "3. 福進",
+              "14. 紅錢到"
+            ],
+            "betLink": "https://sh.hkjc.com/m/VJG9aNNlRF"
+          },
+          {
+            "race": "第三場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 14:00, 第五班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "<span class=\"badge text-bg-primary me-1\">膽</span>1. 綫路萬里",
+              "<span class=\"badge text-bg-primary me-1\">腳</span>2. 綫路光驊",
+              "<span class=\"badge me-1\">&nbsp;&nbsp;&nbsp;&nbsp;</span>11. 飛躍凱旋"
+            ],
+            "betLink": "https://sh.hkjc.com/m/Mmb2L8tcOz"
+          },
+          {
+            "race": "第四場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 14:30, 第四班,<br>1600米, 草地, \"C+3\" 賽道",
+            "list": [
+              "6. 開心宇宙",
+              "9. 大千雄心",
+              "10. 創科群英"
+            ],
+            "betLink": "https://sh.hkjc.com/m/RfkbOyyJiw"
+          },
+          {
+            "race": "第五場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 15:00, 第三班,<br>1200米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 晒冷",
+              "4. 關鍵所在",
+              "5. 新力好"
+            ],
+            "betLink": "https://sh.hkjc.com/m/YMjLJcy49D"
+          },
+          {
+            "race": "第六場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 15:35, 第四班,<br>1200米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 快活英雄",
+              "7. 非凡時刻",
+              "8. 加州本事"
+            ],
+            "betLink": "https://sh.hkjc.com/m/d1aqtSNfEG"
+          },
+          {
+            "race": "第七場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 16:05, 三級賽,<br>1800M, 草地, \"C+3\" 賽道",
+            "list": [
+              "4. 百賀飛駒",
+              "8. 大至尊",
+              "12. 和平波"
+            ],
+            "betLink": "https://sh.hkjc.com/m/3ZxH8lmp2M"
+          },
+          {
+            "race": "第八場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 16:40, 第四班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "10. 天天更好"
+            ],
+            "betLink": "https://sh.hkjc.com/m/JJFC00ikbf"
+          },
+          {
+            "race": "第九場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 17:15, 第三班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 至尊高超",
+              "2. 小鳥天堂",
+              "11. 天福"
+            ],
+            "betLink": "https://sh.hkjc.com/m/59Pi1avoWY"
+          },
+          {
+            "race": "第十場",
+            "type": "QUINELLA",
+            "meta": "09/11 (星期日) 17:50, 第二班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 光年魅力",
+              "8. 遙遙領先",
+              "12. 同樣美麗"
+            ],
+            "betLink": "https://sh.hkjc.com/m/cO0lYn9bGg"
+          }
+        ]
+      },
+      {
+        "name": "Elke",
+        "nameTc": "Elke",
+        "rank": 2,
+        "strikeRate": 42.1,
+        "score": 1436,
+        "title": "命中魔法師",
+        "titleTc": "命中魔法師",
+        "quote": "第三年參與「揀馬世一」，馬會及有線18台賽馬主持。喜歡從馬匹賽績及狀態揀馬，最常投注獨贏及位置Q彩池。從小熱愛動物，喜歡研究各種動物的情緒和行為。",
+        "quoteTc": "第三年參與「揀馬世一」，馬會及有線18台賽馬主持。喜歡從馬匹賽績及狀態揀馬，最常投注獨贏及位置Q彩池。從小熱愛動物，喜歡研究各種動物的情緒和行為。",
+        "avatar": "../assets/images/KOL Image.png",
+        "toneColor": "blue",
+        "isTopThree": true,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/1107/1107/elke/chi/dei-content002_1107_elke_chi_2500kbps.mp4",
+        "picks": [
+          {
+            "race": "第一場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 13:00, 第五班,<br>1600米, 草地, \"C+3\" 賽道",
+            "list": [
+              "3. 桃花多"
+            ],
+            "betLink": "https://sh.hkjc.com/m/DPQMF5wieA"
+          },
+          {
+            "race": "第二場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 13:30, 第四班,<br>1000米, 草地, \"C+3\" 賽道",
+            "list": [
+              "3. 福進"
+            ],
+            "betLink": "https://sh.hkjc.com/m/mjyhK2WSdn"
+          },
+          {
+            "race": "第三場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 14:00, 第五班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 綫路萬里"
+            ],
+            "betLink": "https://sh.hkjc.com/m/qQEbrBZgPk"
+          },
+          {
+            "race": "第四場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 14:30, 第四班,<br>1600米, 草地, \"C+3\" 賽道",
+            "list": [
+              "12. 暴風一族"
+            ],
+            "betLink": "https://sh.hkjc.com/m/zJprDbCLEe"
+          },
+          {
+            "race": "第五場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 15:00, 第三班,<br>1200米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 健康快車"
+            ],
+            "betLink": "https://sh.hkjc.com/m/rua0YQh63a"
+          },
+          {
+            "race": "第六場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 15:35, 第四班,<br>1200米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 快活英雄"
+            ],
+            "betLink": "https://sh.hkjc.com/m/QSEZCpMips"
+          },
+          {
+            "race": "第七場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 16:05, 三級賽,<br>1800米, 草地, \"C+3\" 賽道",
+            "list": [
+              "1. 美麗同享"
+            ],
+            "betLink": "https://sh.hkjc.com/m/B2f3xo86xL"
+          },
+          {
+            "race": "第八場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 16:40, 第四班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "6. 龍城強將"
+            ],
+            "betLink": "https://sh.hkjc.com/m/Dqw5F60ZDb"
+          },
+          {
+            "race": "第九場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 17:15, 第三班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 小鳥天堂"
+            ],
+            "betLink": "https://sh.hkjc.com/m/CM6hgQsfRG"
+          },
+          {
+            "race": "第十場",
+            "type": "WIN_PLACE",
+            "meta": "09/11 (星期日) 17:50, 第二班,<br>1400米, 草地, \"C+3\" 賽道",
+            "list": [
+              "2. 光年魅力"
+            ],
+            "betLink": "https://sh.hkjc.com/m/KjqREu9I9j"
+          }
+        ]
+      },
+      {
+        "name": "Ling Ling",
+        "nameTc": "Ling Ling",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "鐵角公主",
+        "titleTc": "鐵角公主",
+        "quote": "2024/25年度馬季「揀馬世一」總冠軍，不時在馬場或體驗店分享賽馬心得。最常投注連贏及位置Q彩池，揀馬通常兩熱一冷混搭，穩中求勝。",
+        "quoteTc": "2024/25年度馬季「揀馬世一」總冠軍，不時在馬場或體驗店分享賽馬心得。最常投注連贏及位置Q彩池，揀馬通常兩熱一冷混搭，穩中求勝。",
+        "avatar": "../assets/images/KOL Image-4.png",
+        "toneColor": "purple",
+        "isTopThree": false,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/lingling/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "KK",
+        "nameTc": "KK",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "連贏少女",
+        "titleTc": "連贏少女",
+        "quote": "接觸賽馬數季，對賽馬興趣一季比一季濃厚。揀馬時注重馬匹整體步速、慣性跑法等，特別留意年輕馬匹於試閘狀態是否值博。最常投注連贏及位置Q彩池。",
+        "quoteTc": "接觸賽馬數季，對賽馬興趣一季比一季濃厚。揀馬時注重馬匹整體步速、慣性跑法等，特別留意年輕馬匹於試閘狀態是否值博。最常投注連贏及位置Q彩池。",
+        "avatar": "../assets/images/KOL Image-1.png",
+        "toneColor": "amber",
+        "isTopThree": false,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "Colette",
+        "nameTc": "Colette",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "冷馬獵人",
+        "titleTc": "冷馬獵人",
+        "quote": "行內又名「叻姐」，擅長運用獨家的「相對步速」計算法，精準分析馬匹實力，專注以科學方法發掘冷門值博馬，與馬迷扒冷馬。",
+        "quoteTc": "行內又名「叻姐」，擅長運用獨家的「相對步速」計算法，精準分析馬匹實力，專注以科學方法發掘冷門值博馬，與馬迷扒冷馬。",
+        "avatar": "../assets/images/KOL Image-3.png",
+        "toneColor": "gold",
+        "isTopThree": false,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "阿粉知心友",
+        "nameTc": "阿粉知心友",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "評分拆解王",
+        "titleTc": "評分拆解王",
+        "quote": "由三名中生代賽馬狂熱分子阿粉、Homan及Kenson組成，擅長拆解賽績及分析段速。喜愛研究馬匹評分，結合形勢找尋機會馬。精通投注策略，務求以少注數換來最高回報。",
+        "quoteTc": "由三名中生代賽馬狂熱分子阿粉、Homan及Kenson組成，擅長拆解賽績及分析段速。喜愛研究馬匹評分，結合形勢找尋機會馬。精通投注策略，務求以少注數換來最高回報。",
+        "avatar": "../assets/images/KOL Image-6.png",
+        "toneColor": "slate",
+        "isTopThree": false,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      },
+      {
+        "name": "Krystal",
+        "nameTc": "Krystal",
+        "rank": 0,
+        "strikeRate": 0,
+        "score": 0,
+        "title": "睇績穩陣姐",
+        "titleTc": "睇績穩陣姐",
+        "quote": "賽馬新手，累積數年研究賽馬經驗。擔任有線18台賽馬主持，亦在馬場或體驗店分享賽馬心得。揀馬最注重馬匹往績，最常投注位置及位置Q彩池。",
+        "quoteTc": "賽馬新手，累積數年研究賽馬經驗。擔任有線18台賽馬主持，亦在馬場或體驗店分享賽馬心得。揀馬最注重馬匹往績，最常投注位置及位置Q彩池。",
+        "avatar": "../assets/images/KOL Image-5.png",
+        "toneColor": "pink",
+        "isTopThree": false,
+        "locale": "tc",
+        "profileLink": "https://sh.hkjc.com/d/zh-HK/share/kol-profile/krystal/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image",
+        "picks": []
+      }
+    ]
+  },
+  "expertPicks": {
+    "en": [],
+    "tc": []
+  },
+  "articles": {
+    "en": [
+      {
+        "title": "A Brief Introduction to the DISCOVER Content Revamp",
+        "titleEn": "A Brief Introduction to the DISCOVER Content Revamp",
+        "excerpt": "DISCOVER has been upgraded for the new season, bringing you 2 exciting surprises!",
+        "excerptEn": "DISCOVER has been upgraded for the new season, bringing you 2 exciting surprises!",
+        "thumbnail": "../assets/images/KOL_video_1_e.png",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250903/discoverpromovideo/eng/dei-content002_20250903_discoverpromovideo_eng_2500kbps.mp4",
+        "category": "videos",
+        "contentType": "video",
+        "section": "discover-highlight",
+        "views": 2500,
+        "locale": "en",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "The Three New Trainer and Jockeys",
+        "titleEn": "The Three New Trainer and Jockeys",
+        "excerpt": "Taking an in-depth look at the South African trainer B Crawford, and two jockeys from the UK, D Probert and R Kingscote.",
+        "excerptEn": "Taking an in-depth look at the South African trainer B Crawford, and two jockeys from the UK, D Probert and R Kingscote.",
+        "thumbnail": "../assets/images/KOL_video_2_e.png",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250814/newjockeytrainer/eng/dei-content002_20250814_newjockeytrainer_eng_2500kbps.mp4",
+        "category": "videos",
+        "contentType": "video",
+        "section": "discover-highlight",
+        "views": 3200,
+        "locale": "en",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "Fans' Top Three Epic Rides by Zac: The Craft of Eight-Time Champion Jockey",
+        "titleEn": "Fans' Top Three Epic Rides by Zac: The Craft of Eight-Time Champion Jockey",
+        "excerpt": "Let's review Zac's superb riding skills based on fans' comments.",
+        "excerptEn": "Let's review Zac's superb riding skills based on fans' comments.",
+        "thumbnail": "../assets/images/KOL_video_3_e.jpg",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content005/2025/20250702/zacpurton-fanscm/eng/dei-content005_20250702_zacpurton-fanscm_eng_2500kbps.mp4",
+        "category": "videos",
+        "contentType": "video",
+        "section": "discover-highlight",
+        "views": 1800,
+        "locale": "en",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "A new hotspot at Sha Tin Racecourse - Genso",
+        "titleEn": "A new hotspot at Sha Tin Racecourse - Genso",
+        "excerpt": "\"Genso\" is a pioneering four-storey digital horse racing hub in Hong Kong with innovative phygitainment entertainment, Instagram-worthy experiences, and scrumptious dining.",
+        "excerptEn": "\"Genso\" is a pioneering four-storey digital horse racing hub in Hong Kong with innovative phygitainment entertainment, Instagram-worthy experiences, and scrumptious dining.",
+        "thumbnail": "../assets/images/KOL_video_4_e.png",
+        "urlLink": "genso.html",
+        "category": "articles",
+        "contentType": "article",
+        "section": "racecourse-experience",
+        "views": 1500,
+        "locale": "en",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "Japanese Festival: The Ultimate Cultural Celebration at Happy Wednesday Returns!",
+        "titleEn": "Japanese Festival: The Ultimate Cultural Celebration at Happy Wednesday Returns!",
+        "excerpt": "by The Hong Kong Jockey Club in partnership with the Consulate-General of Japan in Hong Kong and the Japan Racing Association.  Experience a dazzling fusion of racing excitement and cultural immersion, including the Japan Racing Association Trophy on 5 November, alongside themed entertainment, cultural experience and authentic Japanese flavours. Mark your calendars: the festivities kick off with the day race on 2 November (Sun), followed by the night races on 5, 12 and 19 November.",
+        "excerptEn": "by The Hong Kong Jockey Club in partnership with the Consulate-General of Japan in Hong Kong and the Japan Racing Association.  Experience a dazzling fusion of racing excitement and cultural immersion, including the Japan Racing Association Trophy on 5 November, alongside themed entertainment, cultural experience and authentic Japanese flavours. Mark your calendars: the festivities kick off with the day race on 2 November (Sun), followed by the night races on 5, 12 and 19 November.",
+        "thumbnail": "../assets/images/KOL_video_5_e.png",
+        "urlLink": "japanese-festival.html",
+        "category": "events",
+        "contentType": "event",
+        "section": "racecourse-experience",
+        "views": 2000,
+        "locale": "en",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "A new hotspot at Happy Valley Racecourse, a new digital horse racing night entertainment experience",
+        "titleEn": "A new hotspot at Happy Valley Racecourse, a new digital horse racing night entertainment experience",
+        "excerpt": "Get ready for a groundbreaking night out at Happy Valley Racecourse! We're thrilled to announce the opening of two spectacular venues — The Beat and Vantage — designed to elevate your dining and nightlife experience.",
+        "excerptEn": "Get ready for a groundbreaking night out at Happy Valley Racecourse! We're thrilled to announce the opening of two spectacular venues — The Beat and Vantage — designed to elevate your dining and nightlife experience.",
+        "thumbnail": "../assets/images/KOL_video_6_e.png",
+        "urlLink": "happy-valley.html",
+        "category": "articles",
+        "contentType": "article",
+        "section": "racecourse-experience",
+        "views": 1800,
+        "locale": "en",
+        "publishedAt": "2024-11-05"
+      }
+    ],
+    "tc": [
+      {
+        "title": "馬上發現內容全面革新",
+        "titleTc": "馬上發現內容全面革新",
+        "excerpt": "「馬上發現」今個馬季全面革新提供4款內容，滿足不同年資馬迷的需求",
+        "excerptTc": "「馬上發現」今個馬季全面革新提供4款內容，滿足不同年資馬迷的需求",
+        "thumbnail": "../assets/images/KOL_video_1.png",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250903/discoverpromovideo/chi/dei-content002_20250903_discoverpromovideo_chi_2500kbps.mp4",
+        "category": "videos",
+        "contentType": "video",
+        "section": "discover-highlight",
+        "views": 2500,
+        "locale": "tc",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "評馬人揀選今季最令人期待的6匹超新星！",
+        "titleTc": "評馬人揀選今季最令人期待的6匹超新星！",
+        "excerpt": "上個馬季出現咗多匹潛藏豐厚嘅新星，到底一眾評馬人今季最睇好邊幾匹超新星可以扶搖直上，躋身頂班甚至接棒呢？即刻睇片啦！",
+        "excerptTc": "上個馬季出現咗多匹潛藏豐厚嘅新星，到底一眾評馬人今季最睇好邊幾匹超新星可以扶搖直上，躋身頂班甚至接棒呢？即刻睇片啦！",
+        "thumbnail": "../assets/images/KOL_video_2.png",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content006/2025/20250926/risingstar-commentator/chi/dei-content006_20250926_risingstar-commentator_chi_2500kbps.mp4",
+        "category": "videos",
+        "contentType": "video",
+        "section": "discover-highlight",
+        "views": 3200,
+        "locale": "tc",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "馬迷嚴選八屆冠軍騎師潘頓　三場最精彩策騎！",
+        "titleTc": "馬迷嚴選八屆冠軍騎師潘頓　三場最精彩策騎！",
+        "excerpt": "「馬上發現」早前蒐集馬迷意見，從馬迷的留言中揀選了一些潘頓的精彩發揮畫面重溫。",
+        "excerptTc": "「馬上發現」早前蒐集馬迷意見，從馬迷的留言中揀選了一些潘頓的精彩發揮畫面重溫。",
+        "thumbnail": "../assets/images/KOL_video_3.jpg",
+        "videoLink": "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content005/2025/20250702/zacpurton-fanscm/chi/dei-content005_20250702_zacpurton-fanscm_chi_2500kbps.mp4",
+        "category": "videos",
+        "contentType": "video",
+        "section": "discover-highlight",
+        "views": 1800,
+        "locale": "tc",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "沙田馬場全新熱點「天馬驛」",
+        "titleTc": "沙田馬場全新熱點「天馬驛」",
+        "excerpt": "「天馬驛」是香港首個四層高的數碼賽馬體驗地標，融合現場賽馬的刺激感及嶄新的數碼科技，提供前所未有的賽馬運動及娛樂體驗。在這裏更可發掘多次元世界，盡情投入革新性馬場體驗、沉浸式AI打卡熱點、數碼娛樂以及不同特色美饌。",
+        "excerptTc": "「天馬驛」是香港首個四層高的數碼賽馬體驗地標，融合現場賽馬的刺激感及嶄新的數碼科技，提供前所未有的賽馬運動及娛樂體驗。在這裏更可發掘多次元世界，盡情投入革新性馬場體驗、沉浸式AI打卡熱點、數碼娛樂以及不同特色美饌。",
+        "thumbnail": "../assets/images/KOL_video_4.png",
+        "urlLink": "genso.html",
+        "category": "articles",
+        "contentType": "article",
+        "section": "racecourse-experience",
+        "views": 1500,
+        "locale": "tc",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "「日本節」載譽歸來！11月跑馬地馬場打造東瀛文化盛宴",
+        "titleTc": "「日本節」載譽歸來！11月跑馬地馬場打造東瀛文化盛宴",
+        "excerpt": "今個十一月，全城期待的「日本節」將強勢回歸跑馬地馬場！活動由香港賽馬會、日本國駐香港總領事館與日本中央競馬會攜手呈獻，融合賽馬激情及東瀛風情，帶您沉浸式體驗日本文化精髓。重頭戲包括11月5日的日本中央競馬會錦標，配合主題娛樂、日式文化體驗及地道美食，誠邀您參與11月2日 (星期日) 的日間賽事，以及11月5日、12日及19日的晚間賽事！",
+        "excerptTc": "今個十一月，全城期待的「日本節」將強勢回歸跑馬地馬場！活動由香港賽馬會、日本國駐香港總領事館與日本中央競馬會攜手呈獻，融合賽馬激情及東瀛風情，帶您沉浸式體驗日本文化精髓。重頭戲包括11月5日的日本中央競馬會錦標，配合主題娛樂、日式文化體驗及地道美食，誠邀您參與11月2日 (星期日) 的日間賽事，以及11月5日、12日及19日的晚間賽事！",
+        "thumbnail": "../assets/images/KOL_video_5.png",
+        "urlLink": "japanese-festival.html",
+        "category": "events",
+        "contentType": "event",
+        "section": "racecourse-experience",
+        "views": 2000,
+        "locale": "tc",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "title": "跑馬地馬場全新熱點 嶄新數碼化賽馬夜娛樂體驗",
+        "titleTc": "跑馬地馬場全新熱點 嶄新數碼化賽馬夜娛樂體驗",
+        "excerpt": "跑馬地馬場餐飲及夜生活體驗的兩個不同嶄新地標 — The Beat 及 Vantage 即將正式開幕！顧客享用美酒佳餚之餘，能置身高端時尚環境下飽覽馬場壯觀美景，盡情感受賽馬熾熱氣氛。",
+        "excerptTc": "跑馬地馬場餐飲及夜生活體驗的兩個不同嶄新地標 — The Beat 及 Vantage 即將正式開幕！顧客享用美酒佳餚之餘，能置身高端時尚環境下飽覽馬場壯觀美景，盡情感受賽馬熾熱氣氛。",
+        "thumbnail": "../assets/images/KOL_video_6.png",
+        "urlLink": "happy-valley.html",
+        "category": "articles",
+        "contentType": "article",
+        "section": "racecourse-experience",
+        "views": 1800,
+        "locale": "tc",
+        "publishedAt": "2024-11-05"
+      }
+    ]
+  }
+}

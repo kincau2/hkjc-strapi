@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_configs",
+  "info": {
+    "singularName": "footer-config",
+    "pluralName": "footer-configs",
+    "displayName": "Footer 配置",
+    "description": "網站 Footer 配置"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contentTc": {
+      "type": "richtext",
+      "required": false
+    },
+
+    "contentEn": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}

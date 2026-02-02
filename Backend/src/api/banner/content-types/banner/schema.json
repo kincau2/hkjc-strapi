@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "singularName": "banner",
+    "pluralName": "banners",
+    "displayName": "Banner",
+    "description": "Homepage banner carousel items"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titleTc": {
+      "type": "string",
+      "required": false
+    },
+    "titleEn": {
+      "type": "string",
+      "required": false
+    },
+    "desktopImageTc": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "desktopImageEn": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "mobileImageTc": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "mobileImageEn": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "linkUrlTc": {
+      "type": "string",
+      "required": false
+    },
+    "linkUrlEn": {
+      "type": "string",
+      "required": false
+    },
+    "linkTarget": {
+      "type": "enumeration",
+      "enum": ["_self", "_blank"],
+      "default": "_blank"
+    },
+    "hasPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    }
+  }
+}
+

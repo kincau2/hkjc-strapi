@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meet Apprentice Jockey Bonnie Wong - 香港賽馬會</title>
+
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="../assets/css/aos.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css"/>
+
+    <link rel="stylesheet" href="../assets/css/video-popup.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/css/post-detail.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <script src="../assets/js/aos.js"></script>
+
+    <script> AOS.init(); </script>
+
+    <script src="../assets/js/gsap.min.js"></script>
+
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
+
+    <script type="text/javascript" src="../assets/js/slick.min.js"></script>
+
+    <script src="../assets/js/video-popup.js"></script>
+
+    <script src="../assets/js/strapi-api.js?v=20260127001"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-white overflow-x-hidden">
+
+    <!-- Header - Duplicated from index.html -->
+
+    <header class="bg-white site-header fixed-top border-bottom">
+
+        <div class="px-5 py-4 container-fluid d-flex justify-content-between align-items-center header-bar">
+
+            <div class="d-flex align-items-center left-cluster">
+
+                <div class="logo pe-5 d-flex">
+
+                    <a href="index" class="d-inline-flex align-items-center">
+
+                        <img class="site-logo d-none d-lg-block" src="../assets/images/logo.png" alt="HKJC Logo">
+
+                        <img class="site-logo d-block d-lg-none" src="../assets/images/logo-mobile.png" alt="HKJC Logo">
+
+                    </a>
+
+                </div>
+
+                <nav class="main-nav d-none d-lg-flex align-items-center" aria-label="Primary">
+
+                    <ul class="nav mb-0">
+
+                        <li class="nav-item first-item-wrapper">
+
+                            <div class="border-start border-end px-3 me-2">
+
+                              <a class="nav-link px-2 fw-bold" href="index">主頁</a>
+
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="index#tipping" target="_top">揀馬世一</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racing-academy">馬上研究所</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="discover-highlight">馬上發現精選</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racecourse-experience">馬場精彩活動</a></li>
+
+                        <li class="nav-item button px-3 position-relative">
+                            <a class="nav-link px-3 fw-normal" href="javascript:void(0)" id="downloadDropdownBtn">下載馬會投注三合一</a>
+                            <div id="downloadDropdown" class="text-center position-absolute start-0 end-0 bg-white shadow-lg rounded-3 px-4 pt-4 pb-3" style="display:none; top:100%; margin-top:15px;">
+                                <img src="../assets/images/3in1app-QRCode.png" class="img-fluid" alt="下載馬會投注三合一">
+                                <small>掃描二維碼下載應用程式</small>
+                            </div>
+                        </li>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var btn = document.getElementById("downloadDropdownBtn");
+                                var dropdown = document.getElementById("downloadDropdown");
+                                btn.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                                });
+                                document.addEventListener("click", function (e) {
+                                    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                                        dropdown.style.display = "none";
+                                    }
+                                });
+                            });
+                        </script>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+            <div class="d-flex align-items-center">
+
+                <!-- Desktop language switcher -->
+
+                <div class="lang d-none d-lg-flex align-items-center desktop-lang dropdown">
+
+                    <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <img src="../assets/images/icon_lang.svg">
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                        <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                        <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Mobile cluster: language + hamburger -->
+
+                <div class="d-lg-none d-flex align-items-center justify-content-end mobile-controls ms-3">
+
+                    <button class="navbar-toggler p-0 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation" id="mobileNavToggle">
+
+                        <svg class="hamburger-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                        <svg class="close-icon d-none" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                    </button>
+
+              </div>
+
+          </div>    
+
+        </div>
+
+        <div class="collapse mobile-nav-wrapper border-bottom" id="mobileNav">
+
+            <div class="lang d-flex d-lg-none align-items-center mobile-lang dropdown">
+
+                <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <img src="../assets/images/icon_lang.svg">
+
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                    <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                    <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="container-fiuld p-5 border-top">
+
+                <nav aria-label="Mobile Primary">
+
+                    <ul class="nav flex-column">
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index">主頁</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index#tipping" target="_top">揀馬世一</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racing-academy">馬上研究所</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="discover-highlight">馬上發現精選</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racecourse-experience">馬場精彩活動</a></li>
+
+                        <li class="nav-item button text-center"><a class="nav-link px-2 py-3" href="https://bit.ly/44xVMGR">下載馬會投注三合一</a></li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="main-content post-detail-page">
+
+        <!-- Post Hero & Content Section -->
+
+        <section class="post-hero-content-section">
+
+            <div class="container">
+
+                <div class="post-hero-content-wrapper">
+
+                    <!-- Left: Hero Image -->
+
+                    <div class="post-hero-image">
+
+                        <img src="../assets/images/KOL_video_6.png" alt="Meet Apprentice Jockey Bonnie Wong">
+
+                    </div>
+
+
+
+                    <!-- Right: Content -->
+
+                    <div class="post-content">
+
+                        <div class="post-header">
+
+                            <h1 class="post-title">Meet Apprentice Jockey Bonnie Wong</h1>
+
+                        </div>
+
+
+
+                        <div class="post-body">
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- You May Be Interested In Section -->
+
+        <section class="related-posts-section">
+
+            <div class="container">
+
+                <h2 class="section-title">You May Be Interested In...</h2>
+
+                
+
+                <div class="posts-grid" id="relatedPostsGrid">
+
+                    <!-- Posts will be generated here -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer Section -->
+
+    <section id="footer" class="px-5">
+
+        <div class="container text-left">
+
+            <p class="footer-text mb-1">最後更新日期 15/09/2025<br>
+
+                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">按此</a>參閱有關命中率及分數計算方法
+
+            </p>
+
+            <p class="footer-text">*所有資料只供參考，並不代表香港賽馬會的立場，亦不構成任何建議。</p>
+
+            <p class="footer-text">^「一按投注」功能只適用於已登入投注戶口之用戶。</p>
+
+            <p class="footer-text"><a href="https://www.hkjc.com/responsible-gambling/ch/index">博彩要有節制</a></p>
+
+            <ul class="footer-list">
+
+                <li class="footer-list">未滿十八歲人士不得投注或進入可投注的地方。</li>
+
+                <li class="footer-list">向非法或海外莊家下注，即屬違法，且可被判監禁。</li>
+
+                <li class="footer-list">切勿沉迷賭博，如需尋求輔導協助，可致電平和基金熱線1834 633。</li>
+
+            </ul>                              
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Video Popup Initialization -->
+
+    <script>
+
+        // Initialize video popup
+
+        var videoPop = new VideoPopup(); 
+
+
+
+        // Initial empty video list - will be populated by post-detail.js
+
+        videoPop.videoList = [];
+
+
+
+        // Global function to open video popup
+
+        function openPopup(i) {
+
+            videoPop.open(i);
+
+        }
+
+    </script>
+
+
+
+    <script>
+
+        // Post Detail Page JavaScript
+
+        $(document).ready(function() {
+
+            
+
+            // Load post data from localStorage
+
+            async function loadPostData() {
+
+                // Get post ID from URL parameter
+
+                const urlParams = new URLSearchParams(window.location.search);
+
+                const postId = urlParams.get('id');
+
+                const postType = urlParams.get('type')||'discover-highlight';
+
+                if (!postId) {
+
+                    console.warn('No post ID found in URL');
+
+                    return;
+
+                }
+
+                
+
+                // Get post data from localStorage
+
+                const postKey = 'post-' + postId;
+
+                let postDataStr = localStorage.getItem(postKey);
+                let opt = {
+                    locale: 'tc',
+                    section:'',
+                }
+                let typeCur = false
+                opt.section = postType;
+                console.log('opt-----opt', opt);
+                let article = {}
+                   
+                    articles = await window.StrapiAPI.Article.getAll(opt);
+                    articles.forEach(e=>{
+                        if(e.id == postId){
+                            typeCur = true
+                            e.type = postType
+                            article = e
+                        }
+                    })
+                console.log('article',article)
+                let post = {
+                    id: article.id,
+                    title: article.title,
+                    excerpt: article.excerpt,
+                    thumbnail: article.thumbnail,
+                    videoLink: article.videoLink,
+                    type: postType,
+                    content: article.content,
+                    contentImg: article.contentImg,
+                    urlLink: article.urlLink,
+                    category: article.category,
+                    views: article.views || 0,
+                    date: article.date || article.publishedAt
+                }
+                postDataStr = JSON.stringify(post)
+                
+
+                if (!postDataStr) {
+
+                    console.warn('Post data not found in localStorage for ID:', postId);
+
+                    return;
+
+                }
+
+                
+
+                try {
+
+                    const post = JSON.parse(postDataStr);
+
+                    
+
+                    // Fill title
+
+                    if (post.title) {
+
+                        $('.post-title').text(post.title);
+
+                        // Also update page title
+
+                        document.title = post.title + ' - 香港賽馬會';
+
+                    }
+
+                    
+
+                    // Fill content image
+
+                    if (post.contentImg) {
+
+                        const $heroImg = $('.post-hero-image img');
+
+                        $heroImg.attr('src', post.contentImg);
+
+                        if (post.title) {
+
+                            $heroImg.attr('alt', post.title);
+
+                        }
+
+                    }
+
+                    
+
+                    // Fill content (rich text)
+
+                    if (post.content) {
+
+                        $('.post-body').html(post.content);
+
+                    }
+
+                } catch (error) {
+
+                    console.error('Error parsing post data:', error);
+
+                }
+
+            }
+
+            
+
+            // Get related posts from API filtered by showInRecommendation
+
+            async function getRelatedPosts() {
+
+                // Get current post ID and type from localStorage
+
+                const urlParams = new URLSearchParams(window.location.search);
+
+                const currentPostId = urlParams.get('id');
+
+                
+
+                if (!currentPostId) {
+
+                    console.warn('No post ID found in URL');
+
+                    return [];
+
+                }
+
+                
+
+                // Get current post data to determine type
+
+                const postKey = 'post-' + currentPostId;
+
+                let postDataStr = localStorage.getItem(postKey);
+            
+
+                if (!postDataStr) {
+
+                    console.warn('Current post data not found in localStorage');
+
+                    return [];
+
+                }
+
+                
+
+                try {
+
+                    const currentPost = JSON.parse(postDataStr);
+
+                    const postType = currentPost.type; // 'discover-highlight' or 'racecourse-experience'
+
+                    
+
+                    if (!postType || (postType !== 'discover-highlight' && postType !== 'racecourse-experience')) {
+
+                        console.warn('Invalid or missing post type:', postType);
+
+                        return [];
+
+                    }
+
+                    
+
+                    // Request data from API based on post type
+
+                    if (!window.StrapiAPI || !window.StrapiAPI.Article) {
+
+                        console.error('StrapiAPI is not loaded');
+
+                        return [];
+
+                    }
+
+                    
+
+                    // Get current locale
+
+                    const locale = window.location.pathname.indexOf('/tc/') !== -1 ? 'tc' : 'en';
+
+                    
+
+                    // Fetch articles with showInRecommendation filter
+
+                    const articles = await window.StrapiAPI.Article.getAll({
+
+                        locale: locale,
+
+                        section: postType,
+
+                        showInRecommendation: true
+
+                    });
+
+                    
+
+                    // Filter: showInRecommendation must be true and exclude current post
+
+                    const relatedPosts = articles
+
+                        .filter(article => {
+
+                            return article.showInRecommendation === true && 
+
+                                   article.id != currentPostId;
+
+                        })
+
+                        .map(article => ({
+
+                            id: article.id,
+
+                            title: article.title,
+
+                            excerpt: article.excerpt,
+
+                            thumbnail: article.thumbnail,
+
+                            videoLink: article.videoLink,
+
+                            urlLink: article.urlLink,
+
+                            articleLink: article.articleLink,
+
+                            eventLink: article.eventLink,
+
+                            category: article.category,
+
+                            type: postType,
+
+                            showInRecommendation: article.showInRecommendation
+
+                        }));
+
+                    
+
+                    return relatedPosts;
+
+                } catch (error) {
+
+                    console.error('Error fetching related posts:', error);
+
+                    return [];
+
+                }
+
+            }
+
+
+
+            // Initialize the page
+
+            function init() {
+
+                loadPostData();
+
+                renderRelatedPosts();
+
+            }
+
+
+
+            // Render related posts
+
+            async function renderRelatedPosts() {
+
+                const $grid = $('#relatedPostsGrid');
+
+                $grid.empty();
+
+
+
+                // Get filtered related posts from API
+
+                const relatedPostsData = await getRelatedPosts();
+
+                
+
+                if (!relatedPostsData || relatedPostsData.length === 0) {
+
+                    console.log('No related posts found with showInRecommendation = true');
+
+                    return;
+
+                }
+
+
+
+                // Build ordered video list
+
+                const orderedVideoList = [];
+
+                
+
+                relatedPostsData.forEach((post, index) => {
+
+                    // Add to video list in display order (only if has videoLink)
+
+                    if (post.videoLink) {
+
+                        orderedVideoList.push({
+
+                            title: post.title,
+
+                            video: post.videoLink
+
+                        });
+
+                    }
+
+
+
+                    // Create post card with sequential display index
+
+                    const postCard = createPostCard(post, index);
+
+                    $grid.append(postCard);
+
+                });
+
+
+
+                // Update the global video popup list
+
+                if (window.videoPop) {
+
+                    window.videoPop.videoList = orderedVideoList;
+
+                }
+
+            }
+
+
+
+            // Create post card HTML (matching index.html #discover section structure)
+
+            function createPostCard(post, displayIndex) {
+
+                // Determine link: if has videoLink, use popup; otherwise use regular link
+
+                const fallbackLink = `post-detail.html?id=${post.id}&type=${post.type}`;
+
+                const hasVideo = post.category === 'videos' && post.videoLink;
+
+                const targetLink = hasVideo 
+
+                    ? fallbackLink 
+
+                    : (post.urlLink || post.articleLink || post.eventLink || fallbackLink);
+
+                
+
+                // For videos, use popup onclick; for others, use regular href
+
+                const linkAttr = hasVideo 
+
+                    ? `href="javascript:void(0);" onclick="openPopup(${displayIndex})"`
+
+                    : `href="${targetLink}"`;
+
+                
+
+                return $(`
+
+                    <div class="post swiper-slide" data-category="${post.category}">
+
+                        <a class="post-link" ${linkAttr}>
+
+                            <div class="feature-img">
+
+                                <img src="${post.thumbnail}" alt="${post.title}">
+
+                            </div>
+
+                            <div class="post-text-wrapper">
+
+                                <p class="post-title">${post.title}</p>
+
+                                <p class="post-excerpt">${post.excerpt}</p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                `);
+
+            }
+
+
+
+            // Mobile navigation toggle icon handler
+
+            const mobileNav = document.getElementById('mobileNav');
+
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+            const closeIcon = document.querySelector('.close-icon');
+
+            
+
+            if (mobileNav && hamburgerIcon && closeIcon) {
+
+                mobileNav.addEventListener('show.bs.collapse', function() {
+
+                    hamburgerIcon.classList.add('d-none');
+
+                    closeIcon.classList.remove('d-none');
+
+                });
+
+                
+
+                mobileNav.addEventListener('hide.bs.collapse', function() {
+
+                    hamburgerIcon.classList.remove('d-none');
+
+                    closeIcon.classList.add('d-none');
+
+                });
+
+            }
+
+
+
+            // Initialize
+
+            init();
+
+        });
+
+    </script>
+
+</body>
+
+<script>
+
+    $(document).ready(function() {
+
+        // 獲取 footer 配置並更新頁面
+
+// 獲取 footer 配置並更新頁面
+
+async function loadFooter() {
+
+    try {
+
+        const footerConfig = await window.StrapiAPI.Footer.getConfig({
+
+            locale: window.StrapiAPI.getCurrentLocale()
+
+        });
+
+        
+
+        // 將 HTML 內容插入到 footer 元素中
+
+        const footerElement = document.getElementById('footer');
+
+        if (footerElement && footerConfig.htmlContent) {
+
+            footerElement.innerHTML = footerConfig.htmlContent;
+
+        }
+
+    } catch (error) {
+
+        console.error('Failed to load footer:', error);
+
+    }
+
+}
+
+
+
+// 在頁面加載時調用
+
+loadFooter();
+
+});
+
+</script>
+
+</html>
+

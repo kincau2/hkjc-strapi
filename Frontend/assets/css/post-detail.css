@@ -1,0 +1,222 @@
+/* ======================================
+   Post Detail Page Styles
+   ====================================== */
+
+/* Main Content */
+main.main-content.post-detail-page {
+    padding: 0 15px;
+}
+
+/* Post Hero & Content Section */
+.post-hero-content-section {
+    padding: 60px 0 64px 0;
+}
+
+@media (max-width: 768px) {
+    .post-hero-content-section {
+        padding: 60px 0 32px 0;
+    }
+}
+
+.post-hero-content-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Left: Hero Image */
+.post-hero-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+
+.post-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px    ;
+    object-fit: contain;
+}
+
+
+
+/* Right: Content */
+.post-content {
+    flex: 1;
+}
+
+.post-header {
+    margin-bottom: 12px;
+}
+
+.post-header .post-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #022169;
+    margin: 0;
+}
+
+.post-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #000;
+}
+
+.post-body p {
+    margin-bottom: 20px;
+}
+
+.post-body p:last-of-type {
+    margin-bottom: 0;
+}
+
+.see-less-link {
+    display: inline-block;
+    color: #022169;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.see-less-link:hover {
+    opacity: 0.7;
+}
+
+/* Related Posts Section */
+.related-posts-section {
+    padding: 22px 0 80px 0;
+}
+
+.related-posts-section .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #022169;
+    margin-bottom: 40px;
+}
+
+.related-posts-section .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Related posts use same styles as index.html #discover section */
+/* Styles are inherited from style.css #discover .post */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .post-hero-content-wrapper {
+        gap: 40px;
+    }
+    
+    .post-hero-image {
+        flex: 0 0 42%;
+        max-width: 42%;
+    }
+    
+    .related-posts-section .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .post-hero-content-wrapper {
+        gap: 30px;
+    }
+    
+    .post-header .post-title {
+        font-size: 36px;
+    }
+    
+    .post-body {
+        font-size: 15px;
+    }
+    
+    .related-posts-section .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .related-posts-section .section-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack layout on mobile */
+    .post-hero-image img {
+        border-radius: 16px;
+    }
+    .post-hero-content-section {
+        padding: 40px 0;
+    }
+    
+    .post-hero-content-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .post-hero-image {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    
+    .post-header {
+        margin-bottom: 12px;
+    }
+    
+    .post-header .post-title {
+        font-size: 32px;
+    }
+    
+    .post-body {
+        font-size: 15px;
+    }
+    
+    .post-body p {
+        margin-bottom: 16px;
+    }
+    
+    .see-less-link {
+        font-size: 15px;
+    }
+    
+    .related-posts-section {
+        padding: 40px 0 60px;
+    }
+    
+    .related-posts-section .section-title {
+        font-size: 28px;
+        margin-bottom: 24px!important;
+    }
+    
+    .related-posts-section .posts-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .post-hero-content-section {
+        padding: 24px 0;
+    }
+    
+    .post-header .post-title {
+        font-size: 28px;
+    }
+    
+    .post-body {
+        font-size: 14px;
+    }
+    
+    .see-less-link {
+        font-size: 14px;
+    }
+    
+    .related-posts-section .section-title {
+        font-size: 24px;
+    }
+}

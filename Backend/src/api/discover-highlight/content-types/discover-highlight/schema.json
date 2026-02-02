@@ -1,0 +1,111 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discover_highlights",
+  "info": {
+    "singularName": "discover-highlight",
+    "pluralName": "discover-highlights",
+    "displayName": "馬上發現精選",
+    "description": "馬上發現精選文章"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titleEn": {
+      "type": "string"
+    },
+    "titleTc": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titleTc"
+    },
+    "excerptEn": {
+      "type": "text"
+    },
+    "excerptTc": {
+      "type": "text"
+    },
+    "thumbnailTc": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "thumbnailEn": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contentImgTc": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contentImgEn": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "videos",
+        "articles",
+        "events"
+      ]
+    },
+    "videoLinkEn": {
+      "type": "string"
+    },
+    "videoLinkTc": {
+      "type": "string"
+    },
+    "urlLinkEn": {
+      "type": "string"
+    },
+    "urlLinkTc": {
+      "type": "string"
+    },
+    "contentEn": {
+      "type": "richtext"
+    },
+    "contentTc": {
+      "type": "richtext"
+    },
+    "views": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInRecommendation": {
+      "type": "boolean",
+      "default": false
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discover Highlight - The Hong Kong Jockey Club</title>
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../assets/css/fonts.css">
+        <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="../assets/css/aos.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="../assets/css/single-video-popup.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/discover-highlight.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/swiper-bundle.min.js"></script>
+        <script src="../assets/js/aos.js"></script>
+        <script> AOS.init(); </script>
+        <script src="../assets/js/gsap.min.js"></script>
+        <script src="../assets/js/ScrollTrigger.min.js"></script>
+        <script type="text/javascript" src="../assets/js/slick.min.js"></script>
+        <script src="../assets/js/single-video-popup.js"></script>
+        
+        <!-- Strapi API Integration -->
+        <script>
+            window.STRAPI_BASE_URL = window.STRAPI_BASE_URL || 'http://localhost:1337';
+        </script>
+        <script src="../assets/js/strapi-api.js?v=20260127001"></script>
+        <script src="../assets/js/strapi-data-loader.js?v=20260127001"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+<body class="bg-white overflow-x-hidden">
+    <!-- Header - Duplicated from index.html -->
+    <header class="bg-white site-header fixed-top border-bottom">
+        <div class="px-5 py-4 container-fluid d-flex justify-content-between align-items-center header-bar">
+            <div class="d-flex align-items-center left-cluster">
+                <div class="logo pe-5 d-flex">
+                    <a href="index" class="d-inline-flex align-items-center">
+                        <img class="site-logo d-none d-lg-block" src="../assets/images/logo.png" alt="HKJC Logo">
+                        <img class="site-logo d-block d-lg-none" src="../assets/images/logo-mobile.png" alt="HKJC Logo">
+                    </a>
+                </div>
+                <nav class="main-nav d-none d-lg-flex align-items-center" aria-label="Primary">
+                    <ul class="nav mb-0">
+                        <li class="nav-item first-item-wrapper">
+                            <div class="border-start border-end px-3 me-2">
+                              <a class="nav-link px-2 fw-bold" href="index">主頁</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="index#tipping" target="_top">揀馬世一</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racing-academy">馬上研究所</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="discover-highlight">馬上發現精選</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racecourse-experience">馬場精彩活動</a></li>
+                        <li class="nav-item button px-3 position-relative">
+                            <a class="nav-link px-3 fw-normal" href="javascript:void(0)" id="downloadDropdownBtn">下載馬會投注三合一</a>
+                            <div id="downloadDropdown" class="text-center position-absolute start-0 end-0 bg-white shadow-lg rounded-3 px-4 pt-4 pb-3" style="display:none; top:100%; margin-top:15px;">
+                                <img src="../assets/images/3in1app-QRCode.png" class="img-fluid" alt="下載馬會投注三合一">
+                                <small>掃描二維碼下載應用程式</small>
+                            </div>
+                        </li>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var btn = document.getElementById("downloadDropdownBtn");
+                                var dropdown = document.getElementById("downloadDropdown");
+                                btn.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                                });
+                                document.addEventListener("click", function (e) {
+                                    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                                        dropdown.style.display = "none";
+                                    }
+                                });
+                            });
+                        </script>
+                    </ul>
+                </nav>
+            </div>
+            <div class="d-flex align-items-center">
+                <!-- Desktop language switcher -->
+                <div class="lang d-none d-lg-flex align-items-center desktop-lang dropdown">
+                    <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../assets/images/icon_lang.svg">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                        <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+                        <li><a class="dropdown-item" href="../en/index">English</a></li>
+                    </ul>
+                </div>
+                <!-- Mobile cluster: language + hamburger -->
+                <div class="d-lg-none d-flex align-items-center justify-content-end mobile-controls ms-3">
+                    <button class="navbar-toggler p-0 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation" id="mobileNavToggle">
+                        <svg class="hamburger-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg class="close-icon d-none" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+              </div>
+          </div>    
+        </div>
+        <div class="collapse mobile-nav-wrapper border-bottom" id="mobileNav">
+            <div class="lang d-flex d-lg-none align-items-center mobile-lang dropdown">
+                <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../assets/images/icon_lang.svg">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                    <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+                    <li><a class="dropdown-item" href="../en/index">English</a></li>
+                </ul>
+            </div>
+            <div class="container-fiuld p-5 border-top">
+                <nav aria-label="Mobile Primary">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link px-2" href="index">主頁</a></li>
+                        <li class="nav-item"><a class="nav-link px-2" href="index#tipping" target="_top">揀馬世一</a></li>
+                        <li class="nav-item"><a class="nav-link px-2" href="racing-academy">馬上研究所</a></li>
+                        <li class="nav-item"><a class="nav-link px-2" href="discover-highlight">馬上發現精選</a></li>
+                        <li class="nav-item"><a class="nav-link px-2" href="racecourse-experience">馬場精彩活動</a></li>
+                        <li class="nav-item button text-center"><a class="nav-link px-2 py-3" href="https://bit.ly/44xVMGR">下載馬會投注三合一</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content discover-highlight-page">
+        <!-- Page Title Section -->
+        <section class="page-header-section">
+            <div class="container d-flex  justify-content-between align-items-center">
+                <h1 class="section-title">「馬上發現」精選</h1>
+                <!-- Filter Controls Section -->
+                <div class="filter-controls-section">
+                    <div class="container">
+                      <div class="filter-controls-wrapper" style="position: relative;">
+                            <!-- Sort/Filter Button -->
+                        <button class="sort-filter-btn" id="sortFilterBtn">
+                                <i class="fa-solid fa-sliders"></i>
+                          </button>
+
+                          <!-- Sort/Filter Popup Modal - Positioned here -->
+                          <div class="sort-filter-modal" id="sortFilterModal">
+                              <div class="sort-filter-content">
+                                  <div class="sort-section">
+                                      <h3 class="option-title">排序</h3>
+                                      <button class="option-btn sort-option active" data-sort="newest">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">最新</span>
+                                      </button>
+                                      <button class="option-btn sort-option" data-sort="most-view">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">最高瀏覽</span>
+                                      </button>
+                                      <!--button class="option-btn sort-option" data-sort="title-a-z">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">Title: A - Z</span>
+                                      </button-->
+                                  </div>
+
+                                  <div class="filter-section">
+                                      <h3 class="option-title">篩選</h3>
+                                      <button class="option-btn filter-option active" data-filter="all">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">所有類別</span>
+                                      </button>
+                                      <button class="option-btn filter-option" data-filter="articles">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">文章</span>
+                                      </button>
+                                      <button class="option-btn filter-option" data-filter="videos">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">影片</span>
+                                      </button>
+                                      <!--button class="option-btn filter-option" data-filter="events">
+                                          <i class="fa-solid fa-check check-icon"></i>
+                                          <span class="option-label">活動</span>
+                                      </button-->
+                                  </div>
+
+                                  <div class="modal-actions">
+                                      <button class="action-btn reset-btn" id="resetBtn">重設</button>
+                                      <button class="action-btn show-result-btn" id="showResultBtn">顯示結果</button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        
+
+        <!-- Posts Grid Section -->
+        <section class="posts-grid-section">
+            <div class="container">
+                <div class="posts-grid" id="postsGrid">
+                    <!-- Posts will be generated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <section id="footer" class="px-5">
+        <div class="container text-left">
+            <p class="footer-text mb-1">最後更新日期 25/11/2025<br>
+                <a href="https://sh.hkjc.com/d/00o /share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">按此</a>參閱有關命中率及分數計算方法
+            </p>
+            <p class="footer-text">*所有資料只供參考，並不代表香港賽馬會的立場，亦不構成任何建議。</p>
+            <p class="footer-text">^「一按投注」功能只適用於已登入投注戶口之用戶。</p>
+            <p class="footer-text"><a href="https://www.hkjc.com/responsible-gambling/ch/index">博彩要有節制</a></p>
+            <ul class="footer-list">
+                <li class="footer-list">未滿十八歲人士不得投注或進入可投注的地方。</li>
+                <li class="footer-list">向非法或海外莊家下注，即屬違法，且可被判監禁。</li>
+                <li class="footer-list">切勿沉迷賭博，如需尋求輔導協助，可致電平和基金熱線1834 633。</li>
+            </ul>                              
+      </div>
+    </section>
+
+    <!-- Single Video Popup Initialization -->
+    <script>
+        // Initialize single video popup and keep a compatible adapter
+        var singleVideoPop = new SingleVideoPopup();
+        window.singleVideoPop = singleVideoPop; // Make it globally accessible
+        var videoPop = {
+            videoList: [],
+            open: function(i) {
+                var item = this.videoList && this.videoList[i];
+                if (item) {
+                    singleVideoPop.open(item);
+                    // Update URL with video parameter for shareable link
+                    if (history.pushState) {
+                        const url = new URL(window.location);
+                        url.searchParams.set('video', i);
+                        history.pushState({ video: i }, '', url);
+                    }
+                }
+            }
+        };
+        window.videoPop = videoPop; // Make it globally accessible
+        
+        function openPopup(i) { 
+            videoPop.open(i); 
+        }
+
+        // Check URL parameter on page load to auto-open video
+        function checkUrlForVideo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoIndex = urlParams.get('video');
+            if (videoIndex !== null) {
+                const index = parseInt(videoIndex, 10);
+                if (!isNaN(index) && index >= 0) {
+                    // This is called after renderPosts() completes, so videoList should be ready
+                    // Use a small delay to ensure DOM is ready
+                    setTimeout(() => {
+                        if (window.videoPop && window.videoPop.videoList && window.videoPop.videoList.length > index) {
+                            // Directly open without updating URL (URL already has the parameter)
+                            const item = window.videoPop.videoList[index];
+                            if (item && window.singleVideoPop) {
+                                window.singleVideoPop.open(item);
+                            }
+                        }
+                    }, 100);
+                }
+            }
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoIndex = urlParams.get('video');
+            if (videoIndex !== null) {
+                const index = parseInt(videoIndex, 10);
+                if (!isNaN(index) && index >= 0 && window.videoPop && window.videoPop.videoList && window.videoPop.videoList.length > index) {
+                    // Directly open without updating URL (handled by browser history)
+                    const item = window.videoPop.videoList[index];
+                    if (item && window.singleVideoPop) {
+                        window.singleVideoPop.open(item);
+                    }
+                }
+            } else {
+                // Close popup if video parameter is removed
+                if (window.singleVideoPop) {
+                    window.singleVideoPop.close();
+                }
+            }
+        });
+
+        // Listen for popup close event to update URL
+        window.addEventListener('singleVideoPopup:close', function() {
+            // Remove video parameter from URL when popup is closed
+            if (history.replaceState) {
+                const url = new URL(window.location);
+                url.searchParams.delete('video');
+                history.replaceState({}, '', url);
+            }
+        });
+    </script>
+
+    <script src="../assets/js/discover-highlight.js?v2"></script>
+</body>
+<script>
+    $(document).ready(function() {
+        // 獲取 footer 配置並更新頁面
+// 獲取 footer 配置並更新頁面
+async function loadFooter() {
+    try {
+        const footerConfig = await window.StrapiAPI.Footer.getConfig({
+            locale: window.StrapiAPI.getCurrentLocale()
+        });
+        
+        // 將 HTML 內容插入到 footer 元素中
+        const footerElement = document.getElementById('footer');
+        if (footerElement && footerConfig.htmlContent) {
+            footerElement.innerHTML = footerConfig.htmlContent;
+        }
+    } catch (error) {
+        console.error('Failed to load footer:', error);
+    }
+}
+
+// 在頁面加載時調用
+loadFooter();
+});
+</script>
+<!--script>
+    // 全域貼文資料，供 discover-highlight.js 使用
+    window.postsData = [
+            {
+                id: 1,
+                title: "馬上發現內容全面革新",
+                excerpt: "「馬上發現」今個馬季全面革新提供4款內容，滿足不同年資馬迷的需求",
+                thumbnail: "../assets/images/KOL_video_1.png",
+                videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250903/discoverpromovideo/eng/dei-content002_20250903_discoverpromovideo_eng_2500kbps.mp4",
+                category: "videos",
+                views: 2500,
+                date: "2024-11-05"
+            },
+            {
+                id: 2,
+                title: "評馬人揀選今季最令人期待的6匹超新星！",
+                excerpt: "上個馬季出現咗多匹潛藏豐厚嘅新星，到底一眾評馬人今季最睇好邊幾匹超新星可以扶搖直上，躋身頂班甚至接棒呢？即刻睇片啦！",
+                thumbnail: "../assets/images/KOL_video_2.png",
+                videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content006/2025/20250926/risingstar-commentator/chi/dei-content006_20250926_risingstar-commentator_chi_2500kbps.mp4",
+                category: "videos",
+                views: 3200,
+                date: "2024-11-05"
+            },
+            {
+                id: 3,
+                title: "馬迷嚴選八屆冠軍騎師潘頓　三場最精彩策騎！",
+                excerpt: "「馬上發現」早前蒐集馬迷意見，從馬迷的留言中揀選了一些潘頓的精彩發揮畫面重溫。",
+                thumbnail: "../assets/images/KOL_video_3.jpg",
+                videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content005/2025/20250702/zacpurton-fanscm/chi/dei-content005_20250702_zacpurton-fanscm_chi_2500kbps.mp4",
+                category: "videos",
+                views: 1800,
+                date: "2024-11-05"
+            },
+            //{
+            //    id: 4,
+            //    title: "Article testing",
+            //    excerpt: "Lorem Ipsum is simply dummy text of...",
+            //    thumbnail: "../assets/images/KOL_video_3.jpg",
+            //    urlLink: "genso.html",
+            //    category: "articles",
+            //    views: 1800,
+            //    date: "2024-11-02"
+            //},
+            //{
+            //    id: 5,
+            //    title: "Event testing",
+            //    excerpt: "Lorem Ipsum is simply dummy text of...",
+            //    thumbnail: "../assets/images/KOL_video_3.jpg",
+            //    urlLink: "genso.html",
+            //    category: "events",
+            //    views: 1800,
+            //    date: "2024-11-01"
+            //},
+    ];
+</script-->
+</html>

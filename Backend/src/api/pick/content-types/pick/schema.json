@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "picks",
+  "info": {
+    "singularName": "pick",
+    "pluralName": "picks",
+    "displayName": "Pick",
+    "description": "Expert picks and selections"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "raceEn": {
+      "type": "string"
+    },
+    "raceTc": {
+      "type": "string"
+    },
+    "typeEn": {
+      "type": "string"
+    },
+    "typeTc": {
+      "type": "string"
+    },
+    "metaEn": {
+      "type": "text"
+    },
+    "metaTc": {
+      "type": "text"
+    },
+    "listEn": {
+      "type": "text"
+    },
+    "listTc": {
+      "type": "text"
+    },
+    "betLink": {
+      "type": "string"
+    },
+    "sort": {
+      "type": "integer",
+      "default": 0
+    },
+    "hasPublished": {
+      "type": "boolean",
+      "default": true
+    },
+    "expert": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::expert.expert",
+      "inversedBy": "picks"
+    }
+  }
+}
+

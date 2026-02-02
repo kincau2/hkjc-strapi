@@ -1,0 +1,111 @@
+{
+  "kind": "collectionType",
+  "collectionName": "racecourse_experiences",
+  "info": {
+    "singularName": "racecourse-experience",
+    "pluralName": "racecourse-experiences",
+    "displayName": "馬場精彩活動",
+    "description": "馬場精彩活動文章"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titleEn": {
+      "type": "string"
+    },
+    "titleTc": {
+      "type": "string"
+    },
+    "excerptEn": {
+      "type": "text"
+    },
+    "excerptTc": {
+      "type": "text"
+    },
+    "thumbnailTc": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "thumbnailEn": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contentImgTc": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contentImgEn": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "videos",
+        "articles",
+        "events"
+      ]
+    },
+    "videoLinkEn": {
+      "type": "string"
+    },
+    "videoLinkTc": {
+      "type": "string"
+    },
+    "urlLinkEn": {
+      "type": "string"
+    },
+    "urlLinkTc": {
+      "type": "string"
+    },
+    "contentEn": {
+      "type": "richtext"
+    },
+    "contentTc": {
+      "type": "richtext"
+    },
+    "views": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInRecommendation": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titleTc"
+    }
+  }
+}
