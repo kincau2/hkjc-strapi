@@ -291,7 +291,10 @@
                                     <div class="type mb-2">${p.type}</div>
                                     <div class="d-flex flex-row justify-content-between flex-nowrap align-items-end w-100">
                                         <div class="list">
-                                            ${p.list.map(i => `<p>${i}</p>`).join('')}
+                                            ${p.list.map(item => {
+                                                const text = typeof item === 'string' ? item : item.text;
+                                                return `<p>${text}</p>`;
+                                            }).join('')}
                                         </div>
                                         <div class="">
                                             <button class="cta" type="button" onclick="window.location.href='${p.betLink}'">${locale === 'tc' ? "立即投注" : "Bet Now"}</button>

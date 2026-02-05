@@ -1,8 +1,16 @@
+import CsvImportButton from './extensions/components/CsvImportButton';
+
 export default {
   config: {
     locales: [],
   },
   bootstrap(app) {
+    // Inject CSV import button into Content Manager list view using Strapi v5 API
+    app.getPlugin('content-manager').injectComponent('listView', 'actions', {
+      name: 'CsvImportButton',
+      Component: CsvImportButton,
+    });
+    
     // 尝试通过 API 移除 Home 菜单项
     try {
       // 获取菜单 API

@@ -8,7 +8,7 @@
     "description": "Expert picks and selections"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -30,11 +30,15 @@
     "metaTc": {
       "type": "text"
     },
-    "listEn": {
-      "type": "text"
+    "listEnItems": {
+      "type": "component",
+      "component": "pick.list-item",
+      "repeatable": true
     },
-    "listTc": {
-      "type": "text"
+    "listTcItems": {
+      "type": "component",
+      "component": "pick.list-item",
+      "repeatable": true
     },
     "betLink": {
       "type": "string"
@@ -42,10 +46,6 @@
     "sort": {
       "type": "integer",
       "default": 0
-    },
-    "hasPublished": {
-      "type": "boolean",
-      "default": true
     },
     "expert": {
       "type": "relation",
@@ -55,4 +55,3 @@
     }
   }
 }
-

@@ -37,14 +37,12 @@
       "type": "integer",
       "default": 0
     },
-
     "titleEn": {
       "type": "string"
     },
     "titleTc": {
       "type": "string"
     },
-
     "quoteEn": {
       "type": "text"
     },

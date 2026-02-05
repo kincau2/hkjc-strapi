@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pick_list_items",
+  "info": {
+    "displayName": "List Item",
+    "description": "A single item in a pick list with checkbox"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "banker": {
+      "type": "boolean",
+      "default": false
+    },
+    "sel": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

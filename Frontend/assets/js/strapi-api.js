@@ -11,6 +11,38 @@
     // const STRAPI_BASE_URL =  'http://localhost:1337' //'http://47.83.120.101:1337' || 'http://localhost:1337';
     const API_BASE = `${STRAPI_BASE_URL}/api`;
 
+    // Preview Mode Detection
+    function isPreviewMode() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('preview') === 'true';
+    }
+
+    function getPreviewStatus() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('status') || 'draft';
+    }
+
+    // Show preview banner if in preview mode (wait for DOM to be ready)
+    if (isPreviewMode()) {
+        function showPreviewBanner() {
+            if (document.body) {
+                const banner = document.createElement('div');
+                banner.id = 'preview-banner';
+                banner.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#ffc107;color:#000;padding:10px;text-align:center;z-index:9999;font-weight:bold;';
+                banner.innerHTML = `📝 PREVIEW MODE - Viewing ${getPreviewStatus().toUpperCase()} Content <button onclick="this.parentElement.remove()" style="margin-left:20px;padding:5px 10px;cursor:pointer;">✕ Close</button>`;
+                document.body.insertBefore(banner, document.body.firstChild);
+                document.body.style.paddingTop = '50px';
+            }
+        }
+        
+        // Run when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', showPreviewBanner);
+        } else {
+            showPreviewBanner();
+        }
+    }
+
     // 检测当前语言环境
     function getCurrentLocale() {
         const path = window.location.pathname;
@@ -71,6 +103,16 @@
         try {
             const queryParams = new URLSearchParams();
             
+            // Add publicationState parameter for preview mode (Strapi 5 uses 'publicationState' not 'status')
+            const previewMode = isPreviewMode();
+            const previewStatus = getPreviewStatus();
+            console.log('[DEBUG] Preview Mode:', previewMode, 'Status:', previewStatus);
+            
+            if (previewMode && previewStatus === 'draft') {
+                queryParams.append('publicationState', 'preview');
+                console.log('[DEBUG] Added publicationState=preview to query params');
+            }
+            
             // 添加语言参数（只有 banner 使用 language 字段过滤）
             if (!params.locale) {
                 params.locale = getCurrentLocale();
@@ -95,9 +137,22 @@
             }
             
             if (params.populate) {
-                // 处理 populate 参数（支持字符串或对象格式）
+                // 处理 populate 参数（支持字符串、数组或对象格式）
                 if (typeof params.populate === 'string') {
-                    queryParams.append('populate', params.populate);
+                    if (params.populate === 'deep') {
+                        // Deep populate - try simpler approach for Strapi 5
+                        queryParams.append('populate[avatar]', '*');
+                        queryParams.append('populate[picks]', '*');
+                    } else if (params.populate === '*') {
+                        queryParams.append('populate', '*');
+                    } else {
+                        queryParams.append('populate', params.populate);
+                    }
+                } else if (Array.isArray(params.populate)) {
+                    // Array format: ['field1', 'relation.field2']
+                    params.populate.forEach(field => {
+                        queryParams.append('populate', field);
+                    });
                 } else if (typeof params.populate === 'object') {
                     // Strapi 5.x 对象格式：populate[field]=*
                     Object.keys(params.populate).forEach(key => {
@@ -114,6 +169,7 @@
             }
 
             const url = `${API_BASE}${endpoint}?${queryParams.toString()}`;
+            console.log('[DEBUG] API Request URL:', url);
             
             const response = await fetch(url);
             
@@ -185,8 +241,10 @@
             const params = {
                 locale: options.locale || getCurrentLocale(),
                 sort: 'rank:asc',
-                populate:  '*'
+                populate: ['avatar', 'picks.listEnItems', 'picks.listTcItems']  // Use array notation for deep populate
             };
+            
+            // Note: publicationState is handled automatically by apiRequest() for preview mode
             
             // if (options.topThreeOnly) {
             //     params.filters = {
@@ -201,12 +259,58 @@
                 const locale = params.locale || getCurrentLocale();
                 // console.log('profileLink', attrs);
                 attrs.picks = attrs.picks || []
+                
+                // Sort picks by race number (extract number from "Race1", "Race2", etc.)
+                attrs.picks = attrs.picks.sort((a, b) => {
+                    const getRaceNumber = (pick) => {
+                        const raceStr = pick.raceEn || '';
+                        const match = raceStr.match(/\d+/); // Extract first number
+                        return match ? parseInt(match[0], 10) : 0;
+                    };
+                    return getRaceNumber(a) - getRaceNumber(b);
+                });
+                
                 attrs.picks = attrs.picks.map(e=>{
                     console.log('e----2', e)
+                    
+                    // Helper function: Convert line breaks to <br> tags for meta fields
+                    const convertLineBreaksToBr = (text) => {
+                        if (!text) return '';
+                        return text.replace(/\n/g, '<br>');
+                    };
+                    
+                    // Helper function: Convert component items to formatted list with badges
+                    const convertComponentsToList = (components, locale) => {
+                        if (!components || !Array.isArray(components) || components.length === 0) {
+                            return [];
+                        }
+                        
+                        return components.map(item => {
+                            const bankerLabel = locale === 'tc' ? '膽' : 'BANKER';
+                            const selLabel = locale === 'tc' ? '腳' : 'SEL';
+                            let displayText = item.text || '';
+                            
+                            // Add badge HTML if banker or sel is true
+                            if (item.banker) {
+                                displayText = `<span class="badge text-bg-primary me-1">${bankerLabel}</span>${displayText}`;
+                            }
+                            if (item.sel) {
+                                displayText = `<span class="badge text-bg-primary me-1">${selLabel}</span>${displayText}`;
+                            }
+                            
+                            return {
+                                text: displayText
+                            };
+                        });
+                    };
+                    
                     return {
                         race: locale === 'tc' ? e.raceTc : e.raceEn,
-                        meta: locale === 'tc' ? e.metaTc : e.metaEn,
-                        list: locale === 'tc' ? e.listTc ? e.listTc.split(',').map(item => item.trim().replace(/'/g, '')) : [] : e.listEn ? e.listEn.split(',').map(item => item.trim().replace(/'/g, '')) : [],
+                        meta: convertLineBreaksToBr(locale === 'tc' ? e.metaTc : e.metaEn),
+                        list: convertComponentsToList(
+                            locale === 'tc' ? e.listTcItems : e.listEnItems,
+                            locale
+                        ),
                         betLink: e.betLink,
                         type: (locale === 'tc' ? e.typeTc : e.typeEn) || '',
                         // origin: e,

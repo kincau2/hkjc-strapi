@@ -24,25 +24,33 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "desktopImageEn": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "mobileImageTc": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "mobileImageEn": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "linkUrlTc": {
       "type": "string",
@@ -54,8 +62,11 @@
     },
     "linkTarget": {
       "type": "enumeration",
-      "enum": ["_self", "_blank"],
-      "default": "_blank"
+      "default": "_blank",
+      "enum": [
+        "_self",
+        "_blank"
+      ]
     },
     "hasPublished": {
       "type": "boolean",
@@ -68,4 +79,3 @@
     }
   }
 }
-

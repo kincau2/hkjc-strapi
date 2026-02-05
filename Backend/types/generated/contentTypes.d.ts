@@ -632,7 +632,7 @@ export interface ApiPickPick extends Struct.CollectionTypeSchema {
     singularName: 'pick';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     betLink: Schema.Attribute.String;
@@ -640,9 +640,8 @@ export interface ApiPickPick extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     expert: Schema.Attribute.Relation<'manyToOne', 'api::expert.expert'>;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    listEn: Schema.Attribute.Text;
-    listTc: Schema.Attribute.Text;
+    listEnItems: Schema.Attribute.Component<'pick.list-item', true>;
+    listTcItems: Schema.Attribute.Component<'pick.list-item', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::pick.pick'> &
       Schema.Attribute.Private;
