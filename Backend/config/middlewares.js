@@ -8,6 +8,7 @@ module.exports = ({ env }) => [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
+          'script-src': ["'self'", "'unsafe-inline'", 'https://code.jquery.com', 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com'],
           'img-src': [
             "'self'",
             'data:',
@@ -45,6 +46,10 @@ module.exports = ({ env }) => [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  {
+    name: 'global::serve-frontend',
+    config: {},
+  },
   // {
   //   name: 'global::redirect-after-login',
   // },

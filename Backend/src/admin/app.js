@@ -11,6 +11,137 @@ export default {
       Component: CsvImportButton,
     });
     
+    // Add Preview Site link using custom injection
+    const addPreviewLink = () => {
+      if (typeof document !== 'undefined') {
+        const checkAndInject = () => {
+          // Find the main navigation menu
+          const nav = document.querySelector('nav[aria-label="Main"]') || 
+                     document.querySelector('nav') ||
+                     document.querySelector('[class*="MainNav"]') ||
+                     document.querySelector('aside');
+          
+          if (!nav) return;
+          
+          // Check if already injected
+          if (document.getElementById('preview-site-link')) return;
+          
+          // Create SVG icon (magnifying glass/search icon)
+          const svgIcon = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#8e8ea9" aria-hidden="true" focusable="false">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+            </svg>
+          `;
+          
+          // Create the menu item matching Strapi's exact structure: <div><span><a>
+          const previewDiv = document.createElement('div');
+          
+          const previewWrapper = document.createElement('span');
+          previewWrapper.setAttribute('data-state', 'closed');
+          
+          const previewItem = document.createElement('a');
+          previewItem.id = 'preview-site-link';
+          previewItem.href = 'http://localhost:1337/tc/index.html?preview=true';
+          previewItem.target = '_blank';
+          previewItem.rel = 'noopener noreferrer';
+          previewItem.className = 'sc-knIDji Cjtso'; // Match other menu items' classes
+          previewItem.setAttribute('aria-label', 'Preview Site');
+          
+          previewItem.innerHTML = `
+            ${svgIcon}
+            <span class="sc-lgpSej gSraUJ">Preview Site</span>
+          `;
+          
+          previewWrapper.appendChild(previewItem);
+          previewDiv.appendChild(previewWrapper);
+          
+          // Add manual tooltip implementation since dynamic elements miss Strapi's tooltip initialization
+          const tooltip = document.createElement('div');
+          tooltip.style.cssText = `
+            position: absolute;
+            background: #212134;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.2s;
+            left: 60px;
+            transform: translateY(-50%);
+          `;
+          tooltip.textContent = 'Preview Site';
+          
+          previewItem.addEventListener('mouseenter', (e) => {
+            const rect = previewItem.getBoundingClientRect();
+            tooltip.style.top = rect.top + rect.height / 2 + 'px';
+            tooltip.style.opacity = '1';
+            document.body.appendChild(tooltip);
+          });
+          
+          previewItem.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+              if (tooltip.parentNode) {
+                tooltip.parentNode.removeChild(tooltip);
+              }
+            }, 200);
+          });
+          
+          // Find Content Manager link to insert after
+          const contentManagerLink = Array.from(nav.querySelectorAll('a'))
+            .find(a => a.href?.includes('content-manager'));
+          
+          if (contentManagerLink) {
+            // Find the parent <li> element (not just parentElement which might be <div>)
+            const parentLi = contentManagerLink.closest('li');
+            
+            if (parentLi && parentLi.parentElement) {
+              // Insert the new <li> after the Content Manager's <li>
+              const newItem = document.createElement('li');
+              newItem.className = parentLi.className; // Match the same classes
+              newItem.appendChild(previewDiv);
+              parentLi.parentElement.insertBefore(newItem, parentLi.nextSibling);
+            }
+          } else {
+            // Fallback: append to nav
+            const ul = nav.querySelector('ul');
+            if (ul) {
+              const newItem = document.createElement('li');
+              newItem.style.cssText = 'list-style: none; margin: 0; padding: 0;';
+              newItem.appendChild(previewDiv);
+              ul.appendChild(newItem);
+            }
+          }
+        };
+        
+        // Initial injection
+        setTimeout(checkAndInject, 500);
+        
+        // Re-inject on navigation changes
+        setInterval(checkAndInject, 2000);
+        
+        // Watch for DOM changes
+        const observer = new MutationObserver(checkAndInject);
+        if (document.body) {
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+          });
+        }
+      }
+    };
+    
+    // Initialize preview link injection
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', addPreviewLink);
+    } else {
+      addPreviewLink();
+    }
+    
     // 尝试通过 API 移除 Home 菜单项
     try {
       // 获取菜单 API

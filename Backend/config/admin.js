@@ -52,7 +52,7 @@ module.exports = ({ env }) => ({
         if (!pathname) return null;
         
         // Build complete preview URL
-        const clientUrl = env('CLIENT_URL', 'http://localhost:5500');
+        const clientUrl = env('CLIENT_URL', 'http://localhost:1337');
         const previewSecret = env('PREVIEW_SECRET', 'preview-secret-key');
         
         // Add status parameter to distinguish draft vs published
