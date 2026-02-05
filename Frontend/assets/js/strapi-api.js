@@ -11,15 +11,15 @@
     // const STRAPI_BASE_URL =  'http://localhost:1337' //'http://47.83.120.101:1337' || 'http://localhost:1337';
     const API_BASE = `${STRAPI_BASE_URL}/api`;
 
-    // Preview Mode Detection
+    // Preview Mode Detection (cached URLSearchParams)
+    const _urlParams = new URLSearchParams(window.location.search);
+    
     function isPreviewMode() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('preview') === 'true';
+        return _urlParams.get('preview') === 'true';
     }
 
     function getPreviewStatus() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('status') || 'draft';
+        return _urlParams.get('status') || 'draft';
     }
 
     // Show preview banner if in preview mode (wait for DOM to be ready)
@@ -104,13 +104,8 @@
             const queryParams = new URLSearchParams();
             
             // Add publicationState parameter for preview mode (Strapi 5 uses 'publicationState' not 'status')
-            const previewMode = isPreviewMode();
-            const previewStatus = getPreviewStatus();
-            console.log('[DEBUG] Preview Mode:', previewMode, 'Status:', previewStatus);
-            
-            if (previewMode && previewStatus === 'draft') {
+            if (isPreviewMode() && getPreviewStatus() === 'draft') {
                 queryParams.append('publicationState', 'preview');
-                console.log('[DEBUG] Added publicationState=preview to query params');
             }
             
             // 添加语言参数（只有 banner 使用 language 字段过滤）
@@ -169,8 +164,6 @@
             }
 
             const url = `${API_BASE}${endpoint}?${queryParams.toString()}`;
-            console.log('[DEBUG] API Request URL:', url);
-            
             const response = await fetch(url);
             
             if (!response.ok) {
@@ -208,7 +201,6 @@
             };
             let local = options.locale || getCurrentLocale();
             const data = await apiRequest('/banners', params);
-            console.log('local', local)
             return data.map(item => {
                 const attrs = item.attributes || item;
                 attrs.desktopImage = local === 'tc' ? attrs.desktopImageTc : attrs.desktopImageEn;
@@ -253,7 +245,6 @@
             // }
             
             const data = await apiRequest('/experts', params);
-            console.log('experts-data', data)
             return data.map(item => {
                 const attrs = item.attributes || item;
                 const locale = params.locale || getCurrentLocale();
@@ -265,13 +256,18 @@
                     const getRaceNumber = (pick) => {
                         const raceStr = pick.raceEn || '';
                         const match = raceStr.match(/\d+/); // Extract first number
-                        return match ? parseInt(match[0], 10) : 0;
+                        return match ? parseInt(match[0], 10) : 999; // Use high number for non-matching
                     };
-                    return getRaceNumber(a) - getRaceNumber(b);
+                    const numA = getRaceNumber(a);
+                    const numB = getRaceNumber(b);
+                    // If both are 999 (non-matching), maintain original order via sort field
+                    if (numA === 999 && numB === 999) {
+                        return (a.sort || 0) - (b.sort || 0);
+                    }
+                    return numA - numB;
                 });
                 
                 attrs.picks = attrs.picks.map(e=>{
-                    console.log('e----2', e)
                     
                     // Helper function: Convert line breaks to <br> tags for meta fields
                     const convertLineBreaksToBr = (text) => {
@@ -498,11 +494,9 @@
                 };
             }
             
-            console.log('params', params, options)
             const data = await apiRequest(url, params);
             
             return data.map(item => {
-                console.log('item-----articles', item);
                 const attrs = item.attributes || item;
                 const locale = params.locale || getCurrentLocale();
                 attrs.thumbnail = locale === 'tc' ? (attrs.thumbnailTc || attrs.thumbnail) : (attrs.thumbnailEn || attrs.thumbnail);
@@ -600,7 +594,6 @@
             const item = Array.isArray(data) ? data[0] : data;
             const attrs = item.attributes || item;
             const locale = params.locale || getCurrentLocale();
-            console.log('data----footer-config',locale, attrs)
             // 根据语言返回对应的 HTML 内容
             const htmlContent = locale === 'tc' 
                 ? (attrs.contentTc || attrs.contentTc || '') 

@@ -27,7 +27,6 @@
                 locale: window.StrapiAPI.getCurrentLocale(),
                 activeOnly: true
             });
-            console.log('banners', banners);
             window.strapiData.banners = banners;
             renderBanners(banners);
         } catch (error) {
@@ -118,7 +117,6 @@
                 locale: window.StrapiAPI.getCurrentLocale(),
                 withPicks: true
             });
-            console.log('experts', experts);
             window.strapiData.experts = experts;
 
             // 构建 specialistsData 对象（用于现有代码兼容）
@@ -132,7 +130,7 @@
             });
             window.strapiData.specialistsData = specialistsData;
             window.specialistsData = specialistsData; // 兼容现有代码
-            console.log('window.StrapiAPI.getCurrentLocale()', window.StrapiAPI.getCurrentLocale())
+
             // 构建 picksData 数组（用于现有代码兼容）
             const picksData = experts
                 .filter(expert => expert.picks && expert.picks.length > 0)
@@ -173,10 +171,8 @@
                 filterList[2] = expert;
             }
         });
-        console.log('topThree', filterList);
         $wrapper.empty();
         let list2 = filterList.concat(filterList).concat(filterList).concat(filterList);
-        console.log('topThree', list2);
         let locale = window.StrapiAPI.getCurrentLocale();
         list2.forEach(expert => {
             const avatar = expert.avatar || '../assets/images/KOL Image-2.png';
@@ -228,7 +224,6 @@
             let profileLink = $(this).data('link');
             let title = $(this).data('title');
             if (profileLink && title) {
-                console.log('click', profileLink, title);
                 // 使用獨立的 single-video-popup.js，不使用 slick，只有一個視頻
                 var singleVideoPopup = new SingleVideoPopup({
                     containerId: 'singleVideoPopupContainer'
@@ -240,9 +235,7 @@
         // onclick="window.singleVideoPopup.open({ link: ${expert.profileLink}, title: '${expert.name} - 賽日分析影片' }); return false;"
         // 重新初始化 Swiper（延迟以确保 DOM 更新完成）
         setTimeout(() => {
-            console.log('typeof Swiper----', typeof Swiper);
             if (typeof Swiper !== 'undefined') {
-                // 如果 Swiper 还未初始化，等待一下再初始化
                 setTimeout(() => {
                     
                     const specialistsSwiper = new Swiper('.specialists-swiper', {
@@ -254,17 +247,14 @@
                         watchSlidesProgress: true,
                         centeredSlides: true,
                     });
-                    console.log('typeof Swiper----2', $wrapper);
                     let picksSwiper = null;
 
                     function renderPicks(idx) {
-                        console.log('picksData-----renderPicks---1', idx);
                         // Expect picksData to be defined in the HTML file
                         if (typeof picksData === 'undefined') {
                             console.warn('picksData not defined');
                             return;
                         }
-                        console.log('picksData-----picksData', picksData);
                         let pIndex = 0
                         // 第一
                         if([0,3,6,9].includes(idx)){
@@ -277,7 +267,6 @@
                         if([2,5,8,11].includes(idx)){
                             pIndex = 1
                         }
-                        console.log('pindex',pIndex, picksData)
                         // 第二
                         // if([2,5,8,11].includes(idx))
                         // const spec = picksData[idx % picksData.length];
@@ -393,8 +382,9 @@
         // 如果 moreSpecialists swiper 已经初始化，需要更新它
         if (window.moreSpecialists && typeof window.moreSpecialists.update === 'function') {
             setTimeout(() => {
-                console.log('update moreSpecialists', window.specialistsData, typeof window.moreSpecialists.update);
-                window.moreSpecialists.update();
+                if (typeof window.moreSpecialists !== 'undefined' && typeof window.moreSpecialists.update === 'function') {
+                    window.moreSpecialists.update();
+                }
             }, 100);
         }
     }
@@ -578,14 +568,17 @@
                     scale: 0.9
                 });
 
-                gsap.set('#animation .animation-image-wrapper p', {
-                    xPercent: -50,
-                    yPercent: -50,
-                    x: 0,
-                    y: 0,
-                    opacity: 0,
-                    scale: 0.9
-                });
+                // Check if the target element exists before animating
+                if (document.querySelector('#animation .animation-image-wrapper p')) {
+                    gsap.set('#animation .animation-image-wrapper p', {
+                        xPercent: -50,
+                        yPercent: -50,
+                        x: 0,
+                        y: 0,
+                        opacity: 0,
+                        scale: 0.9
+                    });
+                }
 
                 cards.forEach((el, i) => {
                     gsap.set(el, {
@@ -732,12 +725,15 @@
                     duration: 0.6
                 }, 'text+=1.75');
 
-                tl.to('#animation .animation-image-wrapper p', {
-                    opacity: 1,
-                    scale: 1,
-                    ease: 'power2.out',
-                    duration: 0.6
-                }, 'text+=1.75');
+                // Only animate if the element exists
+                if (document.querySelector('#animation .animation-image-wrapper p')) {
+                    tl.to('#animation .animation-image-wrapper p', {
+                        opacity: 1,
+                        scale: 1,
+                        ease: 'power2.out',
+                        duration: 0.6
+                    }, 'text+=1.75');
+                }
 
                 tl.to('#animation .animation-button-wrapper button', {
                     ease: 'power2.out',
@@ -1417,8 +1413,6 @@
         // 获取已加载的 discover-highlight 文章
         // 需要从全局数据中获取，因为 loadArticles 可能被多次调用
         const articles = window.strapiData.discoverHighlightData || [];
-        console.log('articles-----discover-highlight', articles);
-        // const discoverArticles = articles.filter(article => article.section === 'discover-highlight');
         const discoverArticles = articles
 
         if (discoverArticles.length === 0) {
@@ -1463,7 +1457,6 @@
                     : (post.urlLink || post.articleLink || post.eventLink || fallbackLink);
                     onClickHandler = `window.location.href='${targetLink}'; return false;`;
             }
-            console.log('onClickHandler-----onClickHandler', onClickHandler);
             const slide = $(`
                 <div class="swiper-slide">
                     <div class="post">
@@ -1499,11 +1492,10 @@
     function renderRacecourseExperiencePosts() {
         const $swiperWrapper = $('.discover-posts-swiper-2 .swiper-wrapper');
         if (!$swiperWrapper.length) return;
-        console.log('racecourseArticles-----racecourseArticles---start')
+
         // 获取已加载的 racecourse-experience 文章
         const articles = window.strapiData.racecourseExperienceData || [];
         const racecourseArticles = articles;
-        console.log('racecourseArticles-----racecourseArticles---start')
         if (racecourseArticles.length === 0) {
             console.warn('No racecourse-experience articles found');
             return;
@@ -1511,8 +1503,6 @@
 
         // 清空现有内容
         $swiperWrapper.empty();
-        console.log('racecourseArticles-----racecourseArticles', racecourseArticles);
-        // 渲染文章卡片
         racecourseArticles.forEach(article => {
             const thumbnail = article.thumbnail || '../assets/images/KOL_video_4.png';
             const title = article.title || '';
@@ -1548,7 +1538,6 @@
                     : (post.urlLink || post.articleLink || post.eventLink || fallbackLink);
                     onClickHandler = `window.location.href='${targetLink}'; return false;`;
             }
-            console.log('racecourseArticles-----racecourseArticles-href', href);
             const slide = $(`
                 <div class="swiper-slide">
                     <div class="post">
@@ -1586,7 +1575,6 @@
      * 更新 Racing Academy 页面的数据
      */
     function updateRacingAcademyPage(articles) {
-        console.log('updateRacingAcademyPage-----articles', articles);
         // 转换为页面需要的格式
         const postsData = articles.map(article => ({
             id: article.id,
@@ -1601,7 +1589,6 @@
             views: article.views || 0,
             date: article.date || article.publishedAt
         }));
-        console.log('articles-----racing-academy', postsData);
         // 更新全局 postsData（racing-academy.js 会读取）
         window.RacingAcademyData = postsData;
 
@@ -1619,8 +1606,6 @@
      * 更新 Discover Highlight 页面的数据
      */
     function updateDiscoverHighlightPage(articles) {
-        console.log('articles-----discover-highlight', articles);
-        // 转换为页面需要的格式
         const postsData = articles.map(article => ({
             id: article.id,
             title: article.title,
@@ -1635,10 +1620,7 @@
             views: article.views || 0,
             date: article.date || article.publishedAt
         }));
-        console.log('postsData-----discover-highlight---1', postsData);
-        // 更新全局 postsData（discover-highlight.js 会读取）
-        window.postsData = postsData;
-
+        
         // 触发自定义事件，让页面 JS 监听并重新渲染
         $(document).trigger('postsDataUpdated');
 
@@ -1652,7 +1634,6 @@
      * 更新 Racecourse Experience 页面的数据
      */
     function updateRacecourseExperiencePage(articles) {
-        console.log('articles-----racecourse-experience', articles);
         // 转换为页面需要的格式
         const postsData = articles.map(article => ({
             id: article.id,
@@ -1702,7 +1683,6 @@
                     opt.section = 'racecourse-experience';
                 }
             }
-            console.log('opt-----opt', opt);
             const articles = await window.StrapiAPI.Article.getAll(opt);
 
             window.strapiData.articles = articles;
@@ -1722,7 +1702,6 @@
             }));
             if (section === 'isFeatured') {
                 if (page === 'index') {
-                    console.log('postsData-----index', postsData);
                     window.strapiData.indexData = postsData;
                 } else if (page === 'discover-highlight') {
                     window.strapiData.discoverHighlightData = articles;
@@ -1735,14 +1714,10 @@
                 }
             } else {
                 if (section === 'discover-highlight') {
-                    console.log('section-----discover-highlight----1', section);
                     updateDiscoverHighlightPage(articles);
                 } else if (section === 'racing-academy') {
-                    console.log('section-----racing-academy', section);
                     updateRacingAcademyPage(articles);
                 } else if (section === 'racecourse-experience') {
-                    console.log('section-----racecourse-experience', section);
-                    updateRacecourseExperiencePage(articles);
                 }
             }
 
@@ -1783,14 +1758,11 @@
                     loadArticles('isFeatured', 'discover-highlight'), // 精选
                     loadArticles('isFeatured', 'racecourse-experience') // 活动
                 ]);
-                console.log('window.strapiData.articles', window.strapiData.articles);
                 // 渲染首页动画卡片
                 renderAnimationCards();
             }
-            console.log('path-----path', path);
             // Discover Highlight 页面：加载文章
             if (path.indexOf('discover-highlight') !== -1) {
-                console.log('path-----discover-highlight', path);
                 await loadArticles('discover-highlight', 'discover-highlight');
             }
 
@@ -1801,7 +1773,6 @@
 
             // Racecourse Experience 页面：加载文章
             if (path.indexOf('racecourse-experience') !== -1) {
-                console.log('path-----racecourse-experience', path);
                 await loadArticles('racecourse-experience', 'racecourse-experience');
             }
 

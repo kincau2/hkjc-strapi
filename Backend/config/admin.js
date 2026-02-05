@@ -62,7 +62,9 @@ module.exports = ({ env }) => ({
           status: status || 'draft'
         });
         
-        return `${clientUrl}${pathname}&${urlParams.toString()}`;
+        // Use proper separator: & if pathname already has ?, otherwise use ?
+        const separator = pathname.includes('?') ? '&' : '?';
+        return `${clientUrl}${pathname}${separator}${urlParams.toString()}`;
       }
     }
   }
