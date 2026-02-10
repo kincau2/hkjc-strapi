@@ -871,6 +871,8 @@ section#specialists {
     height: 100%;
     width: 457px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .pick-card .race-number {
@@ -895,6 +897,7 @@ section#specialists {
     line-height: 26px;
     font-weight:bold;
     color:#022169;
+    height:100%;
 }
 
 .pick-card .cta {

@@ -278,7 +278,7 @@
                                     <div class="meta">${p.meta}</div>
                                     <hr/>
                                     <div class="type mb-2">${p.type}</div>
-                                    <div class="d-flex flex-row justify-content-between flex-nowrap align-items-end w-100">
+                                    <div class="d-flex flex-row justify-content-between flex-nowrap align-items-end w-100 flex-grow-1">
                                         <div class="list">
                                             ${p.list.map(item => {
                                                 const text = typeof item === 'string' ? item : item.text;
