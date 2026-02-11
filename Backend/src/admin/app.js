@@ -41,7 +41,7 @@ export default {
           
           const previewItem = document.createElement('a');
           previewItem.id = 'preview-site-link';
-          previewItem.href = 'http://localhost:1337/tc/index.html?preview=true';
+          previewItem.href = 'https://hkjc-event.org/tc/index.html?preview=true';
           previewItem.target = '_blank';
           previewItem.rel = 'noopener noreferrer';
           previewItem.className = 'sc-knIDji Cjtso'; // Match other menu items' classes
