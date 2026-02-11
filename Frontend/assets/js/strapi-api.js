@@ -5,10 +5,9 @@
 
 (function() {
     'use strict';
-    const ImageBaseUrl = 'http://localhost:1337'; //'https://api.hkjc-event.org'//'http://47.83.120.101:1337';
+    const ImageBaseUrl = 'https://strapi.hkjc-event.org';
     // 配置
-    const STRAPI_BASE_URL = 'http://localhost:1337'; //'https://api.hkjc-event.org' //'http://47.83.120.101:1337' || 'http://localhost:1337';
-    // const STRAPI_BASE_URL =  'http://localhost:1337' //'http://47.83.120.101:1337' || 'http://localhost:1337';
+    const STRAPI_BASE_URL = 'https://strapi.hkjc-event.org';
     const API_BASE = `${STRAPI_BASE_URL}/api`;
 
     // Preview Mode Detection (cached URLSearchParams)
@@ -251,19 +250,23 @@
                 // console.log('profileLink', attrs);
                 attrs.picks = attrs.picks || []
                 
-                // Sort picks by race number (extract number from "Race1", "Race2", etc.)
+                // Sort picks by race number (extract number from "Race1", "Race2", "第1場", etc.)
                 attrs.picks = attrs.picks.sort((a, b) => {
                     const getRaceNumber = (pick) => {
-                        const raceStr = pick.raceEn || '';
+                        // Try both English and Chinese race fields
+                        const raceStr = pick.raceEn || pick.raceTc || '';
                         const match = raceStr.match(/\d+/); // Extract first number
                         return match ? parseInt(match[0], 10) : 999; // Use high number for non-matching
                     };
+                    
+                    // Use sort field if both have it AND they're different
+                    if (a.sort != null && b.sort != null && a.sort !== b.sort) {
+                        return a.sort - b.sort;
+                    }
+                    
+                    // Otherwise, extract race number from race string
                     const numA = getRaceNumber(a);
                     const numB = getRaceNumber(b);
-                    // If both are 999 (non-matching), maintain original order via sort field
-                    if (numA === 999 && numB === 999) {
-                        return (a.sort || 0) - (b.sort || 0);
-                    }
                     return numA - numB;
                 });
                 

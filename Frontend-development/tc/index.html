@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>香港賽馬會</title>
+
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+    <!-- <link rel="stylesheet" href="assets/css/aos.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css"/>
+
+    <link rel="stylesheet" href="../assets/css/video-popup.css">
+
+    <link rel="stylesheet" href="../assets/css/single-video-popup.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!-- <script src="assets/js/aos.js"></script>
+
+    <script> AOS.init(); </script> -->
+
+    <script src="../assets/js/gsap.min.js"></script>
+
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/slick.min.js"></script>
+
+	<script src="../assets/js/video-popup.js"></script>
+
+	<script src="../assets/js/single-video-popup.js"></script>
+
+	
+
+	<!-- Strapi API Integration -->
+
+	<script>
+
+	    // 配置 Strapi API 地址
+
+	    window.STRAPI_BASE_URL = window.STRAPI_BASE_URL || 'http://localhost:1337';
+
+	</script>
+
+	<script src="../assets/js/strapi-api.js?v=20260127001"></script>
+
+	<script src="../assets/js/strapi-data-loader.js?v=20260127001"></script>
+
+	
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+            
+
+    <!-- Fix for iOS viewport height issue with browser UI -->
+
+    <script>
+
+        // Calculate and set actual viewport height as CSS custom property
+
+        function setViewportHeight() {
+
+            const vh = window.innerHeight * 0.01;
+
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+        }
+
+        
+
+        // Set on load
+
+        setViewportHeight();
+
+        
+
+        // Update on resize and orientation change
+
+        window.addEventListener('resize', setViewportHeight);
+
+        window.addEventListener('orientationchange', setViewportHeight);
+
+        
+
+    </script>
+
+
+
+</head>
+
+
+
+<body class="bg-white overflow-x-hidden">
+
+    <header class="bg-white site-header fixed-top border-bottom">
+
+        <div class="px-5 py-4 container-fluid d-flex justify-content-between align-items-center header-bar">
+
+            <div class="d-flex align-items-center left-cluster">
+
+                <div class="logo pe-5 d-flex">
+
+                    <a href="index" class="d-inline-flex align-items-center">
+
+                        <img class="site-logo d-none d-lg-block" src="../assets/images/logo.png" alt="HKJC Logo">
+
+                        <img class="site-logo d-block d-lg-none" src="../assets/images/logo-mobile.png" alt="HKJC Logo">
+
+                    </a>
+
+                </div>
+
+                <nav class="main-nav d-none d-lg-flex align-items-center" aria-label="Primary">
+
+                    <ul class="nav mb-0">
+
+                        <li class="nav-item first-item-wrapper">
+
+                            <div class="border-start border-end px-3 me-2">
+
+                              <a class="nav-link px-2 fw-bold" href="index">主頁</a>
+
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="index#tipping">揀馬世一</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racing-academy">馬上研究所</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="discover-highlight">馬上發現精選</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racecourse-experience">馬場精彩活動</a></li>
+
+                        <li class="nav-item button px-3 position-relative">
+                            <a class="nav-link px-3 fw-normal" href="javascript:void(0)" id="downloadDropdownBtn">下載馬會投注三合一</a>
+                            <div id="downloadDropdown" class="text-center position-absolute start-0 end-0 bg-white shadow-lg rounded-3 px-4 pt-4 pb-3" style="display:none; top:100%; margin-top:15px;">
+                                <img src="../assets/images/3in1app-QRCode.png" class="img-fluid" alt="下載馬會投注三合一">
+                                <small>掃描二維碼下載應用程式</small>
+                            </div>
+                        </li>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var btn = document.getElementById("downloadDropdownBtn");
+                                var dropdown = document.getElementById("downloadDropdown");
+                                btn.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                                });
+                                document.addEventListener("click", function (e) {
+                                    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                                        dropdown.style.display = "none";
+                                    }
+                                });
+                            });
+                        </script>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+            <div class="d-flex align-items-center">
+
+                <!-- Desktop language switcher -->
+
+                <div class="lang d-none d-lg-flex align-items-center desktop-lang dropdown">
+
+                    <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <img src="../assets/images/icon_lang.svg">
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                        <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                        <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Mobile cluster: language + hamburger -->
+
+                <div class="d-lg-none d-flex align-items-center justify-content-end mobile-controls ms-3">
+
+                    <button class="navbar-toggler p-0 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation" id="mobileNavToggle">
+
+                        <svg class="hamburger-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                        <svg class="close-icon d-none" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                    </button>
+
+              </div>
+
+          </div>    
+
+        </div>
+
+        <div class="collapse mobile-nav-wrapper border-bottom" id="mobileNav">
+
+            <div class="lang d-flex d-lg-none align-items-center mobile-lang dropdown">
+
+                <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <img src="../assets/images/icon_lang.svg">
+
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                    <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                    <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="container-fiuld p-5 border-top">
+
+                <nav aria-label="Mobile Primary">
+
+                    <ul class="nav flex-column">
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index">主頁</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index#tipping" data-collapse-reload="index#tipping">揀馬世一</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racing-academy">馬上研究所</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="discover-highlight">馬上發現精選</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racecourse-experience">馬場精彩活動</a></li>
+
+                        <li class="nav-item button text-center"><a class="nav-link px-2 py-3" href="https://bit.ly/44xVMGR">下載馬會投注三合一</a></li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="main-content">
+
+        <!-- Banner Section -->
+
+        <section class="text-center position-relative z-0 cover-swiper-banner" id="home-banner">
+
+            <div class="swiper home-banner-wrapper">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/zh-HK/share/kol-section/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover1.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover1_m.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                                <!--div class="swiper-image-overlay">
+
+                                    <div class="overlay-content">
+
+                                        <h2 class="section-title text-white">Discover the <br>New Way of<br> Racing</h2>
+
+                                        <a class="banner-cta-link" href="#">View More</a>
+
+                                    </div>
+
+                                </div-->
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="hkir" target="_blank">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover2.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover2_m.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                         
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover3.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover3_m.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                            </div>
+
+                     </div>
+
+                    <div class="swiper-slide">
+
+                        <a href="https://sh.hkjc.com/d/zh-HK/share/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">
+
+                            <div class="swiper-image d-flex align-items-center justify-content-center">
+
+                                <img src="../assets/images/cover4.png?v1" class="desktop-image" alt="Banner Image 1">
+
+                                <img src="../assets/images/cover4_m.png?v1" class="mobile-image" alt="Banner Image 1">
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    
+
+                </div>
+
+                <!-- Custom dot pagination -->
+
+                <div class="swiper-pagination banner-pagination"></div>
+
+            </div>
+
+        </section>
+
+        
+
+        <!-- Specialists Section -->
+
+        <section id="specialists">
+
+           <a id="tipping"></a>  
+
+           <div class="section-header">
+
+                <div class="text-center mb-4">
+
+                <h2 class="section-title">前三名「揀馬世一」分析師</h2>
+
+                <p class="section-title-description">「揀馬世一」分析師提供各場心水選擇*，附有短片分及簡評享揀馬攻略，讓你多角度掌握賽事形勢，一按快速投注^。排行榜記錄「揀馬世一」分析師每月累積命中率、分數及走勢排名，協助你全面分析。</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="position-relative specialists-wrap">
+
+                <div class="swiper specialists-swiper">
+
+                    <div class="swiper-wrapper ">
+
+                        <!-- Specialist 1 -->
+
+                        <div class="swiper-slide overflow-hidden rounded-4">
+
+                            <div class="specialist-bg tone-green z-0 rounded-4 position-absolute bottom-0 start-0"></div>   
+
+                            <article class="specialist-card d-flex flex-row justify-content-end align-items-end w-100 h-100 ">
+
+                                <div class="badge-rank z-1 position-absolute text-white d-flex flex-column justify-content-end gap-3">
+
+                                    <div class="rank-number">1</div>
+
+                                    <div class="specialist-wrapper">
+
+                                        <p class="specialist-name mb-1">富仔</p>
+
+                                        <p class="specialist-title mb-0">晨操達人</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portrait position-absolute">
+
+                                  <img src="../assets/images/KOL Image-2.png" alt="" />
+
+                                </div>
+
+                                <div class="stats-box rounded-4 z-1">
+
+                                    <div class="row g-3 align-items-center p-0 m-0">
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">命中率</span><span class="value">15.2%</span></div>
+
+                                      </div>
+
+                                        <div class="col-6 p-0 m-0">
+
+                                            <div class="metric d-flex flex-column"><span class="label">分數</span><span class="value">4837</span></div>
+
+                                      </div>
+
+                                        <div class="col-12 p-0 m-0">
+
+                                            <div class="race-chip w-100">
+
+                                                <a class="text-decoration-none d-flex align-items-center" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/1126/1126/fu/chi/dei-content002_1126_fu_chi_2500kbps.mp4', title: '富仔 - 賽日分析影片' }); return false;">
+
+                                                    <img class="icon" src="../assets/images/movie-icon.png" alt="video"> <span class="text">賽日分析影片</span>
+
+                                                </a>
+
+                                            </div>
+
+                                      </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="text-center my-pick-wrapper">
+
+                <!--div class="down-icon d-flex flex-column pb-3" style="color: #022169;">
+
+                    <i class="fa-solid fa-chevron-down" style="font-size: 16px;"></i>
+
+                    <i class="fa-solid fa-chevron-down" style="font-size: 20px; margin-top: -9px;"></i>
+
+                </div-->
+
+                <div class="arrow">
+
+                    <div class="l-wrapper">
+
+                      <div class="c-arrow"></div>
+
+                      <div class="c-arrow"></div>
+
+                    </div>
+
+                </div>
+
+              <h4 class="section-sub-title">我的心水選擇</h4>
+
+                <div class="swiper picks-swiper overflow-visible">
+
+                    <div class="swiper-wrapper" id="picksWrapper">
+
+                        <!-- dynamic pick slides -->
+
+                    </div>
+
+                </div>
+
+          </div>
+
+      </section>
+
+        
+
+        <!-- More Specialists Section -->
+
+        <section id="specialists-second">
+
+            <div class="section-header">
+
+                    <div class="text-center mb-4">
+
+                        <h2 class="section-title mb-3">更多心水選擇</h2>
+
+                    </div>
+
+              </div>
+
+              <div class="more-specialists-wrap position-relative">
+
+                    <div class="swiper more-specialists-swiper pb-2">
+
+                        <div class="swiper-wrapper">
+
+                            <!-- Sample slides (colors are placeholder tone-*) -->
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-blue"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">Elke</div>
+
+                                        <div class="mspec-title">命中魔法師</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image.png" alt="Elke"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-teal"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">伍兆銓</div>
+
+                                        <div class="mspec-title">試閘密探</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-7.png" alt="伍兆銓"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-gold"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">Colette</div>
+
+                                        <div class="mspec-title">冷馬獵人</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-3.png" alt="Colette"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-slate"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">阿粉知心友</div>
+
+                                        <div class="mspec-title">評分拆解王</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-6.png" alt="阿粉知心友"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-amber"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">KK</div>
+
+                                        <div class="mspec-title">連贏少女</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-1.png" alt="KK"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-blue"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">Elke</div>
+
+                                        <div class="mspec-title">命中魔法師</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image.png" alt="Elke"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-teal"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">伍兆銓</div>
+
+                                        <div class="mspec-title">試閘密探</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-7.png" alt="伍兆銓"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-gold"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">Colette</div>
+
+                                        <div class="mspec-title">冷馬獵人</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-3.png" alt="Colette"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-slate"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">阿粉知心友</div>
+
+                                        <div class="mspec-title">評分拆解王</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-6.png" alt="阿粉知心友"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-amber"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">KK</div>
+
+                                        <div class="mspec-title">連贏少女</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-1.png" alt="KK"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-blue"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">Elke</div>
+
+                                        <div class="mspec-title">命中魔法師</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image.png" alt="Elke"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-teal"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">伍兆銓</div>
+
+                                        <div class="mspec-title">試閘密探</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-7.png" alt="伍兆銓"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-gold"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">Colette</div>
+
+                                        <div class="mspec-title">冷馬獵人</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-3.png" alt="Colette"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-slate"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">阿粉知心友</div>
+
+                                        <div class="mspec-title">評分拆解王</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-6.png" alt="阿粉知心友"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <a href="https://sh.hkjc.com/d/zh-HK/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">
+
+                                <article class="mspec-card">
+
+                                    <div class="mspec-bg tone-amber"></div>
+
+                                    <div class="mspec-text">
+
+                                        <div class="mspec-name">KK</div>
+
+                                        <div class="mspec-title">連贏少女</div>
+
+                                    </div>
+
+                                    <div class="mspec-avatar"><img src="../assets/images/KOL Image-1.png" alt="KK"></div>
+
+                                </article>
+
+                                </a>
+
+                            </div>               
+
+
+
+                             
+
+                        </div>
+
+                        <div class="swiper-button-prev"></div>
+
+                        <div class="swiper-button-next"></div>
+
+                  </div>
+
+                  <div class="mspec-quote-wrapper text-center">
+
+                      <div class="mspec-quote">接觸賽馬數季，對賽馬興趣一季比一季濃厚。揀馬時注重馬匹整體步速、慣性跑法等，特別留意年輕馬匹於試閘狀態是否值博。最常投注連贏及位置Q彩池。</div>
+
+                      <button class="hkjc-outline-button button-blue "><a href="https://sh.hkjc.com/d/zh-HK/share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image">排行榜</a></button>
+
+                  </div>
+
+              </div>
+
+            </section>
+
+
+
+        <!-- Card Animation Section -->
+
+        <section id="animation" class="px-0">
+
+            <a id="academy"></a>  
+
+            <div class="animation-stage container-fluid p-0">
+
+                <div class="animation-group-wrapper">
+
+                    <div class="animation-image-wrapper">
+
+                      <img src="../assets/images/yjs.png" alt="Racing Education Background" />
+
+                      <!--p class="animation-text-description">「馬上研究所」賽馬指南，持續更新不同程度的賽馬研習影片，涵蓋「投注初體驗​」、「投注種類大全」、「投注攻略」​、「​馬匹與騎練指南​」及「越洋賽事精讀 ​」五大必學範疇，助新手零門檻投入賽馬世界，資深馬迷亦可晉升專家，精進策略。</p-->
+
+                    </div>
+
+                    <div class="animation-text-wrapper">
+
+                        <div class="animation-text top">RACING</div>
+
+                        <div class="animation-text center">EDUCATION</div>
+
+                        <div class="animation-text bottom">FOR YOU</div>
+
+                    </div>
+
+                    <div class="animation-cards-layer">
+
+                        <figure class="media-card" onclick="openPopup(0)">
+
+                          <img src="../assets/images/edu_area_video1.jpg" class="video-thumbnail" alt="Race replay highlight 1">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注初體驗</span>
+
+                              </div>
+
+                                <p class="video-title">由零開始新手上路！2分鐘學識四大基本彩池</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(1)">
+
+                          <img src="../assets/images/edu_area_video2.jpg" class="video-thumbnail" alt="Race replay highlight 2">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注初體驗</span>
+
+                              </div>
+
+                                <p class="video-title">揀馬毋須左度右度！排位表兩大因素篩選機會馬</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(2)">
+
+                          <img src="../assets/images/edu_area_video3.jpg" class="video-thumbnail" alt="Race replay highlight 3">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注攻略</span>
+
+                              </div>
+
+                                <p class="video-title">排位表度馬攻略！一眼睇晒重點賽事資訊</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(3)">
+
+                          <img src="../assets/images/edu_area_video4.jpg" class="video-thumbnail" alt="Race replay highlight 4">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬新手</span>
+
+                                    <span class="video-tag">投注初體驗</span>
+
+                              </div>
+
+                              <p class="video-title">記低焦點賽事年曆！帶你玩盡跑馬地＋沙田馬場</p>
+
+                          </div>
+
+                      </figure>
+
+                        <figure class="media-card" onclick="openPopup(4)">
+
+                          <img src="../assets/images/edu_area_video5.jpg" class="video-thumbnail" alt="Race replay highlight 5">
+
+                          <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                            <div class="img-overlay"></div>
+
+                            <div class="info-box">
+
+                                <div class="video-tag-wrapper">
+
+                                    <span class="video-tag">賽馬好手</span>
+
+                                    <span class="video-tag">越洋賽事精讀</span>
+
+                              </div>
+
+                                <p class="video-title">掌握越洋賽事投注入門！海外賽馬資訊及分析教學</p>
+
+                          </div>
+
+                      </figure>
+
+                    </div>
+
+                    <div class="animation-button-wrapper position-relative z-1">
+
+                        <button class="hkjc-outline-button button-blue" onclick="window.location.href='racing-academy.html'">查看更多</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Discover More Section -->
+
+        
+
+        <section id="discover">
+
+            <div class="discover-image-background">
+
+              <img src="../assets/images/Rectangle 16.png" class="left-vector" alt="Discover More Background" />
+
+              <img src="../assets/images/Vector.png" class="right-vector" alt="Discover More Background" />
+
+            </div>
+
+            <div class="discover-background"></div>
+
+            <div class="discover-content">
+
+              <img class="discover-icon" src="../assets/images/ChiLogo.png"/>
+
+                <p class="discover-dot"></p>
+
+                <p class="discover-text">「馬上發現」 提供一站式賽馬及娛樂資訊，只需設定對賽馬的喜好和熟悉程度，即可瀏覽為你度身推薦的個人化內容，無論你是喜歡鑽研冷門精密數據的資深馬迷，或是新手需要入門指南，皆一應俱全。立即下載「馬會投注三合一」，隨時隨地暢享更多精彩內容！</p>
+
+            </div>
+
+            <div class="discover-post">
+
+                
+
+                <div class="post-wrapper first">
+
+                    <h2 class="section-title text-white">「馬上發現」精選</h2>
+
+                    <div class="swiper discover-posts-swiper-1">
+
+                        <div class="swiper-wrapper">
+
+                            <!-- <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/2025/20250903/discoverpromovideo/chi/dei-content002_20250903_discoverpromovideo_chi_2500kbps.mp4', title: '馬上發現內容全面革新', description: '「馬上發現」今個馬季全面革新提供4款內容，滿足不同年資馬迷的需求' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_1.png" alt=""></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">馬上發現內容全面革新</p>
+
+                                            <p class="post-excerpt">「馬上發現」今個馬季全面革新提供4款內容，滿足不同年資馬迷的需求。</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content006/2025/20250926/risingstar-commentator/chi/dei-content006_20250926_risingstar-commentator_chi_2500kbps.mp4', title: '評馬人揀選今季最令人期待的6匹超新星！', description: '上個馬季出現咗多匹潛藏豐厚嘅新星，到底一眾評馬人今季最睇好邊幾匹超新星可以扶搖直上，躋身頂班甚至接棒呢？即刻睇片啦！' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_2.png" alt=""></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">評馬人揀選今季最令人期待的6匹超新星！</p>
+
+                                            <p class="post-excerpt">上個馬季出現咗多匹潛藏豐厚嘅新星，到底一眾評馬人今季最睇好邊幾匹超新星可以扶搖直上，躋身頂班甚至接棒呢？即刻睇片啦！</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content005/2025/20250702/zacpurton-fanscm/chi/dei-content005_20250702_zacpurton-fanscm_chi_2500kbps.mp4', title: '馬迷嚴選八屆冠軍騎師潘頓　三場最精彩策騎！', description: '「馬上發現」早前蒐集馬迷意見，從馬迷的留言中揀選了一些潘頓的精彩發揮畫面重溫。' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_3.jpg" alt=""></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">馬迷嚴選八屆冠軍騎師潘頓　三場最精彩策騎！</p>
+
+                                            <p class="post-excerpt">「馬上發現」早前蒐集馬迷意見，從馬迷的留言中揀選了一些潘頓的精彩發揮畫面重溫。</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div> -->
+
+                        </div>
+
+                    </div>
+
+                        
+
+                    <!--div class="button-wrapper">
+
+                        <button class="hkjc-outline-button button-white">查看更多</button>
+
+                    </div-->
+
+                </div>
+
+                <div class="post-wrapper second">
+
+                    <h2 class="section-title text-white">馬場精彩活動</h2>
+
+                    <div class="swiper discover-posts-swiper-2">
+
+                        <div class="swiper-wrapper">
+
+                            <!-- <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="genso">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_4.png" alt="Race replay highlight 1"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">沙田馬場全新熱點「天馬驛」</p>
+
+                                            <p class="post-excerpt">「天馬驛」是香港首個四層高的數碼賽馬體驗地標，融合現場賽馬的刺激感及嶄新的數碼科技，提供前所未有的賽馬運動及娛樂體驗。在這裏更可發掘多次元世界，盡情投入革新性馬場體驗、沉浸式AI打卡熱點、數碼娛樂以及不同特色美饌。</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="#" onclick="singleVideoPopup.open({ link: 'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content002/1124/1124/HKIRRainCTA/chi/dei-content002_1124_HKIRRainCTA_chi_2500kbps.mp4', title: '【2025/26浪琴香港國際賽事】RAIN鄭智薰開幕表演', description: 'RAIN 約定你！國際韓流巨星RAIN鄭智薰再度亮相沙田馬場，繼續展現非凡舞台魅力，以勁歌熱舞為浪琴香港國際賽事打開序幕！世界級佳駟亦將雲集沙田馬場，出戰四場國際一級賽。記得12月14日蒞臨沙田馬場，一同投入世界級賽馬盛會！ <br>12月14日 (星期日)<br>活動開始 ∣ 上午11時10分<br>首場開跑 ∣ 下午12時25分<br>沙田馬場 <br>活動當天沙田馬場將實施人流管理措施，請遵守工作人員指示。<br>入場及投注人士須年滿十八歲，切勿沉迷賭博。' }); return false;">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_9.png" alt="Race replay highlight 2"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">【2025/26浪琴香港國際賽事】RAIN鄭智薰開幕表演</p>
+
+                                            <p class="post-excerpt">RAIN 約定你！國際韓流巨星RAIN鄭智薰再度亮相沙田馬場，繼續展現非凡舞台魅力，以勁歌熱舞為浪琴香港國際賽事打開序幕！世界級佳駟亦將雲集沙田馬場，出戰四場國際一級賽。記得12月14日蒞臨沙田馬場，一同投入世界級賽馬盛會！</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="hkir">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_8.png" alt="Race replay highlight 4"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">2025浪琴香港國際賽事 — 世界舞台 草地王者</p>
+
+                                            <p class="post-excerpt">年度國際馬壇盛事將於12月14日在沙田馬場矚目上演。世界級賽駒及騎師聚首一堂，角逐浪琴香港短途錦標、浪琴香港一哩錦標、浪琴香港盃及浪琴香港瓶四項一級賽殊榮，帶來振奮人心的比拼！各式頂級娛樂亦於同日呈獻，絕對不容錯過現場巨星級開幕表演、煙火匯演及特式美食。</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div> -->
+
+                            <!--div class="swiper-slide">
+
+                                <div class="post">
+
+                                    <a class="post-link" href="happy-valley.html">
+
+                                        <div class="feature-img"><img src="../assets/images/KOL_video_6.png" alt="Race replay highlight 3"></div>
+
+                                        <div class="post-text-wrapper">
+
+                                            <p class="post-title">跑馬地馬場全新熱點 嶄新數碼化賽馬夜娛樂體驗</p>
+
+                                            <p class="post-excerpt">跑馬地馬場餐飲及夜生活體驗的兩個不同嶄新地標 — The Beat 及 Vantage 即將正式開幕！顧客享用美酒佳餚之餘，能置身高端時尚環境下飽覽馬場壯觀美景，盡情感受賽馬熾熱氣氛。</p>
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                            </div-->
+
+                        </div>
+
+                    </div>
+
+                    <!--div class="button-wrapper">
+
+                        <button class="hkjc-outline-button button-white">查看更多</button>
+
+                    </div-->
+
+                </div>
+
+            </div>
+
+      </section>
+
+      <section id="footer" class="px-5">
+
+            <!-- <div class="container text-left">
+
+                <p class="footer-text mb-1">最後更新日期 25/11/2025<br>
+
+                    <a href="https://sh.hkjc.com/d/zh-HK/share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">按此</a>參閱有關命中率及分數計算方法
+
+                </p>
+
+                <p class="footer-text">*所有資料只供參考，並不代表香港賽馬會的立場，亦不構成任何建議。</p>
+
+                <p class="footer-text">^「一按投注」功能只適用於已登入投注戶口之用戶。</p>
+
+                <p class="footer-text"><a href="https://www.hkjc.com/responsible-gambling/ch/index">博彩要有節制</a></p>
+
+                <ul class="footer-list">
+
+                    <li class="footer-list">未滿十八歲人士不得投注或進入可投注的地方。</li>
+
+                    <li class="footer-list">向非法或海外莊家下注，即屬違法，且可被判監禁。</li>
+
+                    <li class="footer-list">切勿沉迷賭博，如需尋求輔導協助，可致電平和基金熱線1834 633。</li>
+
+                </ul>                              
+
+          </div> -->
+
+        </section>
+
+</main>
+
+
+
+    
+
+    <!-- SVG defs for reusable clip paths/masks -->
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <clipPath id="discover-clip" clipPathUnits="userSpaceOnUse">
+
+                <rect id="discoverClipRect" x="0" y="0" width="0" height="0" rx="0" ry="0" />
+
+            </clipPath>
+
+            <clipPath id="discover-clip-mobile" clipPathUnits="userSpaceOnUse">
+
+                <rect id="discoverClipRectMobile" x="0" y="0" width="0" height="0" rx="0" ry="0" />
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-large" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.98,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.96,0.12 
+
+               L0.03,0.3 
+
+               Q0,0.32,0,0.4 
+
+               L0,0.92 
+
+               Q0,1,0.02,1 Z" />
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-large-mobile" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.97,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.945,0.12 
+
+               L0.04,0.294 
+
+               Q0,0.3,0,0.39 
+
+               L0,0.92 
+
+               Q0,1,0.03,1 Z"></path>
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-small" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.92,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.9,0.12 
+
+               L0.1,0.3 
+
+               Q0,0.32,0,0.4 
+
+               L0,0.92 
+
+               Q0,1,0.08,1 Z" />
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-small-style-2" clipPathUnits="objectBoundingBox">
+
+                <path d="M0.05,1 
+
+               L0.92,1 
+
+               Q1,1,1,0.92 
+
+               L1,0.2 
+
+               Q1,0.1,0.865,0.12 
+
+               L0.1,0.3 
+
+               Q0,0.32,0,0.4 
+
+               L0,0.92 
+
+               Q0,1,0.08,1 Z"></path>
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <defs>
+
+            <!-- Rounded trapezium: narrower top, rounded corners; normalized to 0..1 -->
+
+            <clipPath id="roundedTrap-small-style-2-img" clipPathUnits="objectBoundingBox">
+
+                <path d="M 0.05 1 
+
+                L 0.92 1 
+
+                Q 1 1 1 0.92 
+
+                Q 1 0 1 0 
+
+                Q 0 0 0 0 
+
+                L 0 0.92 
+
+                Q 0 1 0.08 1 
+
+                Z"></path>
+
+            </clipPath>
+
+        </defs>
+
+    </svg>
+
+
+
+    
+
+    
+
+    <!-- Data Objects (Language-specific content) -->
+
+    <script>
+
+        // Racing picks data for specialists (English)
+
+        //const picksData = [
+
+        //  {
+
+        //    name: '富仔',
+
+        //    picks: [
+
+        //                    { race: '第1場', type: '連贏', meta: '26/11 (星期三) 18:40, 第五班,<br>1200米, 草地, "C" 賽道', list: ['1. 喆喆友福','11. 專家','12. 有心意'], betLink: 'https://sh.hkjc.com/m/i4XqjcfaFx' },
+
+        //                    { race: '第2場', type: '連贏', meta: '26/11 (星期三) 19:10, 第五班,<br>1650米, 草地, "C" 賽道', list: ['1. 禾道威','5. 耀昌勝世','8. 快樂老撾'], betLink: 'https://sh.hkjc.com/m/X3oNmtpjDF' },
+
+        //                    { race: '第3場', type: '連贏', meta: '26/11 (星期三) 19:40, 第四班,<br>1200米, 草地, "C" 賽道', list: ['6. 比特星','10. 金運來','11. 大千絕塵'], betLink: 'https://sh.hkjc.com/m/VNGNP1GZLS' },
+
+        //                    { race: '第4場', type: '連贏', meta: '26/11 (星期三) 20:10, 第四班,<br>1200米, 草地, "C" 賽道', list: ['4. 廚神','8. 勇威神駒','10. 祥龍駒'], betLink: 'https://sh.hkjc.com/m/xz7kCXjYfG' },
+
+        //                    { race: '第5場', type: '連贏', meta: '26/11 (星期三) 20:40, 第四班,<br>1800米, 草地, "C" 賽道', list: ['1. 寶賢得得','11. 隨緣得勝','12. 架勢奇爸'], betLink: 'https://sh.hkjc.com/m/aNqhZsI76F' },
+
+        //                    { race: '第6場', type: '連贏', meta: '26/11 (星期三) 21:10, 第四班,<br>1200米, 草地, "C" 賽道', list: ['1. 官金騏','5. 喵喵怪','7. 怡昌精神'], betLink: 'https://sh.hkjc.com/m/oC8zwFPGis' },
+
+        //                    { race: '第7場', type: '連贏', meta: '26/11 (星期三) 21:45, 第四班,<br>1650米, 草地, "C" 賽道', list: ['2. 凱明神駒','5. 凝妙星','8. 康昌之星'], betLink: 'https://sh.hkjc.com/m/ifQCpySr7u' },
+
+        //                    { race: '第8場', type: '連贏', meta: '26/11 (星期三) 22:15, 第三班,<br>1650米, 草地, "C" 賽道', list: ['1. 納百川','6. 超勝無敵','9. 香港神駒'], betLink: 'https://sh.hkjc.com/m/gOy5nYaER3' },
+
+        //                    { race: '第9場', type: '連贏', meta: '26/11 (星期三) 22:50, 第三班,<br>1200米, 草地, "C" 賽道', list: ['4. 天星','6. 輕功猛男','7. 盈妍威楓'], betLink: 'https://sh.hkjc.com/m/RZhFdvw4gz' }
+
+        //    ]
+
+        //  },
+
+        //  {
+
+        //    name: 'Ling Ling',
+
+        //    picks: [
+
+        //                    { race: '第1場', type: '獨贏及位置', meta: '26/11 (星期三) 18:40, 第五班,<br>1200米, 草地, "C" 賽道', list: ['3. 歡樂飛駒'], betLink: 'https://sh.hkjc.com/m/I3tySKRv8W' },
+
+        //                    { race: '第2場', type: '連贏及位置Q', meta: '26/11 (星期三) 19:10, 第五班,<br>1650米, 草地, "C" 賽道', list: ['1. 禾道威','8. 快樂老撾'], betLink: 'https://sh.hkjc.com/m/tDagSKx9cu' },
+
+        //                    { race: '第3場', type: '獨贏及位置', meta: '26/11 (星期三) 19:40, 第四班,<br>1200米, 草地, "C" 賽道', list: ['6. 比特星'], betLink: 'https://sh.hkjc.com/m/i3oCfgHZfB' },
+
+        //                    { race: '第4場', type: '獨贏及位置', meta: '26/11 (星期三) 20:10, 第四班,<br>1200米, 草地, "C" 賽道', list: ['8. 勇威神駒'], betLink: 'https://sh.hkjc.com/m/8kJaWOnWpv' },
+
+        //                    { race: '第5場', type: '獨贏及位置', meta: '26/11 (星期三) 20:40, 第四班,<br>1800米, 草地, "C" 賽道', list: ['3. 客家之光'], betLink: 'https://sh.hkjc.com/m/Znu3eg238r' },
+
+        //                    { race: '第6場', type: '獨贏及位置', meta: '26/11 (星期三) 21:10, 第四班,<br>1200米, 草地, "C" 賽道', list: ['5. 喵喵怪'], betLink: 'https://sh.hkjc.com/m/ck1m6pWFrr' },
+
+        //                    { race: '第7場', type: '獨贏及位置', meta: '26/11 (星期三) 21:45, 第四班,<br>1650米, 草地, "C" 賽道', list: ['5. 凝妙星'], betLink: 'https://sh.hkjc.com/m/ZQdhMOf8Ht' },
+
+        //                    { race: '第8場', type: '獨贏及位置', meta: '26/11 (星期三) 22:15, 第三班,<br>1650米, 草地, "C" 賽道', list: ['3. 有財有勢'], betLink: 'https://sh.hkjc.com/m/IshDnvqXcf' },
+
+        //                    { race: '第9場', type: '獨贏及位置', meta: '26/11 (星期三) 22:50, 第三班,<br>1200米, 草地, "C" 賽道', list: ['6. 輕功猛男'], betLink: 'https://sh.hkjc.com/m/Ew8Kf5Lcji' }
+
+        //    ]
+
+        //  },
+
+        //  {
+
+        //    name: 'Krystal',
+
+        //    picks: [
+
+        //                    { race: '第1場', type: '獨贏及位置', meta: '26/11 (星期三) 18:40, 第五班,<br>1200米, 草地, "C" 賽道', list: ['12. 有心意'], betLink: 'https://sh.hkjc.com/m/bafYmU554l' },
+
+        //                    { race: '第2場', type: '獨贏及位置', meta: '26/11 (星期三) 19:10, 第五班,<br>1650米, 草地, "C" 賽道', list: ['7. 熊噹噹'], betLink: 'https://sh.hkjc.com/m/0q0vJAylgD' },
+
+        //                    { race: '第3場', type: '獨贏及位置', meta: '26/11 (星期三) 19:40, 第四班,<br>1200米, 草地, "C" 賽道', list: ['4. 細水長流'], betLink: 'https://sh.hkjc.com/m/04mW0XvXhw' },
+
+        //                    { race: '第4場', type: '獨贏及位置', meta: '26/11 (星期三) 20:10, 第四班,<br>1200米, 草地, "C" 賽道', list: ['10. 祥龍駒'], betLink: 'https://sh.hkjc.com/m/XNcIXfRdCr' },
+
+        //                    { race: '第5場', type: '獨贏及位置', meta: '26/11 (星期三) 20:40, 第四班,<br>1800米, 草地, "C" 賽道', list: ['6. 平海之星'], betLink: 'https://sh.hkjc.com/m/mCE5T1v4ep' },
+
+        //                    { race: '第6場', type: '獨贏及位置', meta: '26/11 (星期三) 21:10, 第四班,<br>1200米, 草地, "C" 賽道', list: ['3. 自動自覺'], betLink: 'https://sh.hkjc.com/m/cCTh1D0m9J' },
+
+        //                    { race: '第7場', type: '獨贏及位置', meta: '26/11 (星期三) 21:45, 第四班,<br>1650米, 草地, "C" 賽道', list: ['12. 風雲'], betLink: 'https://sh.hkjc.com/m/J0zWu0o4bo' },
+
+        //                    { race: '第8場', type: '獨贏及位置', meta: '26/11 (星期三) 22:15, 第三班,<br>1650米, 草地, "C" 賽道', list: ['3. 有財有勢'], betLink: 'https://sh.hkjc.com/m/7Gt5196027' },
+
+        //                    { race: '第9場', type: '獨贏及位置', meta: '26/11 (星期三) 22:50, 第三班,<br>1200米, 草地, "C" 賽道', list: ['10. 粵港資駒'], betLink: 'https://sh.hkjc.com/m/rCpMc4GAaf' }
+
+        //    ]
+
+        //  },
+
+        //];
+
+
+
+
+
+        // Specialist data structure (English)
+
+        //const specialistsData = {
+
+        //    'Ling Ling': {
+
+        //        name: 'Ling Ling',
+
+        //        quote: '2024/25年度馬季「揀馬世一」總冠軍，不時在馬場或體驗店分享賽馬心得。最常投注連贏及位置Q彩池，揀馬通常兩熱一冷混搭，穩中求勝。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/lingling/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    '富仔': {
+
+        //        name: '富仔',
+
+        //        quote: '第二年參與「揀馬世一」，擁有資深賽馬經驗，由晨操角度揀選每場最好狀態的馬。與此同時，亦會提供變化馬予馬迷參考，目標在馬匹未成為熱門之前，冷門命中。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/fujai/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Colette': {
+
+        //        name: 'Colette',
+
+        //        quote: '行內又名「叻姐」，擅長運用獨家的「相對步速」計算法，精準分析馬匹實力，專注以科學方法發掘冷門值博馬，與馬迷扒冷馬。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/colette/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    "阿粉知心友": {
+
+        //        name: "阿粉知心友",
+
+        //        quote: '由三名中生代賽馬狂熱分子阿粉、Homan及Kenson組成，擅長拆解賽績及分析段速。喜愛研究馬匹評分，結合形勢找尋機會馬。精通投注策略，務求以少注數換來最高回報。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/stevensbros/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    '伍兆銓': {
+
+        //        name: '伍兆銓',
+
+        //        quote: '參與賽馬活動多年，現時於賽日作現場評述，以及主持《聽日有馬跑》。關注馬匹狀態及試閘走勢，留意馬房出擊部署，發掘值博半冷WP。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/alex/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'KK': {
+
+        //        name: 'KK',
+
+        //        quote: '接觸賽馬數季，對賽馬興趣一季比一季濃厚。揀馬時注重馬匹整體步速、慣性跑法等，特別留意年輕馬匹於試閘狀態是否值博。最常投注連贏及位置Q彩池。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/kk/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Elke': {
+
+        //        name: 'Elke',
+
+        //        quote: '第三年參與「揀馬世一」，馬會及有線18台賽馬主持。喜歡從馬匹賽績及狀態揀馬，最常投注獨贏及位置Q彩池。從小熱愛動物，喜歡研究各種動物的情緒和行為。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/elke/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    },
+
+        //    'Krystal': {
+
+        //        name: 'Krystal',
+
+        //        quote: '賽馬新手，累積數年研究賽馬經驗。擔任有線18台賽馬主持，亦在馬場或體驗店分享賽馬心得。揀馬最注重馬匹往績，最常投注位置及位置Q彩池。',
+
+        //        //exploreLink: 'https://sh.hkjc.com/d/en-US/share/kol-profile/krystal/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image'
+
+        //    }
+
+        //};
+
+        
+
+
+
+        // Video list for educational content (Traditional Chinese)
+
+        var videoPop = new VideoPopup(); 
+
+        videoPop.videoList = [ 
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250905/racingacademyep1/chi/dei-content007_20250905_racingacademyep1_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video1.jpg',
+
+                title:'由零開始新手上路！2分鐘學識四大基本彩池',
+
+                description:'由香港體育評述員鍾志光淺淡香港賽馬「平分彩金」制度，以及賠率變化的啟示；然後介紹四大基本彩池，並提供新手兩大揀馬貼士。',
+
+                videotag:['賽馬新手','投注初體驗']
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250912/racingacademyep2/chi/dei-content007_20250912_racingacademyep2_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video2.jpg',
+
+                title:'揀馬毋須左度右度！排位表兩大因素篩選機會馬',
+
+                description:'由香港體育評述員鍾志光，教你如何使用排位表自己度馬。影片將介紹兩大最入門因素，包括「6次近績」及「騎師」，對新手揀馬有何啟示。',
+
+                videotag:['賽馬新手','投注初體驗']
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250919/racingacademyep4/chi/dei-content007_20250919_racingacademyep4_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video3.jpg',
+
+                title:'排位表度馬攻略！一眼睇晒重點賽事資訊',
+
+                description:'由香港體育評述員鍾志光教你學識睇負磅及評分。',
+
+                videotag:['賽馬新手','投注攻略']
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250930/racingacademyep3/chi/dei-content007_20250930_racingacademyep3_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video4.jpg',
+
+                title:'記低焦點賽事年曆！帶你玩盡跑馬地＋沙田馬場',
+
+                description:'由Gigi李佩芝，帶你探索沙田及跑馬地馬場的精彩活動。影片將介紹兩個馬場不同的玩樂設施、全新地標及多國美食， 尋找馬場內的打卡熱點及最佳觀賽位置，等你玩得盡興！',
+
+                videotag:['賽馬新手','投注初體驗']
+
+            },
+
+            {
+
+                link:'https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20251017/racingacademyep17/chi/dei-content007_20251017_racingacademyep17_chi_2500kbps.mp4',
+
+                thumbnail:'../assets/images/edu_area_video5.jpg',
+
+                title:'掌握越洋賽事投注入門！海外賽馬資訊及分析教學',
+
+                description:'由越洋宗師梁浩賢，帶你認識越洋賽事，並提供三大貼士助你掌握海外賽事，包括辨識騎師與練馬師、參考馬匹國際評分、及留意馬場狀況。最後不可錯過「馬上發現」的實用資訊，幫助你分析越洋賽事。',
+
+                videotag:['賽馬好手','越洋賽事精讀']
+
+            }
+
+        ]; 
+
+
+
+        // singleVideoPopup
+
+        function openPopup(i) {
+
+            // 先關閉 discover 彈窗（如果打開）
+
+            if (window.singleVideoPopup && window.singleVideoPopup.container) {
+
+                window.singleVideoPopup.close();
+
+            }
+
+            // 打開教育內容彈窗
+
+            videoPop.open(i);
+
+        }
+
+
+
+        // 使用獨立的 single-video-popup.js，不使用 slick，只有一個視頻
+
+        var singleVideoPopup = new SingleVideoPopup({
+
+            containerId: 'singleVideoPopupContainer'
+
+        });
+
+        window.singleVideoPopup = singleVideoPopup; // 保存到全局以便其他函數訪問
+
+
+
+        // Function to open discover popup（單獨影片）
+
+        function openPopupdiscover(i) {
+
+            // 先關閉教育內容彈窗（如果打開）
+
+            if (videoPop && videoPop.container) {
+
+                videoPop.close();
+
+            }
+
+            
+
+        }
+
+
+
+    </script>
+
+
+
+    <!-- Main JavaScript (All interactive functionality) -->
+
+    <script src="../assets/js/index.js?v=20260127001"></script>
+
+    
+
+</body>
+
+<script>
+
+    $(document).ready(function() {
+
+    if (typeof Swiper === 'undefined') return;
+
+
+
+    // Conditional slide presentation based on device screen width
+
+    var slidesPerView;
+
+    var spaceBetween;
+
+    var allowTouchMove;
+
+    
+
+    // if (window.innerWidth <= 768) {
+
+    //     slidesPerView = 1.2;
+
+    //     spaceBetween = 10;
+
+    //     allowTouchMove = true;
+
+    // } else {
+
+    //     slidesPerView = 3;
+
+    //     spaceBetween = 20;
+
+    //     allowTouchMove = false;
+
+    // }
+
+
+
+    const specialistsSwiper = new Swiper('.specialists-swiper', {
+
+        loop: true,
+
+        slidesPerView: slidesPerView,
+
+        centeredSlides: true,
+
+        spaceBetween: spaceBetween,
+
+        speed: 600,
+
+        allowTouchMove: allowTouchMove,
+
+        watchSlidesProgress: true,
+
+    });
+
+    
+
+    // // Store instance globally
+
+    // if (window.hkjcSwipers) {
+
+    //     window.hkjcSwipers.specialists = specialistsSwiper;
+
+    // }
+
+
+
+    // Picks Swiper instance (created after first render)
+
+    let picksSwiper = null;
+
+
+
+    function renderPicks(idx) {
+
+
+
+        // Expect picksData to be defined in the HTML file
+
+        if (typeof picksData === 'undefined') {
+
+            console.warn('picksData not defined');
+
+            return;
+
+        }
+
+        
+
+        const spec = picksData[idx % picksData.length];
+
+        const slidesHtml = spec.picks.map(p => `
+
+            <div class="swiper-slide">
+
+                <div class="pick-card">
+
+                    <h6 class="race-number">${p.race}</h6>
+
+                    <div class="meta">${p.meta}</div>
+
+                    <hr/>
+
+                    <div class="type mb-2">${p.type}</div>
+
+                    <div class="d-flex flex-row justify-content-between flex-nowrap align-items-end w-100">
+
+                        <div class="list">
+
+                            ${p.list.map(i => `<p>${i}</p>`).join('')}
+
+                        </div>
+
+                        <div class="">
+
+                            <button class="cta" type="button" onclick="window.location.href='${p.betLink}'">立即投注</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `).join('');
+
+        $('#picksWrapper').html(slidesHtml);
+
+
+
+        // (Re)initialize picks swiper for fresh content
+
+        if (picksSwiper) {
+
+            picksSwiper.destroy(true, true);
+
+            picksSwiper = null;
+
+        }
+
+        
+
+        var spaceBetween = window.innerWidth <= 768 ? 16 : 32;
+
+        
+
+        picksSwiper = new Swiper('.picks-swiper', {
+
+            slidesPerView: 'auto',
+
+            spaceBetween: spaceBetween,
+
+            watchSlidesProgress: true
+
+        });
+
+        
+
+        // Store instance globally
+
+        if (window.hkjcSwipers) {
+
+            window.hkjcSwipers.picks = picksSwiper;
+
+        }
+
+    }
+
+
+
+    // Initial render - use realIndex which is correct even in loop mode
+
+    // renderPicks(specialistsSwiper.realIndex);
+
+
+
+    // // Click to center slide
+
+    // $('.specialists-swiper').on('click', '.swiper-slide', function() {
+
+    //     if ($(this).hasClass('swiper-slide-prev')) {
+
+    //         specialistsSwiper.slidePrev();
+
+    //     } else if ($(this).hasClass('swiper-slide-next')) {
+
+    //         specialistsSwiper.slideNext();
+
+    //     }
+
+    // });
+
+
+
+    // // Update picks on slide change
+
+    // specialistsSwiper.on('slideChange', function() {
+
+    //     renderPicks(specialistsSwiper.realIndex);
+
+    //     specialistsSwiper.updateSlides();
+
+    //     specialistsSwiper.updateProgress();
+
+    //     specialistsSwiper.updateSlidesClasses();
+
+    //     specialistsSwiper.update();
+
+    // });
+
+        
+
+         
+
+});
+
+
+
+    $(document).ready(function() {
+
+                // Mobile navigation toggle icon handler
+
+                const mobileNav = document.getElementById('mobileNav');
+
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+        const closeIcon = document.querySelector('.close-icon');
+
+        
+
+        if (mobileNav && hamburgerIcon && closeIcon) {
+
+            mobileNav.addEventListener('show.bs.collapse', function() {
+
+                hamburgerIcon.classList.add('d-none');
+
+                closeIcon.classList.remove('d-none');
+
+            });
+
+            
+
+            mobileNav.addEventListener('hide.bs.collapse', function() {
+
+                hamburgerIcon.classList.remove('d-none');
+
+                closeIcon.classList.add('d-none');
+
+            });
+
+        }
+
+
+
+        // 獲取 footer 配置並更新頁面
+
+async function loadFooter() {
+
+    try {
+
+        const footerConfig = await window.StrapiAPI.Footer.getConfig({
+
+            locale: window.StrapiAPI.getCurrentLocale()
+
+        });
+
+        
+
+        // 將 HTML 內容插入到 footer 元素中
+
+        const footerElement = document.getElementById('footer');
+
+        if (footerElement && footerConfig.htmlContent) {
+
+            footerElement.innerHTML = footerConfig.htmlContent;
+
+        }
+
+    } catch (error) {
+
+        console.error('Failed to load footer:', error);
+
+    }
+
+}
+
+
+
+// 在頁面加載時調用
+
+loadFooter();
+
+    });
+
+
+
+</script>
+
+</html>
+
+</html>
+

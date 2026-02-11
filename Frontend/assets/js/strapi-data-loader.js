@@ -7,7 +7,7 @@
     'use strict';
 
     // 配置 Strapi API 地址
-    window.STRAPI_BASE_URL = 'http://localhost:1337';
+    window.STRAPI_BASE_URL = 'https://strapi.hkjc-event.org';
     // 全局数据存储
     window.strapiData = {
         banners: [],
@@ -1621,6 +1621,9 @@
             date: article.date || article.publishedAt
         }));
         
+        // 更新全局 postsData（discover-highlight.js 会读取）
+        window.postsData = postsData;
+        
         // 触发自定义事件，让页面 JS 监听并重新渲染
         $(document).trigger('postsDataUpdated');
 
@@ -1718,6 +1721,7 @@
                 } else if (section === 'racing-academy') {
                     updateRacingAcademyPage(articles);
                 } else if (section === 'racecourse-experience') {
+                    updateRacecourseExperiencePage(articles);
                 }
             }
 

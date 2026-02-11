@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>馬上研究所 - 香港賽馬會</title>
+
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+    <!-- <link rel="stylesheet" href="assets/css/aos.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css"/>
+
+    <link rel="stylesheet" href="../assets/css/video-popup.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/css/racing-academy.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!-- <script src="assets/js/aos.js"></script>
+
+    <script> AOS.init(); </script> -->
+
+    <script src="../assets/js/gsap.min.js"></script>
+
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/slick.min.js"></script>
+
+	<script src="../assets/js/video-popup.js"></script>
+
+	
+
+	<!-- Strapi API Integration -->
+
+	<script>
+
+	    window.STRAPI_BASE_URL = window.STRAPI_BASE_URL || 'http://localhost:1337';
+
+	</script>
+
+	<script src="../assets/js/strapi-api.js?v=20260127001"></script>
+
+	<script src="../assets/js/strapi-data-loader.js?v=20260127001"></script>
+
+	
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-white overflow-x-hidden">
+
+    <!-- Header - Duplicated from index.html -->
+
+    <header class="bg-white site-header fixed-top border-bottom">
+
+        <div class="px-5 py-4 container-fluid d-flex justify-content-between align-items-center header-bar">
+
+            <div class="d-flex align-items-center left-cluster">
+
+                <div class="logo pe-5 d-flex">
+
+                    <a href="index" class="d-inline-flex align-items-center">
+
+                        <img class="site-logo d-none d-lg-block" src="../assets/images/logo.png" alt="HKJC Logo">
+
+                        <img class="site-logo d-block d-lg-none" src="../assets/images/logo-mobile.png" alt="HKJC Logo">
+
+                    </a>
+
+                </div>
+
+                <nav class="main-nav d-none d-lg-flex align-items-center" aria-label="Primary">
+
+                    <ul class="nav mb-0">
+
+                        <li class="nav-item first-item-wrapper">
+
+                            <div class="border-start border-end px-3 me-2">
+
+                              <a class="nav-link px-2 fw-bold" href="index">主頁</a>
+
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="index#tipping" target="_top">揀馬世一</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="../tc/index.html#academy">馬上研究所</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="discover-highlight">馬上發現精選</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-3 fw-normal" href="racecourse-experience">馬場精彩活動</a></li>
+
+                        <li class="nav-item button px-3 position-relative">
+                            <a class="nav-link px-3 fw-normal" href="javascript:void(0)" id="downloadDropdownBtn">下載馬會投注三合一</a>
+                            <div id="downloadDropdown" class="text-center position-absolute start-0 end-0 bg-white shadow-lg rounded-3 px-4 pt-4 pb-3" style="display:none; top:100%; margin-top:15px;">
+                                <img src="../assets/images/3in1app-QRCode.png" class="img-fluid" alt="下載馬會投注三合一">
+                                <small>掃描二維碼下載應用程式</small>
+                            </div>
+                        </li>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var btn = document.getElementById("downloadDropdownBtn");
+                                var dropdown = document.getElementById("downloadDropdown");
+                                btn.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                                });
+                                document.addEventListener("click", function (e) {
+                                    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                                        dropdown.style.display = "none";
+                                    }
+                                });
+                            });
+                        </script>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+            <div class="d-flex align-items-center">
+
+                <!-- Desktop language switcher -->
+
+                <div class="lang d-none d-lg-flex align-items-center desktop-lang dropdown">
+
+                    <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <img src="../assets/images/icon_lang.svg">
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                        <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                        <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Mobile cluster: language + hamburger -->
+
+                <div class="d-lg-none d-flex align-items-center justify-content-end mobile-controls ms-3">
+
+                    <button class="navbar-toggler p-0 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation" id="mobileNavToggle">
+
+                        <svg class="hamburger-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                        <svg class="close-icon d-none" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                    </button>
+
+              </div>
+
+          </div>    
+
+        </div>
+
+        <div class="collapse mobile-nav-wrapper border-bottom" id="mobileNav">
+
+            <div class="lang d-flex d-lg-none align-items-center mobile-lang dropdown">
+
+                <a href="#" class="text-black text-decoration-none d-flex align-items-center lang-switch-link dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <img src="../assets/images/icon_lang.svg">
+
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+
+                    <li><a class="dropdown-item" href="../tc/index">中文</a></li>
+
+                    <li><a class="dropdown-item" href="../en/index">English</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="container-fiuld p-5 border-top">
+
+                <nav aria-label="Mobile Primary">
+
+                    <ul class="nav flex-column">
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index">主頁</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="index#tipping" target="_top">揀馬世一</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="../tc/index.html#academy">馬上研究所</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="discover-highlight">馬上發現精選</a></li>
+
+                        <li class="nav-item"><a class="nav-link px-2" href="racecourse-experience">馬場精彩活動</a></li>
+
+                        <li class="nav-item button text-center"><a class="nav-link px-2 py-3" href="https://bit.ly/44xVMGR">下載馬會投注三合一</a></li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="main-content racing-academy-page"  style="position: relative;">
+
+        <!-- Page Title Section -->
+
+        <section class="page-header-section">
+
+            <div class="container d-flex justify-content-between align-items-center">
+
+                <h1 class="section-title">馬上研究所</h1>
+
+                <!-- Filter Controls Section -->
+
+                <div class="filter-controls-section">
+
+                    <div class="container">
+
+                      <div class="filter-controls-wrapper" style="position: relative;">
+
+                            <!-- Sort/Filter Button -->
+
+                        <button class="sort-filter-btn" id="sortFilterBtn">
+
+                                <i class="fa-solid fa-sliders"></i>
+
+                          </button>
+
+
+
+                          <!-- Sort/Filter Popup Modal - Positioned here -->
+
+                          <div class="sort-filter-modal" id="sortFilterModal">
+
+                              <div class="sort-filter-content">
+
+                                  <div class="sort-section">
+
+                                      <h3 class="option-title">排序</h3>
+
+                                      <button class="option-btn sort-option active" data-sort="level-low-high">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">難易度：淺 — 深</span>
+
+                                      </button>
+
+                                      <button class="option-btn sort-option" data-sort="level-high-low">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">難易度：深 — 淺</span>
+
+                                      </button>
+
+                                      <button class="option-btn sort-option" data-sort="newest">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">最新
+
+                                        </span>
+
+                                      </button>
+
+                                      <button class="option-btn sort-option" data-sort="most-view">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">最高瀏覽
+
+                                        </span>
+
+                                      </button>
+
+                                  </div>
+
+        
+
+                                  <div class="filter-section">
+
+                                      <h3 class="option-title">篩選</h3>
+
+                                      <button class="option-btn filter-option active" data-filter="all">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">所有</span>
+
+                                      </button>
+
+                                      <button class="option-btn filter-option" data-filter="beginner">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">等級一 賽馬新手</span>
+
+                                      </button>
+
+                                      <button class="option-btn filter-option" data-filter="intermediate">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">等級二 賽馬新晉</span>
+
+                                      </button>
+
+                                      <button class="option-btn filter-option" data-filter="advanced">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">等級三 賽馬好手</span>
+
+                                      </button>
+
+                                      <button class="option-btn filter-option" data-filter="expert">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">等級四 賽馬老手</span>
+
+                                      </button>
+
+                                      <button class="option-btn filter-option" data-filter="master">
+
+                                          <i class="fa-solid fa-check check-icon"></i>
+
+                                          <span class="option-label">等級五 賽馬大師</span>
+
+                                      </button>
+
+
+
+
+
+
+
+                                      
+
+                                  </div>
+
+        
+
+                                  <div class="modal-actions">
+
+                                      <button class="action-btn reset-btn" id="resetBtn">重設</button>
+
+                                      <button class="action-btn show-result-btn" id="showResultBtn">顯示結果</button>
+
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Filter Controls Section -->
+
+        <section class="filter-controls-section">
+
+            <div class="container">
+
+                <div class="filter-controls-wrapper">
+
+                    <!-- Tag Filter Buttons -->
+
+                    <div class="tag-filters">
+
+                        <button class="tag-filter-btn active" data-tag="all">
+
+                            <span class="tag-icon"><i class="fa-solid fa-star"></i></span>
+
+                            <span class="tag-label">所有</span>
+
+                        </button>
+
+                        <button class="tag-filter-btn" data-tag="racing-kickstarter">
+
+                            <span class="tag-icon"><i class="fa-solid fa-book"></i></span>
+
+                            <span class="tag-label">投注初體驗</span>
+
+                        </button>
+
+                        <!--button class="tag-filter-btn" data-tag="basics-to-racing">
+
+                            <span class="tag-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+
+                            <span class="tag-label">Basics to Racing</span>
+
+                        </button-->
+
+                        <button class="tag-filter-btn" data-tag="bet-type">
+
+                            <span class="tag-icon"><i class="fa-solid fa-ticket"></i></span>
+
+                            <span class="tag-label">投注種類大全​</span>
+
+                        </button>
+
+                        <button class="tag-filter-btn" data-tag="betting-strategy">
+
+                            <span class="tag-icon"><i class="fa-solid fa-chart-line"></i></span>
+
+                            <span class="tag-label">投注攻略​</span>
+
+                        </button>
+
+                        <!--button class="tag-filter-btn" data-tag="horse-jockey-trainer">
+
+                            <span class="tag-icon"><i class="fa-solid fa-horse"></i></span>
+
+                            <span class="tag-label">馬匹與騎練指南​</span>
+
+                        </button-->
+
+                        <button class="tag-filter-btn" data-tag="simulcast-racing">
+
+                            <span class="tag-icon"><i class="fa-solid fa-tv"></i></span>
+
+                            <span class="tag-label">越洋賽事精讀</span>
+
+                        </button>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Posts Grid Section -->
+
+        <section class="posts-grid-section">
+
+            <div class="container">
+
+                <div class="posts-grid" id="postsGrid">
+
+                    <!-- Posts will be generated here -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="footer" class="px-5">
+
+            <div class="container text-left">
+
+                <p class="footer-text mb-1">最後更新日期 25/11/2025<br>
+
+                    <a href="https://sh.hkjc.com/d/zh-HK/share/kol-section/kol-leaderboard/?cid=OSXXIOA_O2ODiscover_discover-campaignsite_website_image" target="_blank">按此</a>參閱有關命中率及分數計算方法
+
+                </p>
+
+                <p class="footer-text">*所有資料只供參考，並不代表香港賽馬會的立場，亦不構成任何建議。</p>
+
+                <p class="footer-text">^「一按投注」功能只適用於已登入投注戶口之用戶。</p>
+
+                <p class="footer-text"><a href="https://www.hkjc.com/responsible-gambling/ch/index">博彩要有節制</a></p>
+
+                <ul class="footer-list">
+
+                    <li class="footer-list">未滿十八歲人士不得投注或進入可投注的地方。</li>
+
+                    <li class="footer-list">向非法或海外莊家下注，即屬違法，且可被判監禁。</li>
+
+                    <li class="footer-list">切勿沉迷賭博，如需尋求輔導協助，可致電平和基金熱線1834 633。</li>
+
+                </ul>                              
+
+          </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- Video Popup Initialization -->
+
+    <script>
+
+        // Initialize video popup (similar to index.html)
+
+        var videoPop = new VideoPopup(); 
+
+        window.videoPop = videoPop; // Make it globally accessible
+
+
+
+        // Initial empty video list - will be populated by racing-academy.js
+
+        videoPop.videoList = [];
+
+
+
+        // Global function to open video popup
+
+        function openPopup(i) {
+
+            videoPop.open(i);
+
+            // Update URL with video parameter for shareable link
+
+            if (history.pushState) {
+
+                const url = new URL(window.location);
+
+                url.searchParams.set('video', i);
+
+                history.pushState({ video: i }, '', url);
+
+            }
+
+        }
+
+
+
+        // Check URL parameter on page load to auto-open video
+
+        function checkUrlForVideo() {
+
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const videoIndex = urlParams.get('video');
+
+            if (videoIndex !== null) {
+
+                const index = parseInt(videoIndex, 10);
+
+                if (!isNaN(index) && index >= 0) {
+
+                    // This is called after renderPosts() completes, so videoList should be ready
+
+                    // Use a small delay to ensure DOM is ready
+
+                    setTimeout(() => {
+
+                        if (window.videoPop && window.videoPop.videoList && window.videoPop.videoList.length > index) {
+
+                            // Directly open without updating URL (URL already has the parameter)
+
+                            // Pass autoplay=true to enable automatic playback when opened via URL
+
+                            window.videoPop.open(index, true);
+
+                        }
+
+                    }, 100);
+
+                }
+
+            }
+
+        }
+
+
+
+        // Handle browser back/forward buttons
+
+        window.addEventListener('popstate', function(event) {
+
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const videoIndex = urlParams.get('video');
+
+            if (videoIndex !== null) {
+
+                const index = parseInt(videoIndex, 10);
+
+                if (!isNaN(index) && index >= 0 && window.videoPop && window.videoPop.videoList && window.videoPop.videoList.length > index) {
+
+                    // Directly open without updating URL (handled by browser history)
+
+                    // Pass autoplay=true to enable automatic playback when opened via URL
+
+                    window.videoPop.open(index, true);
+
+                }
+
+            } else {
+
+                // Close popup if video parameter is removed
+
+                if (window.videoPop) {
+
+                    window.videoPop.close();
+
+                }
+
+            }
+
+        });
+
+
+
+        // Listen for popup close event to update URL
+
+        window.addEventListener('videoPopup:close', function() {
+
+            // Remove video parameter from URL when popup is closed
+
+            if (history.replaceState) {
+
+                const url = new URL(window.location);
+
+                url.searchParams.delete('video');
+
+                history.replaceState({}, '', url);
+
+            }
+
+        });
+
+
+
+    </script>
+
+
+
+</body>
+
+<script>
+
+    // Racing Academy Listing Page JavaScript
+
+
+
+    $(document).ready(function() {
+
+        
+
+        // Demo posts data - will be used to populate the grid
+
+        // For backend: Replace this array with JSON data from API/database
+
+        // Required fields per post:
+
+        //   - id: unique identifier
+
+        //   - title: post title displayed on card
+
+        //   - excerpt: short description for post card
+
+        //   - thumbnail: path to thumbnail image
+
+        //   - videoLink: path or URL to video file for popup
+
+        //   - level: "beginner" | "intermediate" | "advanced" | "expert" | "master"
+
+        //   - tags: array of tag strings (e.g., ["racing-kickstarter", "bet-type"])
+
+        //   - views: number of views (for sorting)
+
+        //   - date: ISO date string (for sorting by newest)
+
+        
+
+        
+
+        
+
+        //const postsData = [
+
+        //    {
+
+        //        id: 1,
+
+        //        title: "由零開始新手上路！2分鐘學識四大基本彩池",
+
+        //        excerpt: "由香港體育評述員鍾志光淺淡香港賽馬「平分彩金」制度，以及賠率變化的啟示；然後介紹四大基本彩池，並提供新手兩大揀馬貼士。",
+
+        //        thumbnail: "../assets/images/edu_area_video1.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250905/racingacademyep1/chi/dei-content007_20250905_racingacademyep1_chi_2500kbps.mp4",
+
+        //        level: "beginner",
+
+        //        tags: ["racing-kickstarter"],
+
+        //        views: 1200,
+
+        //        date: "2025-11-05"                
+
+        //    },
+
+        //    {
+
+        //        id: 2,
+
+        //        title: "揀馬毋須左度右度！排位表兩大因素篩選機會馬",
+
+        //        excerpt: "由香港體育評述員鍾志光，教你如何使用排位表自己度馬。影片將介紹兩大最入門因素，包括「6次近績」及「騎師」，對新手揀馬有何啟示。",
+
+        //        thumbnail: "../assets/images/edu_area_video2.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250912/racingacademyep2/chi/dei-content007_20250912_racingacademyep2_chi_2500kbps.mp4",
+
+        //        level: "beginner",
+
+        //        tags: ["racing-kickstarter"],
+
+        //        views: 980,
+
+        //        date: "2025-11-05"
+
+        //    },
+
+        //    {
+
+        //        id: 3,
+
+        //        title: "排位表度馬攻略！一眼睇晒重點賽事資訊",
+
+        //        excerpt: "由香港體育評述員鍾志光教你學識睇負磅及評分。",
+
+        //        thumbnail: "../assets/images/edu_area_video3.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250919/racingacademyep4/chi/dei-content007_20250919_racingacademyep4_chi_2500kbps.mp4",
+
+        //        level: "beginner",
+
+        //        tags: ["betting-strategy"],
+
+        //        views: 1450,
+
+        //        date: "2025-11-05"
+
+        //    },
+
+        //    {
+
+        //        id: 4,
+
+        //        title: "記低焦點賽事年曆！帶你玩盡跑馬地＋沙田馬場",
+
+        //        excerpt: "由Gigi李佩芝，帶你探索沙田及跑馬地馬場的精彩活動。影片將介紹兩個馬場不同的玩樂設施、全新地標及多國美食， 尋找馬場內的打卡熱點及最佳觀賽位置，等你玩得盡興！",
+
+        //        thumbnail: "../assets/images/edu_area_video4.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20250930/racingacademyep3/chi/dei-content007_20250930_racingacademyep3_chi_2500kbps.mp4",
+
+        //        level: "beginner",
+
+        //        tags: ["racing-kickstarter"],
+
+        //        views: 850,
+
+        //        date: "2025-11-05"                
+
+        //    },
+
+        //    {
+
+        //          id: 5,
+
+        //        title: "掌握越洋賽事投注入門！海外賽馬資訊及分析教學",
+
+        //        excerpt: "由越洋宗師梁浩賢，帶你認識越洋賽事，並提供三大貼士助你掌握海外賽事，包括辨識騎師與練馬師、參考馬匹國際評分、及留意馬場狀況。最後不可錯過「馬上發現」的實用資訊，幫助你分析越洋賽事。",
+
+        //        thumbnail: "../assets/images/edu_area_video5.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content007/2025/20251017/racingacademyep17/chi/dei-content007_20251017_racingacademyep17_chi_2500kbps.mp4",
+
+        //        level: "advanced",
+
+        //        tags: ["simulcast-racing"],
+
+        //        views: 1100,
+
+        //        date: "2025-11-05" 
+
+        //    },
+
+        //    {
+
+        //        id: 6,
+
+        //        title: "揀馬叻不如買得精！3分鐘講解基礎投注策略",
+
+        //        excerpt: "「馬上研究所」以簡單易明的一系列賽馬教學影片，由淺入深帶你輕鬆了解賽馬知識及術語。今集由Tammi講解基礎投注彩池與策略，及參考賠率表變動投注。",
+
+        //        thumbnail: "../assets/images/edu_area_video6.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content004/2025/20251108/RAep5/tammi/dei-content004_20251108_RAep5_tammi_2500kbps.mp4",
+
+        //        level: "intermediate",
+
+        //        tags: ["betting-strategy"],
+
+        //        views: 1100,
+
+        //        date: "2025-11-05" 
+
+        //    },
+
+        //    {
+
+        //        id: 7,
+
+        //        title: "落⼀注可以玩全⽇！認識兩⼤固定賠率彩池—騎師王&練⾺師王",
+
+        //        excerpt: "今集由Tammi講解兩⼤固定賠率彩池—騎師王及練⾺師王。影片將介紹兩種彩池的計分方法及如何揀選最佳投注時機。",
+
+        //        thumbnail: "../assets/images/edu_area_video7.jpg",
+
+        //        videoLink: "https://streaminghkjc-a.akamaihd.net/hdflash/dei-content004/2025/20251121/RAep8/tammi/dei-content004_20251121_RAep8_tammi_2500kbps.mp4",
+
+        //        level: "intermediate",
+
+        //        tags: ["bet-type"],
+
+        //        views: 1100,
+
+        //        date: "2025-11-05" 
+
+        //    },
+
+        //];
+
+
+
+        // Current filter and sort state
+
+        let currentState = {
+
+            tagFilter: 'all',
+
+            levelFilter: 'all',
+
+            sortBy: 'level-low-high'
+
+        };
+
+
+
+        // Level order mapping
+
+        const levelOrder = {
+
+            'beginner': 1,
+
+            'intermediate': 2,
+
+            'advanced': 3,
+
+            'expert': 4,
+
+            'master': 5
+
+        };
+
+
+
+        // Initialize the page
+
+        function init() {
+
+            renderPosts();
+
+            setupEventListeners();
+
+        }
+
+
+
+        // Render posts based on current filters and sort
+
+        function renderPosts() {
+
+            const $grid = $('#postsGrid');
+
+            $grid.empty();
+
+
+
+            // Get posts data from global variable (defined in HTML or updated by Strapi)
+
+            const postsData = window.RacingAcademyData;
+
+            console.log('postsData-----racing-academy----1', postsData);
+
+            if (!postsData || postsData.length === 0) {
+
+                console.warn('postsData is not defined or empty');
+
+                return;
+
+            }
+
+
+
+            // Filter posts
+
+            let filteredPosts = postsData.filter(post => {
+
+                // Tag filter
+
+                const matchesTag = currentState.tagFilter === 'all' || 
+
+                                post.tags.includes(currentState.tagFilter);
+
+                
+
+                // Level filter
+
+                const matchesLevel = currentState.levelFilter === 'all' || 
+
+                                    post.level === currentState.levelFilter;
+
+                
+
+                return matchesTag && matchesLevel;
+
+            });
+
+
+
+            // Sort posts
+
+            filteredPosts = sortPosts(filteredPosts);
+
+
+
+            // Group posts by level
+
+            const groupedPosts = groupPostsByLevel(filteredPosts);
+
+
+
+            // Build ordered video list matching display order (top to bottom, left to right)
+
+            const orderedVideoList = [];
+
+            let displayIndex = 0;
+
+
+
+            // Render grouped posts
+
+            const levelNames = {
+
+                'beginner': '等級一 賽馬新手',
+
+                'intermediate': '等級二 賽馬新晉',
+
+                'advanced': '等級三 賽馬好手',
+
+                'expert': '等級四 賽馬老手',
+
+                'master': '等級五 賽馬大師'
+
+            };
+
+
+
+            // 依排序決定群組順序
+
+            const ascOrder = ['beginner', 'intermediate', 'advanced', 'expert', 'master'];
+
+            const descOrder = [...ascOrder].reverse();
+
+            const groupOrder = currentState.sortBy === 'level-high-low' ? descOrder : ascOrder;
+
+
+
+            groupOrder.forEach(level => {
+
+                if (groupedPosts[level] && groupedPosts[level].length > 0) {
+
+                    const $levelGroup = $('<div class="level-group"></div>');
+
+                    const $levelTitle = $(`<h2 class="level-group-title">${levelNames[level]}</h2>`);
+
+                    const $levelPosts = $('<div class="level-group-posts"></div>');
+
+
+
+                    groupedPosts[level].forEach(post => {
+
+                        // Add to video list in display order (with description & videotag like index.html)
+
+                        const tcTagLabelMap = {
+
+                            'racing-kickstarter': '投注初體驗',
+
+                            'basics-to-racing': '賽馬基礎',
+
+                            'bet-type': '投注種類大全',
+
+                            'betting-strategy': '投注攻略',
+
+                            'horse-jockey-trainer': '馬匹與騎練指南',
+
+                            'simulcast-racing': '越洋賽事精讀'
+
+                        };
+
+                        const tcLevelLabelMap = {
+
+                            'beginner': '賽馬新手',
+
+                            'intermediate': '賽馬新晉',
+
+                            'advanced': '賽馬好手',
+
+                            'expert': '賽馬老手',
+
+                            'master': '賽馬大師'
+
+                        };
+
+                        const rawTag = (post.tags && post.tags[0]) || '';
+
+                        const fallback = rawTag.split('-').map(function(word){ return word.charAt(0).toUpperCase() + word.slice(1); }).join(' ');
+
+                        const tagLabel = tcTagLabelMap[rawTag] || fallback;
+
+                        const levelLabel = tcLevelLabelMap[post.level] || post.level;
+
+
+
+                        orderedVideoList.push({
+
+                            link: post.videoLink,
+
+                            thumbnail: post.thumbnail,
+
+                            title: post.title,
+
+                            description: post.excerpt,
+
+                            videotag: [levelLabel, tagLabel]
+
+                        });
+
+                        console.log('post-----racing-academy----14',isTC(), post);
+
+                        // Create post card with sequential display index
+
+                        const postCard = createPostCard(post, displayIndex);
+
+                        $levelPosts.append(postCard);
+
+                        
+
+                        displayIndex++;
+
+                    });
+
+
+
+                    $levelGroup.append($levelTitle);
+
+                    $levelGroup.append($levelPosts);
+
+                    $grid.append($levelGroup);
+
+                }
+
+            });
+
+
+
+            console.log('Ordered Video List:', orderedVideoList);
+
+
+
+            // Update the global video popup list; if already initialized, destroy to refresh on next open
+
+            if (window.videoPop) {
+
+                window.videoPop.videoList = orderedVideoList;
+
+                try {
+
+                    if (window.videoPop.initialized) {
+
+                        window.videoPop.destroy();
+
+                    }
+
+                } catch (e) {
+
+                    console.warn('VideoPopup destroy failed:', e);
+
+                }
+
+            }
+
+
+
+            // Show message if no results
+
+            if (filteredPosts.length === 0) {
+
+                $grid.append('<div class="no-results">暫時未有內容符合你的篩選條件。請重新調整你的選擇。</div>');
+
+            }
+
+
+
+            // Check URL for video parameter after rendering
+
+            checkUrlForVideo();
+
+        }
+
+        function isTC() {
+
+            return true;
+
+        }
+
+        // Group posts by level
+
+        function groupPostsByLevel(posts) {
+
+            const grouped = {
+
+                'beginner': [],
+
+                'intermediate': [],
+
+                'advanced': [],
+
+                'expert': [],
+
+                'master': []
+
+            };
+
+
+
+            posts.forEach(post => {
+
+                if (grouped[post.level]) {
+
+                    grouped[post.level].push(post);
+
+                }
+
+            });
+
+
+
+            return grouped;
+
+        }
+
+
+
+        // Sort posts based on current sort option
+
+        function sortPosts(posts) {
+
+            const sorted = [...posts];
+
+            
+
+            switch(currentState.sortBy) {
+
+                case 'level-low-high':
+
+                    sorted.sort((a, b) => levelOrder[a.level] - levelOrder[b.level]);
+
+                    break;
+
+                case 'level-high-low':
+
+                    sorted.sort((a, b) => levelOrder[b.level] - levelOrder[a.level]);
+
+                    break;
+
+                case 'newest':
+
+                    sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                    break;
+
+                case 'most-view':
+
+                    sorted.sort((a, b) => b.views - a.views);
+
+                    break;
+
+            }
+
+            
+
+            return sorted;
+
+        }
+
+
+
+        // Create post card HTML
+
+        function createPostCard(post, displayIndex) {
+
+            // 繁中標籤文案映射
+
+            const tag = (post.tags && post.tags[0]) || '';
+
+            const tagLabelMap = {
+
+                'racing-kickstarter': '投注初體驗',
+
+                'basics-to-racing': '賽馬基礎',
+
+                'bet-type': '投注種類大全',
+
+                'betting-strategy': '投注攻略',
+
+                'horse-jockey-trainer': '馬匹與騎練指南',
+
+                'simulcast-racing': '越洋賽事精讀'
+
+            };
+
+            const levelLabelMap = {
+
+                'beginner': '賽馬新手',
+
+                'intermediate': '賽馬新晉',
+
+                'advanced': '賽馬好手',
+
+                'expert': '賽馬老手',
+
+                'master': '賽馬大師'
+
+            };
+
+            const fallback = tag.split('-').map(function(word){ return word.charAt(0).toUpperCase() + word.slice(1); }).join(' ');
+
+            const categoryTag = tagLabelMap[tag] || fallback;
+
+            const categoryTagClass = (tag || categoryTag.toLowerCase()).replace(/\s+/g, '-');
+
+            let label = post.tags.map(e=>{
+
+                 return {
+
+                    label: tagLabelMap[e],
+
+                    class: e
+
+                 }
+
+            })
+
+            console.log('label-----racing-academy----13',isTC(), label);
+
+            // <span class="post-tag ${categoryTagClass}">${categoryTag}</span>
+
+
+
+            return $(`
+
+                <div class="post-card" data-level="${post.level}" data-tags="${post.tags.join(',')}" data-video-index="${displayIndex}">
+
+                    <div class="post-thumbnail">
+
+                        <img src="${post.thumbnail}" alt="${post.title}">
+
+                        <div class="post-play-icon">
+
+                            <img src="../assets/images/video-play-icon.png" class="play-icon" alt="Play Icon">
+
+                        </div>
+
+                    </div>
+
+                    <div class="post-content">
+
+                        <div class="post-tags">
+
+                            <span class="post-tag level level-${post.level}">${levelLabelMap[post.level] || capitalizeFirst(post.level)}</span>
+
+                            ${label.map(e=>{
+
+                                return `<span class="post-tag ${e.class}">${e.label}</span>`;
+
+                            }).join('')}
+
+                        </div>
+
+                        <h3 class="post-title">${post.title}</h3>
+
+                        <p class="post-excerpt">${post.excerpt}</p>
+
+                    </div>
+
+                </div>
+
+            `);
+
+        }
+
+
+
+        // Helper function to capitalize first letter
+
+        function capitalizeFirst(str) {
+
+            return str.charAt(0).toUpperCase() + str.slice(1);
+
+        }
+
+
+
+        // Setup event listeners
+
+        function setupEventListeners() {
+
+            // Tag filter buttons
+
+            $('.tag-filter-btn').on('click', function() {
+
+                const tag = $(this).data('tag');
+
+                
+
+                // Update active state
+
+                $('.tag-filter-btn').removeClass('active');
+
+                $(this).addClass('active');
+
+                
+
+                // Update state
+
+                currentState.tagFilter = tag;
+
+                
+
+                // Update modal filter to match
+
+                syncModalWithTagFilter(tag);
+
+                
+
+                // Re-render posts
+
+                renderPosts();
+
+            });
+
+
+
+            // Sort/Filter button - toggle modal
+
+            $('#sortFilterBtn').on('click', function(e) {
+
+                e.stopPropagation();
+
+                $('#sortFilterModal').toggleClass('active');
+
+            });
+
+
+
+            // Close modal when clicking outside
+
+            $(document).on('click', function(e) {
+
+                if ($('#sortFilterModal').hasClass('active')) {
+
+                    if (!$(e.target).closest('.sort-filter-content, #sortFilterBtn').length) {
+
+                        $('#sortFilterModal').removeClass('active');
+
+                    }
+
+                }
+
+            });
+
+
+
+            // Sort options
+
+            $('.sort-option').on('click', function() {
+
+                $('.sort-option').removeClass('active');
+
+                $(this).addClass('active');
+
+                
+
+                currentState.sortBy = $(this).data('sort');
+
+            });
+
+
+
+            // Filter options
+
+            $('.filter-option').on('click', function() {
+
+                $('.filter-option').removeClass('active');
+
+                $(this).addClass('active');
+
+                
+
+                currentState.levelFilter = $(this).data('filter');
+
+                
+
+                // If specific level is selected, update tag filter to 'all'
+
+                if (currentState.levelFilter !== 'all') {
+
+                    currentState.tagFilter = 'all';
+
+                    $('.tag-filter-btn').removeClass('active');
+
+                    $('.tag-filter-btn[data-tag="all"]').addClass('active');
+
+                }
+
+            });
+
+
+
+            // Reset button
+
+            $('#resetBtn').on('click', function() {
+
+                // Reset state
+
+                currentState = {
+
+                    tagFilter: 'all',
+
+                    levelFilter: 'all',
+
+                    sortBy: 'level-low-high'
+
+                };
+
+                
+
+                // Reset UI
+
+                $('.tag-filter-btn').removeClass('active');
+
+                $('.tag-filter-btn[data-tag="all"]').addClass('active');
+
+                $('.sort-option').removeClass('active');
+
+                $('.sort-option[data-sort="level-low-high"]').addClass('active');
+
+                $('.filter-option').removeClass('active');
+
+                $('.filter-option[data-filter="all"]').addClass('active');
+
+                
+
+                // Close modal and re-render
+
+                $('#sortFilterModal').removeClass('active');
+
+                renderPosts();
+
+            });
+
+
+
+            // Show Result button
+
+            $('#showResultBtn').on('click', function() {
+
+                $('#sortFilterModal').removeClass('active');
+
+                renderPosts();
+
+            });
+
+
+
+            // Post card click - open video popup
+
+            $(document).on('click', '.post-card', function() {
+
+                const videoIndex = $(this).data('video-index');
+
+                if (typeof openPopup === 'function') {
+
+                    openPopup(videoIndex);
+
+                }
+
+            });
+
+        }
+
+
+
+        // Sync modal filter with tag filter
+
+        function syncModalWithTagFilter(tag) {
+
+            // If a specific tag is selected (not 'all'), set level filter to 'all'
+
+            if (tag !== 'all') {
+
+                currentState.levelFilter = 'all';
+
+                $('.filter-option').removeClass('active');
+
+                $('.filter-option[data-filter="all"]').addClass('active');
+
+            }
+
+        }
+
+
+
+        // Mobile navigation toggle icon handler
+
+        const mobileNav = document.getElementById('mobileNav');
+
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+        const closeIcon = document.querySelector('.close-icon');
+
+        
+
+        if (mobileNav && hamburgerIcon && closeIcon) {
+
+            mobileNav.addEventListener('show.bs.collapse', function() {
+
+                hamburgerIcon.classList.add('d-none');
+
+                closeIcon.classList.remove('d-none');
+
+            });
+
+            
+
+            mobileNav.addEventListener('hide.bs.collapse', function() {
+
+                hamburgerIcon.classList.remove('d-none');
+
+                closeIcon.classList.add('d-none');
+
+            });
+
+        }        
+
+
+
+        // Initialize on page load
+
+        init();
+
+
+
+        // Listen for postsData updates from Strapi
+
+        $(document).on('postsDataUpdated', function() {
+
+            console.log('postsDataUpdated-----racing-academy', window.RacingAcademyData);
+
+            if (window.RacingAcademyData && window.RacingAcademyData.length > 0) {
+
+                // Re-render posts with updated data
+
+                renderPosts();
+
+            }
+
+        });
+
+    });
+
+</script>
+
+<script>
+
+    $(document).ready(function() {
+
+        // 獲取 footer 配置並更新頁面
+
+// 獲取 footer 配置並更新頁面
+
+async function loadFooter() {
+
+    try {
+
+        const footerConfig = await window.StrapiAPI.Footer.getConfig({
+
+            locale: window.StrapiAPI.getCurrentLocale()
+
+        });
+
+        
+
+        // 將 HTML 內容插入到 footer 元素中
+
+        const footerElement = document.getElementById('footer');
+
+        if (footerElement && footerConfig.htmlContent) {
+
+            footerElement.innerHTML = footerConfig.htmlContent;
+
+        }
+
+    } catch (error) {
+
+        console.error('Failed to load footer:', error);
+
+    }
+
+}
+
+
+
+// 在頁面加載時調用
+
+loadFooter();
+
+});
+
+</script>
+
+</html>
+

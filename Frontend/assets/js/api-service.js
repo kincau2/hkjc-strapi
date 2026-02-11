@@ -6,7 +6,7 @@
 class StrapiApiService {
     constructor(config = {}) {
         // 从环境变量或配置中获取 Strapi URL
-        this.baseUrl = config.baseUrl || 'http://localhost:1337';
+        this.baseUrl = config.baseUrl || 'https://strapi.hkjc-event.org';
         this.apiToken = config.apiToken || null;
         this.defaultLocale = config.defaultLocale || 'en';
     }
@@ -285,7 +285,7 @@ class StrapiApiService {
 // 创建全局实例
 // 在实际使用时，需要根据环境配置 baseUrl
 const apiService = new StrapiApiService({
-    baseUrl: window.STRAPI_URL || 'http://localhost:1337',
+    baseUrl: window.STRAPI_URL || 'https://strapi.hkjc-event.org',
     defaultLocale: document.documentElement.lang === 'zh-Hant' ? 'tc' : 'en'
 });
 
