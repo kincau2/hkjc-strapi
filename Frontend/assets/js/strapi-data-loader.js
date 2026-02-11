@@ -1606,7 +1606,15 @@
      * 更新 Discover Highlight 页面的数据
      */
     function updateDiscoverHighlightPage(articles) {
-        const postsData = articles.map(article => ({
+        const locale = window.StrapiAPI.getCurrentLocale();
+        
+        // Filter out articles with empty title for current language
+        const filteredArticles = articles.filter(article => {
+            const titleField = locale === 'tc' ? 'titleTc' : 'titleEn';
+            return article[titleField] && article[titleField].trim() !== '';
+        });
+        
+        const postsData = filteredArticles.map(article => ({
             id: article.id,
             title: article.title,
             excerpt: article.excerpt,
@@ -1637,8 +1645,16 @@
      * 更新 Racecourse Experience 页面的数据
      */
     function updateRacecourseExperiencePage(articles) {
+        const locale = window.StrapiAPI.getCurrentLocale();
+        
+        // Filter out articles with empty title for current language
+        const filteredArticles = articles.filter(article => {
+            const titleField = locale === 'tc' ? 'titleTc' : 'titleEn';
+            return article[titleField] && article[titleField].trim() !== '';
+        });
+        
         // 转换为页面需要的格式
-        const postsData = articles.map(article => ({
+        const postsData = filteredArticles.map(article => ({
             id: article.id,
             title: article.title,
             excerpt: article.excerpt,

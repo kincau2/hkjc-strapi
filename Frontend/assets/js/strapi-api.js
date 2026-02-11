@@ -518,8 +518,8 @@
                 return {
                     id: item.id,
                     title: attrs.title,
-                    titleEn: attrs.titleEn || attrs.title,
-                    titleTc: attrs.titleTc || attrs.title,
+                    titleEn: attrs.titleEn,  // Keep raw value without fallback
+                    titleTc: attrs.titleTc,  // Keep raw value without fallback
                     excerpt: locale === 'tc' ? (attrs.excerptTc || attrs.excerpt) : (attrs.excerptEn || attrs.excerpt),
                     excerptEn: attrs.excerptEn || attrs.excerpt,
                     excerptTc: attrs.excerptTc || attrs.excerpt,
