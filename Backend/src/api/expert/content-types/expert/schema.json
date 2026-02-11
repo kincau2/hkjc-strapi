@@ -79,10 +79,6 @@
       "type": "boolean",
       "default": false
     },
-    "hasPublished": {
-      "type": "boolean",
-      "default": false
-    },
     "picks": {
       "type": "relation",
       "relation": "oneToMany",

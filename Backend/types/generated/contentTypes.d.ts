@@ -449,7 +449,6 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required;
     desktopImageTc: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     linkTarget: Schema.Attribute.Enumeration<['_self', '_blank']> &
       Schema.Attribute.DefaultTo<'_blank'>;
     linkUrlEn: Schema.Attribute.String;
@@ -504,7 +503,6 @@ export interface ApiDiscoverHighlightDiscoverHighlight
     date: Schema.Attribute.DateTime;
     excerptEn: Schema.Attribute.Text;
     excerptTc: Schema.Attribute.Text;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -554,7 +552,6 @@ export interface ApiExpertExpert extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isTopThree: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -684,7 +681,6 @@ export interface ApiRacecourseExperienceRacecourseExperience
     date: Schema.Attribute.DateTime;
     excerptEn: Schema.Attribute.Text;
     excerptTc: Schema.Attribute.Text;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -744,7 +740,6 @@ export interface ApiRacingAcademyRacingAcademy
     date: Schema.Attribute.DateTime;
     excerptEn: Schema.Attribute.Text;
     excerptTc: Schema.Attribute.Text;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     level: Schema.Attribute.Enumeration<
       ['beginner', 'intermediate', 'advanced', 'expert', 'master']
@@ -797,7 +792,6 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hasPublished: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     key: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;

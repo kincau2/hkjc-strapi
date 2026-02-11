@@ -68,10 +68,6 @@
         "_blank"
       ]
     },
-    "hasPublished": {
-      "type": "boolean",
-      "default": false
-    },
     "order": {
       "type": "integer",
       "default": 0,

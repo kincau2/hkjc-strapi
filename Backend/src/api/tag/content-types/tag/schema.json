@@ -21,10 +21,6 @@
       "type": "string",
       "required": true
     },
-    "hasPublished": {
-      "type": "boolean",
-      "default": true
-    },
     "racingAcademies": {
       "type": "relation",
       "relation": "manyToMany",
@@ -33,4 +29,3 @@
     }
   }
 }
-
