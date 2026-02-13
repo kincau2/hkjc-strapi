@@ -7,22 +7,14 @@ module.exports = {
   // Similar to wp_ajax_ handler in WordPress
   async import(ctx) {
     try {
-      console.log('=== CSV Import Request ===');
-      console.log('ctx.request.body:', ctx.request.body);
-      console.log('ctx.request.files:', ctx.request.files);
-      console.log('ctx.request.body.data:', ctx.request.body?.data);
-      console.log('ctx.request.body.files:', ctx.request.body?.files);
+      console.log('=== CSV Import Started ===');
       
       const { files } = ctx.request;
       
-      // Check file upload - like if ( empty($_FILES['file']) )
+      // Check file upload
       if (!files || !files.file) {
-        console.log('Error: No file uploaded');
-        console.log('Available keys in ctx.request:', Object.keys(ctx.request));
-        return ctx.badRequest('No file uploaded. Received: ' + JSON.stringify(Object.keys(ctx.request)));
+        return ctx.badRequest('No file uploaded');
       }
-      
-      console.log('File received:', files.file);
 
       const file = files.file;
       const fs = require('fs');
@@ -30,21 +22,23 @@ module.exports = {
       
       // Use filepath property (Strapi v5 uses formidable which provides filepath)
       const filePath = file.filepath || file.path;
-      console.log('Reading from path:', filePath);
       
       // Read CSV file
       const results = [];
       
       await new Promise((resolve, reject) => {
         fs.createReadStream(filePath)
-          .pipe(csv())
+          .pipe(csv({
+            mapHeaders: ({ header }) => header.trim() // Trim whitespace from headers
+          }))
           .on('data', (data) => results.push(data))
           .on('end', resolve)
           .on('error', reject);
       });
 
+      console.log(`Parsed ${results.length} CSV rows`);
+
       // VALIDATION PHASE: Check all expert names BEFORE deleting anything
-      console.log('=== Starting Validation Phase ===');
       const invalidExperts = [];
       const expertCache = {}; // Cache to avoid duplicate queries
       
@@ -82,10 +76,9 @@ module.exports = {
         );
       }
       
-      console.log('✓ Validation passed - all expert names are valid');
+      console.log('✓ Validation passed');
 
       // GROUP ROWS BY RACE/EXPERT: Multiple rows now represent one pick
-      console.log('=== Grouping rows by race and expert ===');
       const pickGroups = {};
       
       for (const row of results) {
@@ -106,7 +99,6 @@ module.exports = {
             metaTc: row.metaTc || '',
             betLink: row.betLink || '',
             sort: parseInt(row.sort) || 0,
-            hasPublished: row.hasPublished === 'true' || row.hasPublished === '1',
             expertId: expertId !== 'no-expert' ? expertId : null,
             listEnItems: [],
             listTcItems: []
@@ -115,18 +107,26 @@ module.exports = {
         
         // Add pick item to the group
         if (row.listEn) {
+          // Convert banker/sel to boolean - handle TRUE/FALSE, true/false, 1/0
+          const isBanker = String(row.banker).toLowerCase() === 'true' || row.banker === '1' || row.banker === 1 || row.banker === true;
+          const isSel = String(row.sel).toLowerCase() === 'true' || row.sel === '1' || row.sel === 1 || row.sel === true;
+          
           pickGroups[groupKey].listEnItems.push({
             text: row.listEn.trim(),
-            banker: row.banker === 'true' || row.banker === '1' || row.banker === true,
-            sel: row.sel === 'true' || row.sel === '1' || row.sel === true
+            banker: isBanker,
+            sel: isSel
           });
         }
         
         if (row.listTc) {
+          // Convert banker/sel to boolean - handle TRUE/FALSE, true/false, 1/0
+          const isBanker = String(row.banker).toLowerCase() === 'true' || row.banker === '1' || row.banker === 1 || row.banker === true;
+          const isSel = String(row.sel).toLowerCase() === 'true' || row.sel === '1' || row.sel === 1 || row.sel === true;
+          
           pickGroups[groupKey].listTcItems.push({
             text: row.listTc.trim(),
-            banker: row.banker === 'true' || row.banker === '1' || row.banker === true,
-            sel: row.sel === 'true' || row.sel === '1' || row.sel === true
+            banker: isBanker,
+            sel: isSel
           });
         }
       }
@@ -165,13 +165,12 @@ module.exports = {
             listTcItems: pickData.listTcItems,
             betLink: pickData.betLink,
             sort: pickData.sort,
-            hasPublished: pickData.hasPublished,
             expert: pickData.expertId
           }
         });
       }
 
-      // WordPress equivalent: wp_send_json_success(['message' => '...', 'count' => ...])
+      console.log(`✓ Successfully imported ${pickGroupArray.length} picks`);
       return ctx.send({
         message: `Successfully imported ${pickGroupArray.length} picks from ${results.length} CSV rows`,
         pickCount: pickGroupArray.length,

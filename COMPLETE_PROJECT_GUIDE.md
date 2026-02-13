@@ -553,17 +553,18 @@ This section documents the major refactor from HTML-based pick lists to structur
 #### New CSV Format
 **Multiple rows per race** (one row per pick item):
 ```csv
-raceEn,raceTc,typeEn,typeTc,metaEn,metaTc,listEn,banker,sel,listTc,expert
-"Race1","第1場","Win","獨贏","Meta EN","中文描述","11. MACANESE MASTER",1,0,"11. 旺旺嘉駒","Joseph"
-"Race1","第1場","Win","獨贏","Meta EN","中文描述","1. EXCEED THE WISH",0,1,"1. 星火燎原","Joseph"
-"Race1","第1場","Win","獨贏","Meta EN","中文描述","4. GENERAL SMART",0,0,"4. 運來伍寶","Joseph"
+raceEn,raceTc,typeEn,typeTc,metaEn,metaTc,listEn,listTc,banker,sel,betLink,sort,expertName
+"Race1","第1場","Win","獨贏","Meta EN","中文描述","11. MACANESE MASTER","11. 旺旺嘉駒",TRUE,FALSE,https://example.com,0,"Joseph"
+"Race1","第1場","Win","獨贏","Meta EN","中文描述","1. EXCEED THE WISH","1. 星火燎原",FALSE,TRUE,https://example.com,0,"Joseph"
+"Race1","第1場","Win","獨贏","Meta EN","中文描述","4. GENERAL SMART","4. 運來伍寶",FALSE,FALSE,https://example.com,0,"Joseph"
 ```
 
 **Key Points**:
 - Multiple rows per race create one pick with multiple list items
-- `banker` column: `1` = true, `0` = false
-- `sel` column: `1` = true, `0` = false
-- Rows with same `raceEn + expert` are grouped together
+- `banker` column: Accepts `TRUE`, `true`, `1` = true, `FALSE`, `false`, `0` = false (case-insensitive)
+- `sel` column: Accepts `TRUE`, `true`, `1` = true, `FALSE`, `false`, `0` = false (case-insensitive)
+- Rows with same `raceEn + expertName` are grouped together
+- `expertName` must match an existing expert's `nameEn` field exactly
 
 #### Import Logic Flow
 **File**: `Backend/src/api/pick/controllers/csv-import.js`
@@ -1216,6 +1217,21 @@ populate: ['listEnItems', 'listTcItems']
 // Or object populate
 populate: { listEnItems: true, listTcItems: true }
 ```
+
+#### ❌ Pitfall 7: Case-Sensitive Boolean Values in CSV
+```csv
+# Wrong - uppercase TRUE/FALSE won't work with old import code
+Race1,第1場,...,TRUE,FALSE,Joseph
+
+# Fixed - the import now handles both uppercase and lowercase
+Race1,第1場,...,TRUE,FALSE,Joseph   # Works
+Race1,第1場,...,true,false,Joseph   # Works  
+Race1,第1場,...,1,0,Joseph          # Works
+```
+
+**Issue**: CSV files exported from Excel often have `TRUE`/`FALSE` (uppercase), but older import code only checked for lowercase `'true'`/`'false'`.
+
+**Solution**: The import controller now uses `.toLowerCase()` to convert strings before comparison, accepting `TRUE`, `true`, `1`, or boolean `true`.
 
 ### Debug Commands
 
